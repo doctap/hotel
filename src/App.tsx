@@ -8,16 +8,12 @@ function App() {
 	return (
 		<form className={styles.App}>
 
-
 			<div className={styles.column}>
 				<Input type='text' name={'TEXT FIELD'} placeholder={'Email'} />
 				<Select />
 				<Checkbox type='checkbox' name={'Получать спецпредложения'}/>
 
-			</div>
-
-
-
+			</div> 
 
 		</form>
 	);
