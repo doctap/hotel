@@ -1,0 +1,50 @@
+// @import '../../CommonStyles.module.scss';
+
+.wraper {
+	.checkbox {
+		position: relative;
+		display: inline-block;
+		width: 2.5em;
+		height: 1.25em;
+
+		& input {
+			display: none;
+
+			&:checked+.slider {
+				border: 0.0625em solid rgb(46, 189, 27);
+			}
+
+			&:checked+.slider:before {
+				transform: translateX(1.25em);
+				background-color: rgb(46, 189, 27);
+			}
+		}
+
+		.slider {
+			border: 0.0625em solid #df3d27;
+			position: absolute;
+			cursor: pointer;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: rgba(255, 255, 255, 0);
+			transition: .4s;
+			border-radius: 1em;
+
+			&:before {
+				position: absolute;
+				content: "";
+				height: 0.85em;
+				width: 0.85em;
+				left: 0.125em;
+				bottom: 0.125em;
+				background-color: #df3d27;
+				transition: .4s;
+				border-radius: 1em;
+			}
+		}
+	}
+
+	.name {} 
+}

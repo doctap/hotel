@@ -1,0 +1,41 @@
+// Colors
+$DarkShade100: rgba(31, 32, 65, 1);
+$DarkShade75: rgba(31, 32, 65, 0.75);
+$DarkShade50: rgba(31, 32, 65, 0.50);
+$DarkShade25: rgba(31, 32, 65, 0.25);
+$DarkShade5: rgba(31, 32, 65, 0.05);
+
+$Purple: rgba(220, 156, 255, 1);
+$Green: rgba(111, 207, 151, 1);
+
+// Font-sizes
+%fontPropH1 {
+	font-weight: 700;
+	font-size: 1.5em;
+}
+
+%fontPropH2 {
+	font-weight: 700;
+	font-size: 1.1875em;
+}
+
+%fontPropH3 {
+	font-weight: 700;
+	font-size: 0.75em;
+	line-height: 0.914375em;
+
+}
+
+%fontPropBody {
+	font-weight: 400;
+	font-size: 0.875em;
+}
+
+// Templates
+%flexCenter {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
