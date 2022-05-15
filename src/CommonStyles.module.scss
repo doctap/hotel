@@ -8,6 +8,9 @@ $DarkShade5: rgba(31, 32, 65, 0.05);
 $Purple: rgba(220, 156, 255, 1);
 $Green: rgba(111, 207, 151, 1);
 
+$GradientPurple: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+
+
 // Font-sizes
 %fontPropH1 {
 	font-weight: 700;
@@ -38,4 +41,19 @@ $Green: rgba(111, 207, 151, 1);
 	align-items: center;
 }
 
+%flexRow {
+	display: flex;
+	flex-direction: row;
+}
 
+%flexColumn {
+	display: flex;
+	flex-direction: column;
+}
+
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
