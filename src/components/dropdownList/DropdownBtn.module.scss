@@ -1,0 +1,11 @@
+@import '../../CommonStyles.module.scss';
+
+.DropBtn {
+	border-radius: 2rem;
+	border: 1px solid $DarkShade25;
+	color: $DarkShade50;
+	width: 1.875rem;
+	height: 1.875rem;
+	background: rgba(0, 0, 0, 0);
+	font-size: 1.2rem;
+}

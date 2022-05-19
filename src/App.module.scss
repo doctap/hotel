@@ -27,3 +27,12 @@
 	width: 15em;
 	height: 8em;
 }
+
+.ListCheckBoxTick {
+	list-style: none;
+	width: 15rem;
+
+	&>* {
+		margin-bottom: .7rem;
+	}
+}

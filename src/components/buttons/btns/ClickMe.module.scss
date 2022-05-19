@@ -10,10 +10,11 @@
 	color: #fff;
 	background: $GradientPurple;
 	letter-spacing: .050rem;
+
 	&:disabled {
 		background: $GradientPurple;
 		opacity: 50%
-	 }
+	}
 }
 
 .btnBorder {
@@ -26,9 +27,10 @@
 	color: #BC9CFF;
 	background: rgba(0, 0, 0, 0);
 	letter-spacing: .050rem;
+
 	&:disabled {
 		border: 2px solid #bb9cff7e;
-	 }
+	}
 }
 
 .btnText {
@@ -40,7 +42,8 @@
 	color: #BC9CFF;
 	background: rgba(0, 0, 0, 0);
 	letter-spacing: .050rem;
+
 	&:disabled {
 		color: #958ea6;
-	 }
+	}
 }
