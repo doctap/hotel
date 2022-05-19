@@ -1,0 +1,46 @@
+@import '../../../CommonStyles.module.scss';
+
+.btnPrimary {
+	cursor: pointer;
+	width: 6.25rem;
+	height: 2.75rem;
+	border: none;
+	border-radius: 2rem;
+	@extend %fontPropH3;
+	color: #fff;
+	background: $GradientPurple;
+	letter-spacing: .050rem;
+	&:disabled {
+		background: $GradientPurple;
+		opacity: 50%
+	 }
+}
+
+.btnBorder {
+	cursor: pointer;
+	width: 6.25rem;
+	border-radius: 2rem;
+	height: 2.75rem;
+	border: 2px solid #BC9CFF;
+	@extend %fontPropH3;
+	color: #BC9CFF;
+	background: rgba(0, 0, 0, 0);
+	letter-spacing: .050rem;
+	&:disabled {
+		border: 2px solid #bb9cff7e;
+	 }
+}
+
+.btnText {
+	cursor: pointer;
+	width: fit-content;
+	height: fit-content;
+	border: none;
+	@extend %fontPropH3;
+	color: #BC9CFF;
+	background: rgba(0, 0, 0, 0);
+	letter-spacing: .050rem;
+	&:disabled {
+		color: #958ea6;
+	 }
+}

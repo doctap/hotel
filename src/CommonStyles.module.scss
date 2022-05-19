@@ -14,24 +14,24 @@ $GradientPurple: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
 // Font-sizes
 %fontPropH1 {
 	font-weight: 700;
-	font-size: 1.5em;
+	font-size: 1.5rem;
 }
 
 %fontPropH2 {
 	font-weight: 700;
-	font-size: 1.1875em;
+	font-size: 1.1875rem;
 }
 
 %fontPropH3 {
 	font-weight: 700;
-	font-size: 0.75em;
+	font-size: 0.75rem;
 	line-height: 0.914375em;
 
 }
 
 %fontPropBody {
 	font-weight: 400;
-	font-size: 0.875em;
+	font-size: 0.875rem;
 }
 
 // Templates
@@ -56,4 +56,5 @@ $GradientPurple: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
+	font-family: inherit;
 }

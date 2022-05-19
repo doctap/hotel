@@ -1,0 +1,30 @@
+@import '../../../CommonStyles.module.scss';
+
+
+.Btn {
+	cursor: pointer;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: end;
+	width: 20rem;
+	height: 2.75rem;
+	border-radius: 2rem;
+	border: none;
+	background: $GradientPurple;
+	@extend %fontPropH3;
+	letter-spacing: .050rem;
+	font-weight: 600;
+	color: #fff;
+	padding: 0 1rem 0 0;
+
+	.image {
+		margin: 0 0 0 3.5rem;
+		width: 1.1rem;
+		height: 1.1rem;
+		display: inline-block;
+		background-image: url(../../../../public/arrow_forward.png);
+		background-size: contain;
+		background-repeat: no-repeat;
+	}
+}

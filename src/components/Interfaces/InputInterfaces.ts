@@ -4,6 +4,7 @@ interface IInputProps {
 	placeholder?: string;
 	onChange?: (isChecked: boolean) => void;
 	value?: string;
+	internalText?: string;
 }
 
 type InputType = 'text' | 'email' | 'password' | 'checkbox' | 'radio';
