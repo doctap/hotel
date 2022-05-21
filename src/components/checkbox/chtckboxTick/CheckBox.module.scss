@@ -1,47 +1,47 @@
-  @import '../../../CommonStyles.module.scss';
+@import '../../../CommonStyles.module.scss';
 
-  .container {
-  	@extend %fontPropBody;
-  	display: block;
-  	position: relative;
-  	padding-left: 2.1875rem;
-  	cursor: pointer;
-  	-webkit-user-select: none;
-  	-moz-user-select: none;
-  	-ms-user-select: none;
-  	user-select: none;
+.container {
+	@extend %fontPropBody;
+	display: block;
+	position: relative;
+	padding-left: 2.1875rem;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 
-  	input {
-  		position: absolute;
-  		opacity: 0;
-  		cursor: pointer;
-  		height: 0;
-  		width: 0;
+	input {
+		position: absolute;
+		opacity: 0;
+		cursor: pointer;
+		height: 0;
+		width: 0;
 
-  		&:checked~.Tick {
-  			display: block;
-  		}
-  	}
+		&:checked~.Tick {
+			display: block;
+		}
+	}
 
-  	.Tick {
-  		background-image: url(../../../../public/VectorTick.svg);
+	.Tick {
+		background-image: url(../../../../public/VectorTick.svg);
 		background-size: contain;
 		background-repeat: no-repeat;
-  		width: 12px;
-  		height: 12px;
-  		position: absolute;
-  		top: .250rem;
-  		left: .250rem;
-  		display: none;
-  	}
+		width: 12px;
+		height: 12px;
+		position: absolute;
+		top: .250rem;
+		left: .250rem;
+		display: none;
+	}
 
-  	.checkmark {
-  		position: absolute;
-  		top: 0;
-  		left: 0;
-  		height: 1.25rem;
-  		width: 1.25rem;
-  		border-radius: 4px;
-  		border: 1px solid $DarkShade25;
-  	}
-  }
+	.checkmark {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 1.25rem;
+		width: 1.25rem;
+		border-radius: 4px;
+		border: 1px solid $DarkShade25;
+	}
+}

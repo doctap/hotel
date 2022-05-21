@@ -1,0 +1,38 @@
+@import '../../../CommonStyles.module.scss';
+
+.wrapper {
+	.dropDownList {
+		width: 20rem;
+
+		.subTitle {
+			border: 1px solid $DarkShade50;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			max-height: 2.795625rem;
+
+			.value {
+				color: $DarkShade75;
+				@extend %fontPropBody;
+				padding: .8rem 0 .8rem .8rem;
+				display: block;
+				width: 100%;
+			}
+		}
+
+		.list {
+			border: 1px solid $DarkShade50;
+			padding: 0 .5rem .5rem .8125rem;
+			border-top: none;
+			@extend %fontPropH3;
+
+			.dropDownFooter {
+				display: flex;
+				justify-content: space-between;
+				padding: .5rem 0 0 0;
+			}
+		}
+
+
+	}
+}

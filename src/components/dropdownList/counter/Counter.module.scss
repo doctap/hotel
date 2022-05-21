@@ -1,0 +1,18 @@
+@import '../../../CommonStyles.module.scss';
+
+.AddOne {
+	display: flex;
+	width: 6rem;
+	height: 2rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.ItemDropDown {
+	width: 100%;
+	display: flex;
+	padding: 0.5rem 0 0 0;
+	justify-content: space-between;
+	align-items: center;
+}

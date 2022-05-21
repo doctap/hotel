@@ -1,8 +1,8 @@
 import React from 'react';
+import { IBtnSubmit } from './BtnSubmitInterface';
 import styles from './LongSubmit.module.scss';
-// import { IButtonProps } from '../../Interfaces/ButtonInterfaces';
 
-export default function LongSubmit(props: any) {
+export default function LongSubmit(props: IBtnSubmit) {
 	return (
 		<button
 			className={styles.Btn}

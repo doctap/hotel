@@ -2,14 +2,15 @@ import React from 'react';
 import styles from './App.module.scss';
 import CheckboxToggle from './components/checkbox/checkboxToggle/CheckboxToggle';
 import CheckboxRadio from './components/checkbox/checkboxRadio/CheckboxRadio';
-import Input from './components/inputs/Input';
 import Select from './components/selects/Select';
 import LongSubmit from './components/buttons/submit/LongSubmit';
-import ClickMe from './components/buttons/btns/ClickMe';
-import { BtnVariants } from './components/Interfaces/ButtonInterfaces';
+import ClickMe from './components/buttons/btns/Button';
 import CheckBoxTick from './components/checkbox/chtckboxTick/CheckBoxTick';
-import AddOne from './components/dropdownList/Counter';
-import Counter from './components/dropdownList/Counter';
+import DropDownList from './components/dropdownList/drop_Down_List/DropDownList';
+import Title from './components/titles/title/SubTitle';
+import LikeBtn from './components/buttons/btnLike/LikeBtn';
+import { BtnVariants } from './components/buttons/btns/ButtonInterface';
+import Input from './components/inputs/InputEmail/Input';
 
 
 function App() {
@@ -17,13 +18,12 @@ function App() {
 		<form className={styles.App}>
 
 			<div className={styles.column}>
-				<Input type='text' name={'TEXT FIELD'} placeholder={'Email'} />
+				<Input type='email' placeholder={'Email'} />
 				<Select />
 
-				<form>
-					
-				</form>
-				<Counter name={''} count={0}/>
+
+				<DropDownList name='Сколько гостей' />
+				<LikeBtn value={0} />
 
 			</div>
 
@@ -45,14 +45,17 @@ function App() {
 			</div>
 
 			<div className={styles.column}>
-				<LongSubmit name={'ПЕРЕЙТИ К ОПЛАТЕ'} type='submit' variant={BtnVariants.Submit} />
-				<div className={styles.BtnsClickMe}>
-					<ClickMe type='button' name={'CLICK ME'} variant={BtnVariants.Primary} />
-					<ClickMe type='button' name={'CLICK ME'} variant={BtnVariants.Primary} disabled={true} />
-					<ClickMe type='button' name={'CLICK ME'} variant={BtnVariants.Border} />
-					<ClickMe type='button' name={'CLICK ME'} variant={BtnVariants.Border} disabled={true} />
-					<ClickMe type='button' name={'CLICK ME'} variant={BtnVariants.BtnText} />
-					<ClickMe type='button' name={'CLICK ME'} variant={BtnVariants.BtnText} disabled={true} />
+				<div>
+					<Title name='buttons' />
+					<LongSubmit name={'ПЕРЕЙТИ К ОПЛАТЕ'} type='submit' />
+					<div className={styles.BtnsClickMe}>
+						<ClickMe type='button' name='click me' variant={BtnVariants.Primary} />
+						<ClickMe type='button' name='click me' variant={BtnVariants.Primary} disabled={true} />
+						<ClickMe type='button' name='click me' variant={BtnVariants.Border} />
+						<ClickMe type='button' name='click me' variant={BtnVariants.Border} disabled={true} />
+						<ClickMe type='button' name='click me' variant={BtnVariants.BtnText} />
+						<ClickMe type='button' name='click me' variant={BtnVariants.BtnText} disabled={true} />
+					</div>
 				</div>
 
 			</div>

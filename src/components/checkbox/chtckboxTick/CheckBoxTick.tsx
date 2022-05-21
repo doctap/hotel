@@ -1,8 +1,9 @@
 import React from 'react';
 import { ChangeEvent } from 'react';
 import styles from './CheckBox.module.scss'
+import { ICheckBoxTick } from './CheckBoxTickInterface';
 
-export default function CheckBoxTick(props: IInputProps) {
+export default function CheckBoxTick(props: ICheckBoxTick) {
 
 	const toggleCheckbox = (e: ChangeEvent<HTMLInputElement>) => {
 		const elem = e.currentTarget;

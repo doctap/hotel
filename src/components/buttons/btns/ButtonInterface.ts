@@ -10,4 +10,5 @@ export interface IButtonProps {
 	type: 'button' | 'reset' | 'submit';
 	variant: BtnVariants;
 	disabled?: boolean;
+	onClick?: () => void;
 }

@@ -10,6 +10,7 @@
 	color: #fff;
 	background: $GradientPurple;
 	letter-spacing: .050rem;
+	text-transform: uppercase;
 
 	&:disabled {
 		background: $GradientPurple;
@@ -27,6 +28,7 @@
 	color: #BC9CFF;
 	background: rgba(0, 0, 0, 0);
 	letter-spacing: .050rem;
+	text-transform: uppercase;
 
 	&:disabled {
 		border: 2px solid #bb9cff7e;
@@ -42,6 +44,7 @@
 	color: #BC9CFF;
 	background: rgba(0, 0, 0, 0);
 	letter-spacing: .050rem;
+	text-transform: uppercase;
 
 	&:disabled {
 		color: #958ea6;

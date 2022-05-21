@@ -1,7 +1,8 @@
 import React from 'react'
 import styles from './CheckboxRadio.module.scss'
+import { ICheckboxRadio } from './CheckboxRadioInterface'
 
-export default function CheckboxRadio(props: IInputProps) {
+export default function CheckboxRadio(props: ICheckboxRadio) {
 	return (
 		<div className={styles.divRow}>
 
@@ -22,27 +23,3 @@ export default function CheckboxRadio(props: IInputProps) {
 		</div>
 	)
 }
-
-
-			// <label className={styles.label}>
-			// 	<span className={styles.spanInp}>
-			// 		<input
-			// 			type={props.type}
-			// 			name={props.name}
-			// 			id='radio_1'
-			// 		/>
-			// 		<label htmlFor='radio_1'></label>
-			// 	</span>
-			// 	<span>Мужчина</span>
-			// </label>
-			// <label className={styles.label}>
-			// 	<span className={styles.spanInp}>
-			// 		<input
-			// 			type={props.type}
-			// 			name={props.name}
-			// 			id='radio_2'
-			// 		/>
-			// 		<label htmlFor='radio_2'></label>
-			// 	</span>
-			// 	<span>Женщина</span>
-			// </label>

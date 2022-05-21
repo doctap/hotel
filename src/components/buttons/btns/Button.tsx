@@ -1,6 +1,6 @@
 import React from 'react';
-import styles from './ClickMe.module.scss';
-import { BtnVariants, IButtonProps } from '../../Interfaces/ButtonInterfaces';
+import styles from './Button.module.scss';
+import { BtnVariants, IButtonProps } from './ButtonInterface';
 
 export default function ClickMe(props: IButtonProps) {
 
@@ -19,6 +19,7 @@ export default function ClickMe(props: IButtonProps) {
 
 	return (
 		<button
+			onClick={props.onClick}
 			type={props.type}
 			className={variantBtn(props.variant)}
 			disabled={props.disabled}
