@@ -24,7 +24,9 @@ export default function ClickMe(props: IButtonProps) {
 			className={variantBtn(props.variant)}
 			disabled={props.disabled}
 		>
-			{props.name}
+			<span className={styles.spanBorder}>
+				{props.name}
+			</span>
 		</button>
 	)
 }

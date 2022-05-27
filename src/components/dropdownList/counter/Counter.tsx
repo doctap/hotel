@@ -14,12 +14,11 @@ export default function Counter(props: ICounter) {
 
 	return (
 		<div className={styles.ItemDropDown}>
-			<span>
+			<span className={styles.name}>
 				{props.name}
 			</span>
 			<div className={styles.AddOne}>
 				<DropdownBtn
-
 					onClick={minusOne}
 					name='-'
 				/>

@@ -1,0 +1,24 @@
+@import '../../CommonStyles.module.scss';
+
+.stars {
+
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 7.5rem;
+
+	.starBorder {
+		width: 1.3rem;
+		height: 1.3rem;
+		background-image: url(../../../public/star_border.svg);
+		background-repeat: no-repeat;
+		background-size: contain;
+	}
+	.starPrimary {
+		width: 1.3rem;
+		height: 1.3rem;
+		background-image: url(../../../public/star.svg);
+		background-repeat: no-repeat;
+		background-size: contain;
+	}
+}

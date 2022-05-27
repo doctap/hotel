@@ -1,1 +1,21 @@
 @import '../../../CommonStyles.module.scss';
+
+.wrapper {
+
+	.header {
+		width: 16.625rem;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.List {
+		padding: .5rem 0 0 0;
+
+		&>* {
+			margin-bottom: .7em;
+		}
+
+	}
+
+}

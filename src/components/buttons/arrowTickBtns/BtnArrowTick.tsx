@@ -17,7 +17,8 @@ export default function BtnTick(props: IBtnTick) {
 
 	return (
 		<button
-		className={styles.Btn}
+			onClick={props.onClick}
+			className={styles.Btn}
 			type={props.type}
 		>
 			<div

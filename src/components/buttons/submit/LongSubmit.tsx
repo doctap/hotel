@@ -7,7 +7,7 @@ export default function LongSubmit(props: IBtnSubmit) {
 		<button
 			className={styles.Btn}
 		>
-			<span>{props.name}</span>
+			<span className={styles.name} >{props.name}</span>
 			<span className={styles.image} />
 		</button>
 	)

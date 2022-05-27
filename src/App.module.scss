@@ -6,7 +6,7 @@
 	padding-bottom: 90px;
 	height: 100%;
 	@extend %flexRow;
-	justify-content: space-between;
+	justify-content: space-around;
 }
 
 .column {
@@ -14,7 +14,18 @@
 	height: 100%;
 	@extend %flexColumn;
 	padding: 1em;
-	align-items: center;
+	align-items: flex-start;
+
+	&>* {
+		margin-bottom: 1rem;
+	}
+
+	.blockStars {
+		height: 3rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
 }
 
 .BtnsClickMe {
