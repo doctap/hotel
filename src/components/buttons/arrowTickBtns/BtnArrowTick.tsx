@@ -6,9 +6,9 @@ export default function BtnTick(props: IBtnTick) {
 
 	const variantBtn = (v: BtnTickVariants) => {
 		switch (v) {
-			case BtnTickVariants.Arrow: return styles.Arrow;
+			case BtnTickVariants.Arrow: return styles.BtnArrow;
 
-			case BtnTickVariants.Tick: return styles.Tick;
+			case BtnTickVariants.Tick: return styles.BtnTick;
 
 			default:
 				break;
@@ -18,12 +18,19 @@ export default function BtnTick(props: IBtnTick) {
 	return (
 		<button
 			onClick={props.onClick}
-			className={styles.Btn}
+			className={variantBtn(props.variant)}
 			type={props.type}
 		>
 			<div
-				className={variantBtn(props.variant)}
-			></div>
+				className={styles.Arrow}
+			>
+				arrow_forward
+			</div>
+			<div
+				className={styles.Tick}
+			>
+				expand_more
+			</div>
 		</button>
 	)
 }

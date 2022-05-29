@@ -1,26 +1,28 @@
 import React, { useState } from 'react';
 import BtnTick from '../../buttons/arrowTickBtns/BtnArrowTick';
 import { BtnTickVariants } from '../../buttons/arrowTickBtns/BtnArrowTickInterface';
-import Title from '../../titles/title/SubTitle';
-import CheckBoxTick from '../chtckboxTick/CheckBoxTick';
+import CheckBoxItem from '../chtckBoxItem/CheckBoxItem';
 import { IListCheckbox } from './IneterfaceListCheckbox';
 import styles from './ListCheckbox.module.scss';
+
+
 
 export default function ListCheckbox(props: IListCheckbox) {
 
 	const [toggle, setToggle] = useState(false);
 
 	const toggleList = () => {
-		setToggle(!toggle)
+		setToggle(!toggle);
 	}
 
 	return (
 		<div className={styles.wrapper}>
 
 			<label className={styles.header}>
-				<Title name='expandable checkbox list' />
+				<div className={styles.title}>
+					{props.name}
+				</div>
 				<div className={styles.rotateTick}>
-
 					<BtnTick
 						onClick={toggleList}
 						type='button'
@@ -28,19 +30,16 @@ export default function ListCheckbox(props: IListCheckbox) {
 					/>
 				</div>
 			</label>
-
-			{toggle ?
-				<ul className={styles.List}>
-					<li><CheckBoxTick type='checkbox' name='Завтрак' /></li>
-					<li><CheckBoxTick type='checkbox' name='Письменный стол' /></li>
-					<li><CheckBoxTick type='checkbox' name='Стул для кормления' /></li>
-					<li><CheckBoxTick type='checkbox' name='Кроватка' /></li>
-					<li><CheckBoxTick type='checkbox' name='Телевизор' /></li>
-					<li><CheckBoxTick type='checkbox' name='Шампунь' /></li>
-				</ul>
-				:
-				null
-			}
+			<ul
+				className={toggle ? styles.List : styles.NoneList}
+			>
+				<li><CheckBoxItem name='Завтрак' /></li>
+				<li><CheckBoxItem name='Письменный стол' /></li>
+				<li><CheckBoxItem name='Стул для кормления' /></li>
+				<li><CheckBoxItem name='Кроватка' /></li>
+				<li><CheckBoxItem name='Телевизор' /></li>
+				<li><CheckBoxItem name='Шампунь' /></li>
+			</ul>
 		</div>
 	)
 }

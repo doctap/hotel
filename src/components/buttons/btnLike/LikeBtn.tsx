@@ -23,7 +23,8 @@ export default function LikeBtn(props: ILikeBtn) {
 			onClick={plusLike}
 			className={ toggle ? styles.LikeBtn_var1 : styles.LikeBtn_var2}
 		>
-			<div className={styles.img}></div>
+			<div className={styles.like}>favorite</div>
+			<div className={styles.noLike}>favorite_border</div>
 			<div className={styles.num}>
 				{like}
 			</div>

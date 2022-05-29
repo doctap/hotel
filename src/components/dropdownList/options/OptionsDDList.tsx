@@ -20,7 +20,7 @@ export default function OptionsDDList(props: IOptionsDDList) {
 	}
 
 	return (
-		<div className={styles.list}>
+		<div className={ props.showHide ? styles.showList : styles.hideList}>
 			<Counter setValue={setCounterAdults} value={counterAdults} name='взрослые' />
 			<Counter setValue={setCounterKids} value={counterKids} name='дети' />
 			<Counter setValue={setCounterBabies} value={counterBabies} name='младенцы' />

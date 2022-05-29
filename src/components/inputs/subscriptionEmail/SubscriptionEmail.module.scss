@@ -1,0 +1,11 @@
+@import '../../../CommonStyles.module.scss';
+
+.formEmail {
+	position: relative;
+
+	.btnSubmit {
+		position: absolute;
+		top: .7em;
+		right: .7rem;
+	}
+}
