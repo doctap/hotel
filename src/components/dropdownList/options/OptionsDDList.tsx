@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import ClickMe from '../../buttons/btns/Button';
+import Button from '../../buttons/btns/Button';
 import { BtnVariants } from '../../buttons/btns/ButtonInterface';
 import Counter from '../counter/Counter';
 import { IOptionsDDList } from './InterfacesOptionsDDList';
@@ -25,8 +25,8 @@ export default function OptionsDDList(props: IOptionsDDList) {
 			<Counter setValue={setCounterKids} value={counterKids} name='дети' />
 			<Counter setValue={setCounterBabies} value={counterBabies} name='младенцы' />
 			<div className={styles.dropDownFooter}>
-				<ClickMe type='button' name='очистить' variant={BtnVariants.BtnText} onClick={resetCounters} />
-				<ClickMe type='button' name='применить' variant={BtnVariants.BtnText} />
+				<Button type='button' name='очистить' variant={BtnVariants.BtnText} onClick={resetCounters} />
+				<Button type='button' name='применить' variant={BtnVariants.BtnText} />
 			</div>
 		</div>
 	)

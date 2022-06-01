@@ -1,0 +1,19 @@
+@import '../../CommonStyles.module.scss';
+
+.UserFeedback {
+	width: 44.4375rem;
+
+	.body {
+		display: flex;
+		flex-direction: row;
+		padding: 0.625rem 0 0 0;
+
+		.btnLike {
+			width: 3.3rem;
+			display: flex;
+			justify-content: center;
+			margin-right: 0.5rem;
+			padding: .3rem 0 0 0;
+		}
+	}
+}

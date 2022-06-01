@@ -1,0 +1,24 @@
+@import '../../../CommonStyles.module.scss';
+
+.container {
+	// min-height: 3.1875rem;
+
+	.header {
+		display: flex;
+		align-items: flex-start;
+
+		.title {
+			font-size: 0.875rem;
+			font-weight: bold;
+			color: $DarkShade75;
+			padding: .1em 0 0 0;
+		}
+	}
+
+	.description {
+		font-size: 0.75rem;
+		color: $DarkShade50;
+		font-weight: regular;
+		padding: .4em 0 0 2.950em;
+	}
+}

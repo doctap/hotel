@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Button.module.scss';
 import { BtnVariants, IButtonProps } from './ButtonInterface';
 
-export default function ClickMe(props: IButtonProps) {
+export default function Button(props: IButtonProps) {
 
 	const variantBtn = (v: BtnVariants) => {
 		switch (v) {

@@ -1,9 +1,12 @@
 @import './CommonStyles.module.scss';
 
-.App {
+.wrapper {
 	font-family: Montserrat;
 	width: 100%;
-	padding-bottom: 90px;
+	padding: 30px;
+}
+
+.App {
 	height: 100%;
 	@extend %flexRow;
 	justify-content: space-between;
@@ -13,11 +16,10 @@
 	width: fit-content;
 	height: 100%;
 	@extend %flexColumn;
-	padding: 1em;
 	align-items: flex-start;
 
 	&>* {
-		margin-bottom: 1rem;
+		margin-bottom: 2rem;
 	}
 
 	.blockStars {
@@ -26,6 +28,14 @@
 		flex-direction: column;
 		justify-content: space-between;
 	}
+
+
+	.rich_checkbox {
+		min-height: 8.5rem;
+		@extend %flexColumn;
+		justify-content: space-between;
+	}
+
 }
 
 .BtnsClickMe {
@@ -33,8 +43,8 @@
 	flex-wrap: wrap;
 	justify-content: space-around;
 	align-items: center;
-	width: 15em;
-	height: 8em;
+	width: 15rem;
+	height: 10rem;
 }
 
 .ListCheckBoxTick {
@@ -43,5 +53,26 @@
 
 	&>* {
 		margin-bottom: .7rem;
+	}
+}
+
+
+.footer_row {
+	display: flex;
+	flex-direction: row;
+	flex: 1 1 auto;
+
+	.footer_column {
+		display: flex;
+		flex-direction: column;
+		flex: 1 1 auto;
+
+		&>*{
+			margin-bottom: 1rem;
+		}
+
+		.shortcutIcon {
+			width: fit-content;
+		}
 	}
 }

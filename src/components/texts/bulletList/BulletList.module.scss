@@ -1,0 +1,12 @@
+@import '../../../CommonStyles.module.scss';
+
+.bulletList {
+	list-style-image: url(../../../../public/Ellipse.svg);
+	@extend %fontPropBody;
+	color: $DarkShade75;
+
+	&>* {
+		margin-bottom: .8em;
+		line-height: 1.5em;
+	}
+}
