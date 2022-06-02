@@ -9,14 +9,15 @@ import LikeBtn from './components/buttons/btnLike/LikeBtn';
 import { BtnVariants } from './components/buttons/btns/ButtonInterface';
 import ListCheckbox from './components/checkbox/listCheckbox/ListCheckbox';
 import RateStars from './components/rateStars/RateStars';
-import SubscriptionEmail from './components/inputs/subscriptionEmail/SubscriptionEmail';
-import InputText from './components/inputs/InputEmail/InputText';
+import SubscriptionEmail from './components/inputs/SubscriptionEmail/SubscriptionEmail';
+import InputText from './components/inputs/Input/InputFieldText';
 import CheckBoxItem from './components/checkbox/chtckBoxItem/CheckBoxItem';
 import RichCheckbox from './components/checkbox/checkboxRich/RichCheckbox';
 import BulletList from './components/texts/bulletList/BulletList';
 import Button from './components/buttons/btns/Button';
 import ShortcutIcon from './components/shortcuts/shortcutIcon/ShortcutIcon';
 import UserFeedback from './components/userFeedback/UserFeedback';
+import InputWithBtn from './components/inputs/SubscriptionEmail/SubscriptionEmail';
 
 
 function App() {

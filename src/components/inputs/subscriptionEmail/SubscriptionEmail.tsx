@@ -1,7 +1,7 @@
 import React from 'react';
 import BtnTick from '../../buttons/arrowTickBtns/BtnArrowTick';
 import { BtnTickVariants } from '../../buttons/arrowTickBtns/BtnArrowTickInterface';
-import InputText from '../InputEmail/InputText';
+import InputText from '../Input/InputFieldText';
 import styles from './SubscriptionEmail.module.scss';
 
 
