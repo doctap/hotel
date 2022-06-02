@@ -5,12 +5,10 @@ import { IInputProps } from './InterfaceInput';
 
 export default function InputText(props: IInputProps) {
 	return (
-		<label className={styles.labelInp}>
-			<input
-				type={props.type}
-				className={styles.input}
-				placeholder={props.placeholder}
-			/>
-		</label>
+		<input
+			type={props.type}
+			className={styles.input}
+			placeholder={props.placeholder}
+		/>
 	);
 }

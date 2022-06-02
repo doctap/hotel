@@ -9,7 +9,6 @@ import LikeBtn from './components/buttons/btnLike/LikeBtn';
 import { BtnVariants } from './components/buttons/btns/ButtonInterface';
 import ListCheckbox from './components/checkbox/listCheckbox/ListCheckbox';
 import RateStars from './components/rateStars/RateStars';
-import SubscriptionEmail from './components/inputs/SubscriptionEmail/SubscriptionEmail';
 import InputText from './components/inputs/Input/InputFieldText';
 import CheckBoxItem from './components/checkbox/chtckBoxItem/CheckBoxItem';
 import RichCheckbox from './components/checkbox/checkboxRich/RichCheckbox';
@@ -17,7 +16,9 @@ import BulletList from './components/texts/bulletList/BulletList';
 import Button from './components/buttons/btns/Button';
 import ShortcutIcon from './components/shortcuts/shortcutIcon/ShortcutIcon';
 import UserFeedback from './components/userFeedback/UserFeedback';
-import InputWithBtn from './components/inputs/SubscriptionEmail/SubscriptionEmail';
+import DateDropdown from './components/dateDropdown/DateDropdown';
+import { BtnTickVariants } from './components/buttons/arrowTickBtns/BtnArrowTickInterface';
+import InputBtn from './components/inputs/InputBtn/InputBtn';
 
 
 function App() {
@@ -30,12 +31,12 @@ function App() {
 				<div className={styles.column}>
 
 					<div className={styles.text_field}>
-						<Title name={'text field'} />
-						<InputText type='email' placeholder={'Email'} />
+						<Title name='text field' />
+						<InputText type='email' placeholder='Email' />
 					</div>
 
 					<div className={styles.masked_text_field}>
-						<Title name={'masked text field'} />
+						<Title name='masked text field' />
 						<InputText type='text' placeholder='ДД.ММ.ГГГГ' />
 					</div>
 
@@ -45,9 +46,29 @@ function App() {
 						<ListCheckbox name='expandable checkbox list' />
 					</div>
 
+					<div className={styles.filter_date_dropdown}>
+						<Title name='filter date dropdown' />
+						<InputBtn
+							typeInput='text'
+							placeholderInput='19 авг - 23 авг'
+							typeButton='button'
+							variantBtn={BtnTickVariants.Tick}
+						/>
+					</div>
+
 					<div className={styles.subscription_text_field}>
 						<Title name={'subscription text field'} />
-						<SubscriptionEmail />
+						<InputBtn
+							typeInput='email'
+							placeholderInput='Email'
+							typeButton='submit'
+							variantBtn={BtnTickVariants.Arrow}
+						/>
+					</div>
+
+					<div className={styles.dateDropdown}>
+						<Title name='date dropdown' />
+						<DateDropdown />
 					</div>
 
 				</div>
