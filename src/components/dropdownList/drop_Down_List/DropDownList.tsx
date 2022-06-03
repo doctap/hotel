@@ -29,8 +29,9 @@ export default function DropDownList(props: IDropDownList) {
 		setToggle(!toggle);
 	}
 
+	const sumVisitors: number = counterAdults + counterKids + counterBabies;
+
 	const applyValueList = () => {
-		const sumVisitors: number = counterAdults + counterKids + counterBabies;
 
 		if (sumVisitors === 1
 		) {
@@ -53,14 +54,16 @@ export default function DropDownList(props: IDropDownList) {
 			<div
 				className={styles.subTitle}
 			>
-				<span className={styles.value}>
+				<div className={styles.value}>
 					{valueList}
-				</span>
-				<BtnTick
-					onClick={showHideOptions}
-					type={'button'}
-					variant={BtnTickVariants.Tick}
-				/>
+				</div>
+				<div className={styles.btnTick}>
+					<BtnTick
+						onClick={showHideOptions}
+						type={'button'}
+						variant={BtnTickVariants.Tick}
+					/>
+				</div>
 			</div>
 			<div
 				className={toggle ? styles.showList : styles.hideList}
@@ -71,8 +74,15 @@ export default function DropDownList(props: IDropDownList) {
 				<div
 					className={styles.dropDownFooter}
 				>
-					<Button type='button' name='очистить' variant={BtnVariants.BtnText} onClick={resetCounters} />
-					<Button type='button' name='применить' variant={BtnVariants.BtnText} onClick={applyValueList} />
+					{
+						sumVisitors > 0 ? <div className={styles.resetBtn}>
+							<Button type='button' name='очистить' variant={BtnVariants.BtnText} onClick={resetCounters} />
+						</div>
+							: null
+					}
+					<div className={styles.applyBtn}>
+						<Button type='button' name='применить' variant={BtnVariants.BtnText} onClick={applyValueList} />
+					</div>
 				</div>
 			</div>
 		</div>

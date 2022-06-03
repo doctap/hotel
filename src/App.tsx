@@ -9,7 +9,7 @@ import LikeBtn from './components/buttons/btnLike/LikeBtn';
 import { BtnVariants } from './components/buttons/btns/ButtonInterface';
 import ListCheckbox from './components/checkbox/listCheckbox/ListCheckbox';
 import RateStars from './components/rateStars/RateStars';
-import InputText from './components/inputs/Input/InputFieldText';
+import InputText, { InputVariants } from './components/inputs/Input/InputFieldText';
 import CheckBoxItem from './components/checkbox/chtckBoxItem/CheckBoxItem';
 import RichCheckbox from './components/checkbox/checkboxRich/RichCheckbox';
 import BulletList from './components/texts/bulletList/BulletList';
@@ -32,12 +32,12 @@ function App() {
 
 					<div className={styles.text_field}>
 						<Title name='text field' />
-						<InputText type='email' placeholder='Email' />
+						<InputText type='email' placeholder='Email' variant={InputVariants.InputText} />
 					</div>
 
 					<div className={styles.masked_text_field}>
 						<Title name='masked text field' />
-						<InputText type='text' placeholder='ДД.ММ.ГГГГ' />
+						<InputText type='text' placeholder='ДД.ММ.ГГГГ' variant={InputVariants.InputText}/>
 					</div>
 
 

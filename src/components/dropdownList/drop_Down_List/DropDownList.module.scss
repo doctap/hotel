@@ -11,14 +11,19 @@
 		flex-direction: row;
 		justify-content: space-between;
 		max-height: 2.795625rem;
-		padding: 0 .5rem 0 0;
 
 		.value {
 			color: $DarkShade75;
 			@extend %fontPropBody;
 			padding: .8rem 0 .8rem .8rem;
-			display: block;
 			width: 100%;
+		}
+
+		.btnTick {
+			border-radius: 4px;
+			width: 3rem;
+			height: 2.6rem;
+			overflow: hidden;
 		}
 	}
 
@@ -38,9 +43,21 @@
 		;
 
 		.dropDownFooter {
-			display: flex;
-			justify-content: space-between;
-			padding: .5rem 0 0 0;
+			height: 1.4375rem;
+			position: relative;
+			width: 100%;
+
+			.resetBtn {
+				position: absolute;
+				left: 0;
+				bottom: 0;
+			}
+
+			.applyBtn {
+				position: absolute;
+				right: 0;
+				bottom: 0;
+			}
 		}
 	}
 
