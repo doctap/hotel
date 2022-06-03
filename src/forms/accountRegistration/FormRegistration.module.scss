@@ -1,0 +1,64 @@
+@import '../../CommonStyles.module.scss';
+
+%this_props {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.form_registration {
+	width: 23.75rem;
+	height: 40.375rem;
+	padding: 2.5rem 1.875rem 1.875rem 1.875rem;
+	background: rgba(255, 255, 255, 1);
+	border: 1px solid rgba(0, 0, 0, 0.12);
+	box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.2);
+	border-radius: 4px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	.title {
+		margin-bottom: 1.25rem;
+	}
+
+	.fullName {
+		height: 8.25rem;
+		@extend %this_props;
+		margin-bottom: 1.2225rem;
+
+		.radio_btn {
+			width: 13.8125rem;
+		}
+	}
+
+	.Data {
+		height: 14.5rem;
+		@extend %this_props;
+
+
+		.loginData {
+			height: 9.25rem;
+			@extend %this_props;
+
+		}
+	}
+
+	.footer_registration {
+		@extend %this_props;
+		height: 8.5rem;
+		padding: 1rem 0 0 0;
+
+		.log_in {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+
+			.text {
+				font-size: 0.875rem;
+				color: #000;
+			}
+		}
+	}
+}
