@@ -13,6 +13,7 @@ import DateDropdown from '../dateDropdown/DateDropdown';
 import DropDownList from '../dropdownList/drop_Down_List/DropDownList';
 import InputText, { InputVariants } from '../inputs/Input/InputFieldText';
 import InputBtn from '../inputs/InputBtn/InputBtn';
+import RateStars from '../rateStars/RateStars';
 import ShortcutIcon from '../shortcuts/shortcutIcon/ShortcutIcon';
 import BulletList from '../texts/bulletList/BulletList';
 import SubTitle from '../titles/subTitle/SubTitle';
@@ -99,14 +100,14 @@ export default function PageComponents() {
 
 					<div className={styles.like}>
 						<SubTitle name='button like' />
-						<LikeBtn value={17} />
+						<LikeBtn value={17} onClick={x => console.log(x)} />
 					</div>
 
 					<div className={styles.blockStars}>
 						<SubTitle name='rate stars' />
 						<div className={styles.stars}>
-							{/* <RateStars value={3} /> */}
-							{/* <RateStars value={0} /> */}
+							<RateStars fullStars={3} maxStars={5} />
+							<RateStars fullStars={5} maxStars={7} />
 						</div>
 					</div>
 

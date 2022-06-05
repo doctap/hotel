@@ -1,6 +1,6 @@
 @import '../../../CommonStyles.module.scss';
 
-.LikeBtn_var1 {
+.like {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-evenly;
@@ -11,14 +11,14 @@
 	border: 1px solid $DarkShade25;
 	background: rgba(0,0,0,0);
 
-	.noLike {
+	.favorite_border {
 		width: 1em;
 		height: 1em;
 		font-family: Material icons;
 		color: $DarkShade25;
 	}
 
-	.like {
+	.favorite {
 		display: none;
 	}
 
@@ -28,7 +28,7 @@
 	}
 }
 
-.LikeBtn_var2 {
+.disLike {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-evenly;
@@ -39,14 +39,14 @@
 	border: 1px solid #a489de;
 	background: rgba(0,0,0,0);
 
-	.like {
+	.favorite {
 		width: 1em;
 		height: 1em;
 		font-family: Material icons;
 		color: #a489de;
 	}
 
-	.noLike {
+	.favorite_border {
 		display: none;
 	}
 

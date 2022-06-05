@@ -18,7 +18,7 @@ export default function InputText(props: IInputProps) {
 		switch (v) {
 			case InputVariants.InputText: return styles.inputText;
 			
-			case InputVariants.InputBtn: return styles.inputBtn;
+			case InputVariants.InputBtn: return `${styles.inputText_paddingRight} ${styles.inputText}`;
 				
 			default:
 				break;

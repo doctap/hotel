@@ -14,7 +14,7 @@ export default function UserFeedback() {
 
 			<div className={styles.body}>
 				<div className={styles.btnLike}>
-					<LikeBtn value={14} />
+					<LikeBtn value={14} onClick={x => console.log(x)} />
 				</div>
 				<Paragraph>
 					Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий.

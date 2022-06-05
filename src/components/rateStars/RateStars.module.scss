@@ -5,9 +5,14 @@
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	width: 7.5rem;
+	width: fit-content;
 
 	.Star {
 		font-family: Material Icons;
+		font-size: 1.5rem;
+		color: transparent;
+		-webkit-background-clip: text;
+		background-clip: text;
+		background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
 	}
 }

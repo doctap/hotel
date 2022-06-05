@@ -5,30 +5,24 @@ import styles from './LikeBtn.module.scss';
 export default function LikeBtn(props: ILikeBtn) {
 
 	const [like, setLike] = useState(props.value);
-	const [toggle, setToggle] = useState(true)
-	
+
 	const plusLike = () => {
-		if (toggle) {
-			setLike(like + 1);
-			setToggle(!toggle)
-		}else {
-			setLike(like - 1);
-			setToggle(!toggle)
-		}
+		const newLike = like === props.value ? like + 1 : like - 1;
+		setLike(newLike);
+		props.onClick?.(newLike);
 	}
-	
+
 	return (
 		<button
 			type='button'
 			onClick={plusLike}
-			className={ toggle ? styles.LikeBtn_var1 : styles.LikeBtn_var2}
+			className={like === props.value ? styles.like: styles.disLike}
 		>
-			<div className={styles.like}>favorite</div>
-			<div className={styles.noLike}>favorite_border</div>
+			<div className={styles.favorite}>favorite</div>
+			<div className={styles.favorite_border}>favorite_border</div>
 			<div className={styles.num}>
 				{like}
 			</div>
 		</button>
 	)
-
 }

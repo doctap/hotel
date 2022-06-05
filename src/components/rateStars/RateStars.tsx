@@ -2,91 +2,46 @@ import React, { ReactElement, useState } from 'react';
 import styles from './RateStars.module.scss'
 
 interface IRateStars {
-	value: number;
+	fullStars: number;
+	maxStars: number;
 }
 
 export default function RateStars(props: IRateStars) {
 
-	const [container, setContainer] = useState<ReactElement>();
+	function renderStars(fullStarsCount: number, maxStarsCount: number): React.ReactNode[] {
+		const maxStarsCountNormalize = normalizeNumber(maxStarsCount, Number.POSITIVE_INFINITY);
+		const fullStarsCountNormalize = normalizeNumber(fullStarsCount, maxStarsCountNormalize);
+		const fullStars = getStars(fullStarsCountNormalize, true);
+	
+		return fullStars.concat(getStars(maxStarsCountNormalize - fullStarsCountNormalize, false));
+	}
 
-	if (props.value === 3) {
-		setContainer(
-			<div className={styles.stars}>
-				<div className={styles.Star}>star_border</div>
-				<div className={styles.Star}>star_border</div>
-				<div className={styles.Star}>star_border</div>
-				<div className={styles.Star}>star_border</div>
-				<div className={styles.Star}>star_border</div>
-			</div>
-		)
+	/**
+	 * Норрмализует число в диапозоне от 0 до topLimit
+	 * @param num число которое необходимо нормализовать 
+	 * @param topLimit верхний предел нормализации
+	 * @returns нормализованное число
+	 */
+	function normalizeNumber(num: number, topLimit: number): number {
+		let fullStarsCountNormalize = num < 0 ? 0 : num;
+
+		return fullStarsCountNormalize > topLimit ? topLimit : fullStarsCountNormalize;
+	}
+	
+	function getStars(num: number, isFullsStars: boolean): React.ReactNode[] {
+		const stars: React.ReactNode[] = [];
+	
+		for (let index = 0; index < num; index++) {
+			stars.push(<div className={styles.Star}>{isFullsStars ? 'star' : 'star_border'}</div>)
+		}
+		 
+		return stars;
 	}
 
 	return (
-		{ container }
+		<div className={styles.stars}>
+			{renderStars(props.fullStars, props.maxStars)}
+		</div>
 	)
 }
-
-	// if (props.value === 0) {
-	// 	return (
-	// 		<div className={styles.stars}>
-	// 			<div className={styles.Star}>star_border</div>
-	// 			<div className={styles.Star}>star_border</div>
-	// 			<div className={styles.Star}>star_border</div>
-	// 			<div className={styles.Star}>star_border</div>
-	// 			<div className={styles.Star}>star_border</div>
-	// 		</div>
-	// 	)
-	// } else if (props.value === 1) {
-	// 	return (
-	// 		<div className={styles.stars}>
-	// 			<div className={styles.Star}>star</div>
-	// 			<div className={styles.Star}>star_border</div>
-	// 			<div className={styles.Star}>star_border</div>
-	// 			<div className={styles.Star}>star_border</div>
-	// 			<div className={styles.Star}>star_border</div>
-	// 		</div>
-	// 	)
-	// } else if (props.value === 2) {
-	// 	return (
-	// 		<div className={styles.stars}>
-	// 			<div className={styles.Star}>star</div>
-	// 			<div className={styles.Star}>star</div>
-	// 			<div className={styles.Star}>star_border</div>
-	// 			<div className={styles.Star}>star_border</div>
-	// 			<div className={styles.Star}>star_border</div>
-	// 		</div>
-	// 	)
-	// } else if (props.value === 3) {
-	// 	return (
-	// 		<div className={styles.stars}>
-	// 			<div className={styles.Star}>star</div>
-	// 			<div className={styles.Star}>star</div>
-	// 			<div className={styles.Star}>star</div>
-	// 			<div className={styles.Star}>star_border</div>
-	// 			<div className={styles.Star}>star_border</div>
-	// 		</div>
-	// 	)
-	// } else if (props.value === 4) {
-	// 	return (
-	// 		<div className={styles.stars}>
-	// 			<div className={styles.Star}>star</div>
-	// 			<div className={styles.Star}>star</div>
-	// 			<div className={styles.Star}>star</div>
-	// 			<div className={styles.Star}>star</div>
-	// 			<div className={styles.Star}>star_border</div>
-	// 		</div>
-	// 	)
-	// } else if (props.value === 5) {
-	// 	return (
-	// 		<div className={styles.stars}>
-	// 			<div className={styles.Star}>star</div>
-	// 			<div className={styles.Star}>star</div>
-	// 			<div className={styles.Star}>star</div>
-	// 			<div className={styles.Star}>star</div>
-	// 			<div className={styles.Star}>star</div>
-	// 		</div>
-	// 	)
-	// }
-
-
 
