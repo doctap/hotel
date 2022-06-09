@@ -1,0 +1,37 @@
+@import '../../../CommonStyles.module.scss';
+
+
+.Btn {
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 2.75rem;
+	border-radius: 2rem;
+	border: none;
+	background: $GradientPurple;
+	@extend %fontPropH3;
+	letter-spacing: .050rem;
+	font-weight: 600;
+	color: #fff;
+	position: relative;
+
+	.name {
+		text-transform: uppercase;
+	}
+
+	.arrow {
+		font-family: Material icons;
+		font-size: 1.7em;
+		font-weight: 400;
+		position: absolute;
+		right: .7em;
+	}
+
+	&:hover,
+	&:focus {
+		opacity: 75%;
+		cursor: pointer;
+	}
+}

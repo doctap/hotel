@@ -1,0 +1,11 @@
+@import '../../CommonStyles.module.scss';
+
+.container {
+	position: relative;
+	display: flex;
+	align-items: center;
+	.btn {
+		position: absolute;
+		right: 0.6em;
+	}
+}

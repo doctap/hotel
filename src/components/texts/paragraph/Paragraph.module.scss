@@ -1,0 +1,9 @@
+@import '../../../CommonStyles.module.scss';
+
+.para {
+	@extend %fontPropBody;
+	width: 100%;
+	height: fit-content;
+	color: $DarkShade75;
+	line-height: 1.5rem;
+}

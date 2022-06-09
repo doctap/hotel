@@ -1,0 +1,44 @@
+@import '../../../CommonStyles.module.scss';
+
+.BtnArrow {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: none;
+	background: rgba(255, 255, 255);
+	height: 100%;
+	width: 100%;
+
+	.Arrow {
+		font-size: 1.6rem;
+		font-family: Material icons;
+		color: transparent;
+		-webkit-background-clip: text;
+		background-clip: text;
+		background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+	}
+
+	.Tick {
+		display: none;
+	}
+}
+
+.BtnTick {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: none;
+	background: rgba(255, 255, 255);	
+	height: 100%;
+	width: 100%;
+
+	.Arrow {
+		display: none;
+	}
+
+	.Tick {
+		font-size: 1.6rem;
+		font-family: Material icons;
+		color: $DarkShade50;
+	}
+}

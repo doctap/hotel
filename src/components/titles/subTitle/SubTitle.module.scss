@@ -1,0 +1,8 @@
+@import '../../../CommonStyles.module.scss';
+
+.Title {
+	@extend %fontPropH3;
+	padding: 0 0 .2rem 0;
+	color: $DarkShade100;
+	text-transform: uppercase;
+}
