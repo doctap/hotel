@@ -18,7 +18,7 @@
 
 	}
 
-	&:hover,
+	&:not([disabled]):hover,
 	&:focus {
 		opacity: 75%;
 		cursor: pointer;
@@ -26,12 +26,12 @@
 }
 
 .btnBorder {
-	width: 6.25rem;
+	width: 6.24rem;
 	border-radius: 2rem;
-	height: 2.75rem;
+	height: 2.74rem;
 	border: 0;
 	background: $GradientPurple;
-	padding: 3px;
+	padding: 2px;
 
 	.spanBorder {
 		display: flex;
@@ -51,7 +51,7 @@
 		opacity: 50%;
 	}
 
-	&:hover,
+	&:not([disabled]):hover,
 	&:focus {
 		opacity: 75%;
 		cursor: pointer;
@@ -65,14 +65,13 @@
 	@extend %fontPropH3;
 	color: #BC9CFF;
 	background: rgba(0, 0, 0, 0);
-	letter-spacing: .050rem;
 	text-transform: uppercase;
 
 	&:disabled {
 		color: #958ea6;
 	}
 
-	&:hover,
+	&:not([disabled]):hover,
 	&:focus {
 		opacity: 75%;
 		cursor: pointer;

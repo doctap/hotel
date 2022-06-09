@@ -31,7 +31,8 @@ export default function FormRegistration() {
 				<div className={styles.radio_btn}>
 					<CheckboxRadio
 						type='radio'
-						name='radioBox'
+						male='Мужчина'
+						female='Женщина'
 					/>
 				</div>
 			</div>

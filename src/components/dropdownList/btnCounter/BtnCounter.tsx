@@ -8,6 +8,7 @@ export default function DropdownBtn(props: IDropdownBtn) {
 			type='button'
 			onClick={props.onClick}
 			className={styles.DropBtn}
+			disabled={props.disabled}
 		>
 			{props.name}
 		</button>

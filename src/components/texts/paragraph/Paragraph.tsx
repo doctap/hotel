@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Paragraph.module.scss';
 
 interface IParagraph {
-	children: React.ReactNode;
+	children: string;
 }
 
 export default function Paragraph(props: IParagraph) {

@@ -7,9 +7,6 @@ interface ICheckBoxTick {
 }
 
 export default function CheckBoxItem(props: ICheckBoxTick) {
-
-
-
 	return (
 		<label className={styles.container}>
 			<CheckboxTick type='checkbox' />

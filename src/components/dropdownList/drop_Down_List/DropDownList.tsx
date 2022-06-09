@@ -15,7 +15,7 @@ export default function DropDownList(props: IDropDownList) {
 	const [counterAdults, setCounterAdults] = useState<number>(0);
 	const [counterKids, setCounterKids] = useState<number>(0);
 	const [counterBabies, setCounterBabies] = useState<number>(0);
-	const [toggle, setToggle] = useState<boolean>(false);
+	const [showHideList, setShowHideList] = useState<boolean>(false);
 	const [valueList, setValueList] = useState<string>(props.name);
 
 	const resetCounters = () => {
@@ -26,33 +26,26 @@ export default function DropDownList(props: IDropDownList) {
 	}
 
 	const showHideOptions = () => {
-		setToggle(!toggle);
+		setShowHideList(!showHideList);
 	}
 
 	const sumVisitors: number = counterAdults + counterKids + counterBabies;
 
-	const applyValueList = () => {
+	const visitors = [' гостей', ' гость', ' гостя', ' гостя', ' гостя', ' гостей', ' гостей', ' гостей', ' гостей', ' гостей']
 
-		if (sumVisitors === 1
-		) {
-			setValueList(`${sumVisitors} гость`);
-		} else if (
-			sumVisitors >= 2 && sumVisitors <= 4
-		) {
-			setValueList(`${sumVisitors} гостя`);
-		} else if (
-			sumVisitors >= 5 && sumVisitors <= 20
-		) {
-			setValueList(`${sumVisitors} гостей`);
-		}
-		setToggle(false);
+	const applyValueList = () => {
+		let word = visitors[sumVisitors % 10];
+		word = sumVisitors > 10 && sumVisitors < 20 ? ' гостей' : word;
+		setValueList(`${sumVisitors}` + word);
+
+		setShowHideList(false);
 	}
 
 	return (
 
 		<div className={styles.dropDownList}>
 			<div
-				className={styles.subTitle}
+				className={showHideList ? `${styles.subTitle_bottomBorderRadius0} ${styles.subTitle}` : styles.subTitle}
 			>
 				<div className={styles.value}>
 					{valueList}
@@ -66,11 +59,13 @@ export default function DropDownList(props: IDropDownList) {
 				</div>
 			</div>
 			<div
-				className={toggle ? styles.showList : styles.hideList}
+				className={showHideList ? styles.showList : styles.hideList}
 			>
-				<Counter setValue={setCounterAdults} value={counterAdults} name='взрослые' />
-				<Counter setValue={setCounterKids} value={counterKids} name='дети' />
-				<Counter setValue={setCounterBabies} value={counterBabies} name='младенцы' />
+				<div className={styles.counters}>
+					<Counter setValue={setCounterAdults} value={counterAdults} name='взрослые' />
+					<Counter setValue={setCounterKids} value={counterKids} name='дети' />
+					<Counter setValue={setCounterBabies} value={counterBabies} name='младенцы' />
+				</div>
 				<div
 					className={styles.dropDownFooter}
 				>
@@ -81,7 +76,13 @@ export default function DropDownList(props: IDropDownList) {
 							: null
 					}
 					<div className={styles.applyBtn}>
-						<Button type='button' name='применить' variant={BtnVariants.BtnText} onClick={applyValueList} />
+						<Button
+							type='button'
+							name='применить'
+							variant={BtnVariants.BtnText}
+							onClick={applyValueList}
+							disabled={sumVisitors === 0 ? true : false}
+						/>
 					</div>
 				</div>
 			</div>

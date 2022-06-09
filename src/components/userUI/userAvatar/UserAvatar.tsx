@@ -3,7 +3,7 @@ import styles from './UserAvatar.module.scss';
 
 interface IUserAvatar {
 	name: string;
-	wasLastOnline: string;
+	wasLastOnline: number;
 }
 
 export default function UserAvatar(props: IUserAvatar) {

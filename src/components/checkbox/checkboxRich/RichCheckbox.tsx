@@ -4,7 +4,7 @@ import styles from './RichCheckbox.module.scss';
 
 interface IRichCheckbox {
 	name: string;
-	children: React.ReactNode;
+	children: string;
 }
 
 export default function RichCheckbox(props: IRichCheckbox) {

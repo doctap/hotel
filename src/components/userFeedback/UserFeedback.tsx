@@ -4,21 +4,35 @@ import Paragraph from '../texts/paragraph/Paragraph';
 import UserAvatar from '../userUI/userAvatar/UserAvatar';
 import styles from './UserFeedback.module.scss';
 
-export default function UserFeedback() {
+interface IUserFeedback {
+	userName: string;
+	// dateWasLastOnline: Date;
+	userFeedback: string;
+	likeValue: number;
+	getValueLike: (num: number) => void;
+}
+
+export default function UserFeedback(props: IUserFeedback) {
+
+	// const getDate = () => {
+	// 	let nowDate = props.dateWasLastOnline;
+	// 	return new Date(nowDate)
+	// }
+
 	return (
 		<div className={styles.UserFeedback}>
 			<UserAvatar
-				name='Мурад Сарафанов'
-				wasLastOnline='5 дней назад'
+				name={props.userName}
+				wasLastOnline={5}
 			/>
+			{/* узнать у санька как лучше сделать "dateWasLastOnline" */}
 
 			<div className={styles.body}>
 				<div className={styles.btnLike}>
-					<LikeBtn value={14} onClick={x => console.log(x)} />
+					<LikeBtn value={props.likeValue} onClick={props.getValueLike} />
 				</div>
 				<Paragraph>
-					Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий.
-					И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.
+					{props.userFeedback}
 				</Paragraph>
 			</div>
 		</div>

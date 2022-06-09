@@ -17,6 +17,10 @@
 		@extend %flexColumn;
 		align-items: flex-start;
 
+		.DropdownRooms {
+			width: 16.625rem;
+		}
+
 		&>* {
 			margin-bottom: 2rem;
 		}
@@ -44,16 +48,26 @@
 			justify-content: space-between;
 		}
 
+		.drop_down_list{
+			width: 20rem;
+		}
 
 		.rich_checkbox {
-			min-height: 8.5rem;
-			@extend %flexColumn;
-			justify-content: space-between;
+			.rich_checkbox_block {
+				@extend %flexColumn;
+				justify-content: space-between;
+				height: 7.5rem;
+				width: 16rem;
+			}
 		}
 
 		.btnSubmit {
 			width: 20rem;
 			height: 2.75rem;
+		}
+
+		.radio_btn {
+			width: 13rem;
 		}
 	}
 }
@@ -74,7 +88,7 @@
 	width: 15rem;
 
 	&>* {
-		margin-bottom: .7rem;
+		margin-bottom: 0.9rem;
 	}
 }
 

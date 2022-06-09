@@ -11,6 +11,7 @@ import CheckBoxItem from '../checkbox/chtckBoxItem/CheckBoxItem';
 import ListCheckbox from '../checkbox/listCheckbox/ListCheckbox';
 import DateDropdown from '../dateDropdown/DateDropdown';
 import DropDownList from '../dropdownList/drop_Down_List/DropDownList';
+import DropdownQtyRooms from '../dropdownQtyRooms/DropdownQtyRooms';
 import InputText, { InputVariants } from '../inputs/Input/InputFieldText';
 import InputBtn from '../inputs/InputBtn/InputBtn';
 import RateStars from '../rateStars/RateStars';
@@ -21,6 +22,9 @@ import UserFeedback from '../userFeedback/UserFeedback';
 import styles from './PageComponents.module.scss';
 
 export default function PageComponents() {
+
+	const arr = ['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия - после 13:00, а выезд до 12:00'];
+
 	return (
 		<div className={styles.wrapper}>
 
@@ -70,6 +74,10 @@ export default function PageComponents() {
 						<DateDropdown />
 					</div>
 
+					<div className={styles.DropdownRooms}>
+						<DropdownQtyRooms limitBedroom={5} limitBed={7} limitBathroom={5} />
+					</div>
+
 				</div>
 
 				<div className={styles.column}>
@@ -92,9 +100,9 @@ export default function PageComponents() {
 						<CheckboxToggle type='checkbox' name='Получать спецпредложения' />
 					</div>
 
-					<div>
+					<div className={styles.radio_btn}>
 						<SubTitle name='radio buttons' />
-						<CheckboxRadio type='radio' name='gender' />
+						<CheckboxRadio type='radio' male='Мужчина' female='Женщина' />
 					</div>
 
 
@@ -118,12 +126,14 @@ export default function PageComponents() {
 
 					<div className={styles.rich_checkbox}>
 						<SubTitle name='rich checkbox buttons' />
-						<RichCheckbox name='Широкий коридор' >
-							Ширина коридоров в номере <br /> не менее 91 см.
-						</RichCheckbox>
-						<RichCheckbox name='Помощник для инвалидов' >
-							На 1 этаже вас встретит специалист <br /> и проводит до номера.
-						</RichCheckbox>
+						<div className={styles.rich_checkbox_block}>
+							<RichCheckbox name='Широкий коридор' >
+								Ширина коридоров в номере не менее 91 см.
+							</RichCheckbox>
+							<RichCheckbox name='Помощник для инвалидов' >
+								На 1 этаже вас встретит специалист и проводит до номера.
+							</RichCheckbox>
+						</div>
 					</div>
 
 
@@ -148,11 +158,10 @@ export default function PageComponents() {
 
 					<div className={styles.bullet_list}>
 						<SubTitle name='bullet list' />
-						<BulletList>
-							<li>Нельзя с питомцами</li>
+						<BulletList items={arr} />
+						{/* <li>Нельзя с питомцами</li>
 							<li>Без вечеринок и мероприятий</li>
-							<li>Время прибытия &#8212; после 13:00,<br /> а выезд до 12:00</li>
-						</BulletList>
+							<li>Время прибытия &#8212; после 13:00,<br /> а выезд до 12:00</li> */}
 					</div>
 				</div>
 			</div>
@@ -172,7 +181,13 @@ export default function PageComponents() {
 
 				<div className={styles.footer_column}>
 
-					<UserFeedback />
+					<UserFeedback
+						userName='Vasili Nikiforov'
+						likeValue={10}
+						getValueLike={x => console.log(x)}
+						userFeedback='Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий.
+						И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'
+					/>
 				</div>
 			</div>
 		</div>

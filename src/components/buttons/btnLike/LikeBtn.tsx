@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
-import { ILikeBtn } from './LikeBtnInterface';
 import styles from './LikeBtn.module.scss';
+
+interface ILikeBtn {
+	value: number;
+	onClick?: (value: number) => void;
+}
 
 export default function LikeBtn(props: ILikeBtn) {
 

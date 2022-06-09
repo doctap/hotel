@@ -4,6 +4,7 @@
 	list-style-image: url(../../../../public/Ellipse.svg);
 	@extend %fontPropBody;
 	color: $DarkShade75;
+	list-style-position: inside;
 
 	&>* {
 		margin-bottom: .8em;

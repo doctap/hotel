@@ -2,13 +2,13 @@ import React from 'react';
 import styles from './BulletList.module.scss';
 
 interface IBulletList {
-	children: React.ReactNode;
+	items: string[];
 }
 
 export default function BulletList(props: IBulletList) {
 	return (
 		<ul className={styles.bulletList}>
-			{props.children}
+			{props.items.map(x => <li>{x}</li>)}
 		</ul>
 	)
 }
