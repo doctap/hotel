@@ -1,0 +1,20 @@
+@import '../../../CommonStyles.module.scss';
+
+.wrapper {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+
+	.price {
+		font-size: 0.875rem;
+		font-weight: 700;
+		color: $DarkShade50;
+		display: flex;
+	}
+
+	.text {
+		font-size: 0.75rem;
+		font-weight: 400;
+		color: $DarkShade50;
+	}
+}

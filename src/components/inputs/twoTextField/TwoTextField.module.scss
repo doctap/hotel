@@ -1,0 +1,8 @@
+@import '../../../CommonStyles.module.scss';
+
+.inputs {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 6.125rem;
+}

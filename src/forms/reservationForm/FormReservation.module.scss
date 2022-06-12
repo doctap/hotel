@@ -1,0 +1,86 @@
+@import '../../CommonStyles.module.scss';
+
+.header {
+	display: flex;
+	margin-bottom: 1.5rem;
+
+	.symbol {
+		font-size: 0.875rem;
+		font-weight: 700;
+		color: $DarkShade100;
+	}
+
+	.headerBlock {
+		width: 100%;
+		display: flex;
+		align-items: flex-end;
+	}
+
+	.roomNumber {
+		margin: 0 7px 0 3px;
+		line-height: 1.5rem;
+	}
+
+	.roomStatus {
+		text-transform: uppercase;
+		font-weight: 700;
+		font-size: 0.75rem;
+		color: $Purple;
+	}
+
+	.tittlePricePerDay {
+		width: 9rem;
+		display: flex;
+		align-items: flex-end;
+	}
+}
+
+.inputs {
+	height: 9.3rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	margin-bottom: 1.4rem;
+
+	.period {
+		display: flex;
+		justify-content: space-between;
+
+		&>* {
+			width: 9.3rem;
+		}
+	}
+
+}
+
+.finalPrices {
+	margin-bottom: 1.2rem;
+
+	&>* {
+		display: flex;
+		justify-content: space-between;
+		@extend %fontPropBody;
+		color: $DarkShade75;
+		margin-bottom: 1.1rem;
+	}
+}
+
+.totalPrice {
+	display: flex;
+	align-items: flex-end;
+	margin-bottom: 1.5rem;
+
+	.border {
+		flex: 1 1 auto;
+		border: 1px dotted $DarkShade25;
+		border-left: none;
+		border-right: none;
+		border-top: none;
+	}
+
+	.total {
+		@extend %fontPropH2;
+		color: $DarkShade100;
+		line-height: 1rem;
+	}
+}

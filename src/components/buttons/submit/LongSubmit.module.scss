@@ -12,7 +12,7 @@
 	border: none;
 	background: $GradientPurple;
 	@extend %fontPropH3;
-	letter-spacing: .050rem;
+	// letter-spacing: .050rem;
 	font-weight: 600;
 	color: #fff;
 	position: relative;
@@ -23,10 +23,10 @@
 
 	.arrow {
 		font-family: Material icons;
-		font-size: 1.7em;
+		font-size: 2em;
 		font-weight: 400;
 		position: absolute;
-		right: .7em;
+		right: .4em;
 	}
 
 	&:hover,
