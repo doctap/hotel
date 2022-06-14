@@ -1,6 +1,6 @@
 import React from 'react';
-import styles from './BtnArrowTick.module.scss';
 import { BtnTickVariants, IBtnTick } from './BtnArrowTickInterface';
+import styles from './BtnArrowTick.module.scss';
 
 export default function BtnTick(props: IBtnTick) {
 

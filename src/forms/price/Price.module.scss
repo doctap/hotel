@@ -1,0 +1,24 @@
+@import '../../CommonStyles.module.scss';
+
+// .price {
+// 	font-size: inherit;
+// 	color: inherit;
+// 	font-weight: inherit;
+// }
+
+.light {
+	@extend %fontPropBody;
+	color: $DarkShade75;
+}
+
+.medium {
+	font-size: 0.875rem;
+	font-weight: 700;
+	color: $DarkShade50;
+}
+
+.bold {
+	font-size: 1.1875rem;
+	font-weight: 700;
+	color: $DarkShade100;
+}

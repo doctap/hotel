@@ -3,9 +3,20 @@ import styles from './Price.module.scss';
 
 interface IPrice {
 	sum: number;
+	variant: PriceVariants;
 }
 
+type PriceVariants = 'light' | 'medium' | 'bold';
+
 export default function Price(props: IPrice) {
+
+	function getStyles(variant: string): string {
+		if (variant === 'light') return styles.light;
+		if (variant === 'medium') return styles.medium;
+		
+		return styles.bold;
+	}
+
 	/**
 	 * нормализует число в строку которая содержит пробелы после каждого 
 	 * третьего знака с конца 
@@ -27,7 +38,7 @@ export default function Price(props: IPrice) {
 	}
 
 	return (
-		<div className={styles.price}>
+		<div className={getStyles(props.variant)}>
 			{getPrice(props.sum)}&#8381;
 		</div>
 	)

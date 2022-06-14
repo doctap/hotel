@@ -1,5 +1,5 @@
 import React from 'react';
-import InputText, { InputVariants } from '../Input/InputFieldText';
+import InputText, { InputVariants } from '../../components/inputs/Input/InputFieldText';
 import styles from './TwoTextField.module.scss';
 
 interface ITwoTextField {

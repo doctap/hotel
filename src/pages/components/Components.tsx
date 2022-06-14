@@ -1,29 +1,39 @@
 import React from 'react';
-import { BtnTickVariants } from '../buttons/arrowTickBtns/BtnArrowTickInterface';
-import LikeBtn from '../buttons/btnLike/LikeBtn';
-import Button from '../buttons/btns/Button';
-import { BtnVariants } from '../buttons/btns/ButtonInterface';
-import LongSubmit from '../buttons/submit/LongSubmit';
-import CheckboxRadio from '../checkbox/checkboxRadio/CheckboxRadio';
-import RichCheckbox from '../checkbox/checkboxRich/RichCheckbox';
-import CheckboxToggle from '../checkbox/checkboxToggle/CheckboxToggle';
-import CheckBoxItem from '../checkbox/chtckBoxItem/CheckBoxItem';
-import ListCheckbox from '../checkbox/listCheckbox/ListCheckbox';
-import DateDropdown from '../dateDropdown/DateDropdown';
-import DropDownList from '../dropdownList/drop_Down_List/DropDownList';
-import DropdownQtyRooms from '../dropdownQtyRooms/DropdownQtyRooms';
-import InputText, { InputVariants } from '../inputs/Input/InputFieldText';
-import InputBtn from '../inputs/InputBtn/InputBtn';
-import RateStars from '../rateStars/RateStars';
-import ShortcutIcon from '../shortcuts/shortcutIcon/ShortcutIcon';
-import BulletList from '../texts/bulletList/BulletList';
-import SubTitle from '../titles/subTitle/SubTitle';
-import UserFeedback from '../userFeedback/UserFeedback';
-import styles from './PageComponents.module.scss';
+import ReactSlider from 'react-slider';
+import { BtnTickVariants } from '../../components/buttons/arrowTickBtns/BtnArrowTickInterface';
+import LikeBtn from '../../components/buttons/btnLike/LikeBtn';
+import Button from '../../components/buttons/btns/Button';
+import { BtnVariants } from '../../components/buttons/btns/ButtonInterface';
+import LongSubmit from '../../components/buttons/submit/LongSubmit';
+import CheckboxList from '../../components/checkbox/checkboxList/CheckboxList';
+import CheckboxRadio from '../../components/checkbox/checkboxRadio/CheckboxRadio';
+import RichCheckbox from '../../components/checkbox/checkboxRich/RichCheckbox';
+import CheckboxRichList, { itemCheckboxRich } from '../../components/checkbox/checkboxRichList/CheckboxRichList';
+import CheckboxToggle from '../../components/checkbox/checkboxToggle/CheckboxToggle';
+import CheckBoxItem from '../../components/checkbox/chtckBoxItem/CheckBoxItem';
+import DropdownCheckboxes from '../../components/checkbox/dropdownCheckboxes/DropdownCheckboxes';
+import DateDropdown from '../../components/dateDropdown/DateDropdown';
+import DropDownList from '../../components/dropdownList/drop_Down_List/DropDownList';
+import DropdownQtyRooms from '../../components/dropdownQtyRooms/DropdownQtyRooms';
+import InputText, { InputVariants } from '../../components/inputs/Input/InputFieldText';
+import InputBtn from '../../components/inputs/InputBtn/InputBtn';
+import RateStars from '../../components/rateStars/RateStars';
+import ShortcutIcon from '../../components/shortcuts/shortcutIcon/ShortcutIcon';
+import BulletList from '../../components/texts/bulletList/BulletList';
+import SubTitle from '../../components/titles/subTitle/SubTitle';
+import UserFeedback from '../../components/userFeedback/UserFeedback';
+import ItemContainer from '../../forms/containers/itemContainer/ItemContainer';
+import styles from './Components.module.scss';
 
-export default function PageComponents() {
+export default function Components() {
 
-	const arr = ['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия - после 13:00, а выезд до 12:00'];
+	const itemsForBulletList = ['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия - после 13:00, а выезд до 12:00'];
+	const itemsForDropdownCheckboxes = ['Завтрак', 'Письменный стол', 'Стул для кормления', 'Кроватка', 'Телевизор', 'Шампунь',];
+	const itemsForCheckboxList = ['Можно курить', 'Можно с питомцами', 'Можно приглосить гостей (до 10 человек)'];
+	const itemForCheckboxRichList = [
+		{ title: 'Широкий коридор', text: 'Ширина коридоров в номере не менее 91 см.' },
+		{ title: 'Помощник для инвалидов', text: 'На 1 этаже вас встретит специалист и проводит до номера.' }
+	];
 
 	return (
 		<div className={styles.wrapper}>
@@ -46,7 +56,10 @@ export default function PageComponents() {
 
 
 					<div className={styles.expandable_checkbox_list}>
-						<ListCheckbox name='expandable checkbox list' />
+						<DropdownCheckboxes
+							name='expandable checkbox list'
+							items={itemsForDropdownCheckboxes}
+						/>
 					</div>
 
 					<div className={styles.filter_date_dropdown}>
@@ -83,18 +96,12 @@ export default function PageComponents() {
 				<div className={styles.column}>
 
 					<SubTitle name='checkbox button' />
-					<ul className={styles.ListCheckBoxTick}>
-						<li>
-							<CheckBoxItem name='Можно курить' />
-						</li>
-						<li>
-							<CheckBoxItem name='Можно с питомцами' />
-						</li>
-						<li>
-							<CheckBoxItem name='Можно приглосить гостей (до 10 человек)' />
-						</li>
-					</ul>
 
+					<ItemContainer>
+						<CheckboxList
+							items={itemsForCheckboxList}
+						/>
+					</ItemContainer>
 					<div>
 						<SubTitle name='toggle' />
 						<CheckboxToggle type='checkbox' name='Получать спецпредложения' />
@@ -124,22 +131,27 @@ export default function PageComponents() {
 						<DropDownList name='Сколько гостей' />
 					</div>
 
-					<div className={styles.rich_checkbox}>
-						<SubTitle name='rich checkbox buttons' />
-						<div className={styles.rich_checkbox_block}>
-							<RichCheckbox name='Широкий коридор' >
-								Ширина коридоров в номере не менее 91 см.
-							</RichCheckbox>
-							<RichCheckbox name='Помощник для инвалидов' >
-								На 1 этаже вас встретит специалист и проводит до номера.
-							</RichCheckbox>
-						</div>
-					</div>
+					<CheckboxRichList items={itemForCheckboxRichList} />
 
 
 				</div>
 
 				<div className={styles.column}>
+
+					{/* <ItemContainer> */}
+					{/* <ReactSlider
+						className="horizontal-slider"
+						thumbClassName="example-thumb"
+						trackClassName="example-track"
+						defaultValue={[0, 100]}
+						ariaLabel={['Lower thumb', 'Upper thumb']}
+						ariaValuetext={state => `Thumb value ${state.valueNow}`}
+						renderThumb={(props, state) => <div {...props}>{state.valueNow}</div>}
+						pearling
+						minDistance={10}
+					/> */}
+					{/* </ItemContainer> */}
+
 					<div>
 						<SubTitle name='buttons' />
 						<div className={styles.btnSubmit}>
@@ -158,10 +170,7 @@ export default function PageComponents() {
 
 					<div className={styles.bullet_list}>
 						<SubTitle name='bullet list' />
-						<BulletList items={arr} />
-						{/* <li>Нельзя с питомцами</li>
-							<li>Без вечеринок и мероприятий</li>
-							<li>Время прибытия &#8212; после 13:00,<br /> а выезд до 12:00</li> */}
+						<BulletList items={itemsForBulletList} />
 					</div>
 				</div>
 			</div>
@@ -170,12 +179,17 @@ export default function PageComponents() {
 
 				<div className={styles.footer_column}>
 					<div className={styles.shortcutIcon}>
-						<ShortcutIcon name='Комфорт' variantIcon='insert_emoticon'>
-							Шумопоглощающие стены
-						</ShortcutIcon>
-						<ShortcutIcon name='Удобство' variantIcon='location_city'>
-							Окно в каждой из спален
-						</ShortcutIcon>
+						<ShortcutIcon
+							title='Комфорт'
+							variantIcon='insert_emoticon'
+							text='Шумопоглощающие стены'
+						/>
+
+						<ShortcutIcon
+							title='Удобство'
+							variantIcon='location_city'
+							text='Окно в каждой из спален'
+						/>
 					</div>
 				</div>
 

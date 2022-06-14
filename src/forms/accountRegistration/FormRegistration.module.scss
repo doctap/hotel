@@ -7,36 +7,11 @@
 	justify-content: space-between;
 }
 
-.title {
-	margin-bottom: 1.25rem;
+
+
+.radio_btn {
+	width: 13.8rem;
 }
-
-.fullName {
-	height: 8.25rem;
-	@extend %this_props;
-	margin-bottom: 1.2225rem;
-
-	.radio_btn {
-		width: 13.8rem;
-	}
-}
-
-.Data {
-	height: 14.5rem;
-	@extend %this_props;
-
-
-	.loginData {
-		height: 9.25rem;
-		@extend %this_props;
-
-	}
-}
-
-.footer_registration {
-	@extend %this_props;
-	height: 8.5rem;
-	padding: 1rem 0 0 0;
 
 	.log_in {
 		display: flex;
@@ -48,4 +23,3 @@
 			color: #000;
 		}
 	}
-}

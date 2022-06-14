@@ -1,16 +1,15 @@
 import React from 'react';
 import LongSubmit from '../../components/buttons/submit/LongSubmit';
-import DateDropdown from '../../components/dateDropdown/DateDropdown';
-import DropDownList from '../../components/dropdownList/drop_Down_List/DropDownList';
-import SubTitle from '../../components/titles/subTitle/SubTitle';
-import TitleH2 from '../../components/titles/titleH2/TitleH2';
-import TittlePricePerDay from '../../components/titles/titlePricePerDay/TitlePricePerDay';
+import TittlePricePerDay from '../titlePricePerDay/TitlePricePerDay';
 import FormContainer from '../containers/formContainer/FormContainer';
+import ItemContainer from '../containers/itemContainer/ItemContainer';
+import PeriodQtyVisitors from '../periodQtyVisitors/PeriodQtyVisitors';
+import Price from '../price/Price';
+import HotelRoom from '../../components/hotelRoom/HotelRoom';
 import styles from './FormReservation.module.scss';
 
 interface IFormReservation {
-	roomNumber: number;
-	roomStatus: string;
+
 }
 
 export default function FormReservation(props: IFormReservation) {
@@ -18,71 +17,57 @@ export default function FormReservation(props: IFormReservation) {
 		<FormContainer>
 
 			<div className={styles.header}>
-				<div className={styles.headerBlock}>
-					<div className={styles.symbol}>
-						&#8470;
-					</div>
-					<div className={styles.roomNumber}>
-						<TitleH2 value={props.roomNumber} />
-					</div>
-					<div className={styles.roomStatus}>
-						{props.roomStatus}
-					</div>
+				<div className={styles.roomNumber}>
+					<HotelRoom roomNumber={888} roomStatus='люкс' />
 				</div>
 				<div className={styles.tittlePricePerDay}>
 					<TittlePricePerDay price={9990} text='в сутки' />
 				</div>
 			</div>
 
-			<div className={styles.inputs}>
-				<div className={styles.period}>
-					<div className={styles.arrival}>
-						<div className={styles.arrivalTitle}>
-							<SubTitle name='прибытие' />
-							<DateDropdown />
-						</div>
-					</div>
-					<div className={styles.departure}>
-						<div className={styles.departureTitle}>
-							<SubTitle name='выезд' />
-							<DateDropdown />
-						</div>
-					</div>
-				</div>
-				<div className={styles.visitors}>
-					<div className={styles.visitorsTitle}>
-						<SubTitle name='гости' />
-					</div>
-					<div className={styles.DropDownList}>
-						<DropDownList name='Сколько гостей' />
-					</div>
-				</div>
-			</div>
+			<ItemContainer margin='0 0 1.2rem 0'>
+				<PeriodQtyVisitors />
+			</ItemContainer>
 
 			<div className={styles.finalPrices}>
 				<div className={styles.pricePeriod}>
-					<div>{9990}&#8381; x {4} суток</div>
-					<div>{9990 * 4}&#8381;</div>
+					<div>
+						<Price sum={9990} variant='light' />
+						&nbsp;x {4} суток
+					</div>
+					<div>
+						<Price sum={9990 * 4} variant='light' />
+					</div>
 				</div>
 				<div className={styles.serviceFee}>
-					<div>Сбор за услуги: скидка {2179}&#8381;</div>
-					<div>{0}&#8381;</div>
+					<div>
+						Сбор за услуги: скидка&nbsp;
+						<Price sum={2179} variant='light' />
+					</div>
+					<div>
+						<Price sum={0} variant='light' />
+					</div>
 				</div>
 				<div className={styles.extras}>
 					<div>Сбор за дополнительные<br /> услуги</div>
-					<div>{300}&#8381;</div>
+					<div><Price sum={300} variant='light' /></div>
 				</div>
 			</div>
 
 			<div className={styles.totalPrice}>
-				<div className={styles.total}>Итого</div>
-				<div className={styles.border}></div>
-				<div className={styles.total}>{38081}&#8381;</div>
+				<div className={styles.total}>
+					Итого
+				</div>
+				<div className={styles.borderDotted}></div>
+				<div className={styles.total}>
+					<Price sum={38081} variant='bold' />
+				</div>
 			</div>
 
 			<div className={styles.BtnSubmit}>
 				<LongSubmit name='забронировать' type='submit' />
 			</div>
+
 		</FormContainer>
 	)
 }

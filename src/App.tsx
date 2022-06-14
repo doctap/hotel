@@ -1,17 +1,22 @@
 import React from 'react';
-import styles from './App.module.scss';
-import PageComponents from './components/PageComponents/PageComponents';
-import PageForms from './forms/PageForms/PageForms';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Layout from './pages/Layout';
+import Components from './pages/components/Components';
+import Forms from './pages/forms/Forms';
+import Home from './pages/Home';
+import NoPage from './pages/NoPage';
 
-
-
-function App() {
+export default function App() {
 	return (
-		<div>
-			<PageForms />
-			<PageComponents />
-		</div>
+		<BrowserRouter>
+			<Routes>
+				<Route path="/" element={<Layout />}>
+					<Route index element={<Home />} />
+					<Route path="components" element={<Components />} />
+					<Route path="forms" element={<Forms />} />
+					<Route path="*" element={<NoPage />} />
+				</Route>
+			</Routes>
+		</BrowserRouter>
 	);
 }
-
-export default App;

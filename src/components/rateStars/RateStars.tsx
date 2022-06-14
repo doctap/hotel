@@ -1,4 +1,4 @@
-import React, { ReactElement, useState } from 'react';
+import React from 'react';
 import styles from './RateStars.module.scss'
 
 interface IRateStars {

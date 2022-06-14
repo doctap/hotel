@@ -52,15 +52,6 @@
 			width: 20rem;
 		}
 
-		.rich_checkbox {
-			.rich_checkbox_block {
-				@extend %flexColumn;
-				justify-content: space-between;
-				height: 7.5rem;
-				width: 16rem;
-			}
-		}
-
 		.btnSubmit {
 			width: 20rem;
 			height: 2.75rem;
@@ -82,16 +73,6 @@
 	width: 15rem;
 	height: 10rem;
 }
-
-.ListCheckBoxTick {
-	list-style: none;
-	width: 15rem;
-
-	&>* {
-		margin-bottom: 0.9rem;
-	}
-}
-
 
 .footer_row {
 	display: flex;
