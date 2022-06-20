@@ -7,12 +7,35 @@ import CheckboxToggle from '../../components/checkbox/checkboxToggle/CheckboxTog
 import InputText, { InputVariants } from '../../components/inputs/Input/InputFieldText';
 import TwoTextField from '../twoTextField/TwoTextField';
 import SubTitle from '../../components/titles/subTitle/SubTitle';
-import TitleH2 from '../../components/titles/titleH2/TitleH2';
+import TitleH2 from '../../components/titles/titleH1/TitleH1';
 import FormContainer from '../containers/formContainer/FormContainer';
 import ItemContainer from '../containers/itemContainer/ItemContainer';
 import styles from './FormRegistration.module.scss';
 
+interface IFormRegistration {
+	userName: string;
+	userSurName: string;
+
+}
+
 export default function FormRegistration() {
+
+	function getFullName(userName: string, userSurName: string) {
+		console.log(userName, userSurName);
+	}
+
+	function getGender(male: boolean, female: boolean) {
+		console.log(male, female);
+	}
+
+	function getEmailPassword(email: string, password: string) {
+		console.log(email, password);
+	}
+
+	function getAnswerAboutSpecialOffers(isChecked: boolean) {
+		console.log(isChecked);
+	}
+
 	return (
 		<FormContainer>
 
@@ -22,6 +45,7 @@ export default function FormRegistration() {
 
 			<ItemContainer margin='0 0 0 0'>
 				<TwoTextField
+					onChange={getFullName}
 					topInputType='text'
 					topInputPlaceholder='Имя'
 					bottomInputType='text'
@@ -32,6 +56,7 @@ export default function FormRegistration() {
 			<ItemContainer margin='0 0 1.2rem 0'>
 				<div className={styles.radio_btn}>
 					<CheckboxRadio
+						onClick={getGender}
 						type='radio'
 						male='Мужчина'
 						female='Женщина'
@@ -40,17 +65,23 @@ export default function FormRegistration() {
 			</ItemContainer>
 
 			<ItemContainer>
-			<SubTitle name='дата рождения' />
+				<ItemContainer margin='0 0 .3rem 0'>
+					<SubTitle name='дата рождения' />
+				</ItemContainer>
+				{/* ==========ДОДЕЛАТЬ дату рождения===============*/}
 				<InputText
 					type='text'
-					placeholder='ДД.ММ.ГГ'
+					placeholder='ДД.ММ.ГГГГ'
 					variant={InputVariants.InputText}
 				/>
 			</ItemContainer>
 
 			<ItemContainer margin='0 0 0 0'>
-				<SubTitle name='данные для входа в сервис' />
+				<ItemContainer margin='0 0 .3rem 0'>
+					<SubTitle name='данные для входа в сервис' />
+				</ItemContainer>
 				<TwoTextField
+					onChange={getEmailPassword}
 					topInputType='email'
 					topInputPlaceholder='Email'
 					bottomInputType='password'
@@ -59,11 +90,15 @@ export default function FormRegistration() {
 			</ItemContainer>
 
 			<ItemContainer margin='0 0 1.2rem 0'>
-				<CheckboxToggle type='checkbox' name='Получать спецпредложения' />
+				<CheckboxToggle
+					onChange={getAnswerAboutSpecialOffers}
+					type='checkbox'
+					name='Получать спецпредложения'
+				/>
 			</ItemContainer>
 
 			<ItemContainer margin='0 0 1.2rem 0'>
-				<LongSubmit name='перейти к оплате' type='submit' />
+				<LongSubmit name='перейти к оплате' type='submit' submitForm={() => 0} />
 			</ItemContainer>
 
 			<div className={styles.log_in}>

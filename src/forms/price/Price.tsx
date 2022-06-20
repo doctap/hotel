@@ -6,11 +6,12 @@ interface IPrice {
 	variant: PriceVariants;
 }
 
-type PriceVariants = 'light' | 'medium' | 'bold';
+type PriceVariants = 'easy' | 'light' | 'medium' | 'bold';
 
 export default function Price(props: IPrice) {
 
 	function getStyles(variant: string): string {
+		if (variant === 'easy') return styles.easy;
 		if (variant === 'light') return styles.light;
 		if (variant === 'medium') return styles.medium;
 		

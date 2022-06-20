@@ -1,18 +1,14 @@
 import React from 'react';
-import ReactSlider from 'react-slider';
-import { BtnTickVariants } from '../../components/buttons/arrowTickBtns/BtnArrowTickInterface';
 import LikeBtn from '../../components/buttons/btnLike/LikeBtn';
 import Button from '../../components/buttons/btns/Button';
 import { BtnVariants } from '../../components/buttons/btns/ButtonInterface';
 import LongSubmit from '../../components/buttons/submit/LongSubmit';
 import CheckboxList from '../../components/checkbox/checkboxList/CheckboxList';
 import CheckboxRadio from '../../components/checkbox/checkboxRadio/CheckboxRadio';
-import RichCheckbox from '../../components/checkbox/checkboxRich/RichCheckbox';
-import CheckboxRichList, { itemCheckboxRich } from '../../components/checkbox/checkboxRichList/CheckboxRichList';
+import CheckboxRichList from '../../components/checkbox/checkboxRichList/CheckboxRichList';
 import CheckboxToggle from '../../components/checkbox/checkboxToggle/CheckboxToggle';
-import CheckBoxItem from '../../components/checkbox/chtckBoxItem/CheckBoxItem';
 import DropdownCheckboxes from '../../components/checkbox/dropdownCheckboxes/DropdownCheckboxes';
-import DateDropdown from '../../components/dateDropdown/DateDropdown';
+import DateCalendar from '../../components/dateCalendar/DateCalendar';
 import DropDownList from '../../components/dropdownList/drop_Down_List/DropDownList';
 import DropdownQtyRooms from '../../components/dropdownQtyRooms/DropdownQtyRooms';
 import InputText, { InputVariants } from '../../components/inputs/Input/InputFieldText';
@@ -24,6 +20,9 @@ import SubTitle from '../../components/titles/subTitle/SubTitle';
 import UserFeedback from '../../components/userFeedback/UserFeedback';
 import ItemContainer from '../../forms/containers/itemContainer/ItemContainer';
 import styles from './Components.module.scss';
+import { BtnTickVariants } from '../../components/buttons/arrowTickBtns/BtnArrowTickInterface';
+import HorizontalSlider from '../../components/horizontalSlider/HorizontalSlider';
+import PeriodOfStay from '../../components/dateCalendar/periodOfStay/PeriodOfStay';
 
 export default function Components() {
 
@@ -44,12 +43,16 @@ export default function Components() {
 				<div className={styles.column}>
 
 					<div className={styles.text_field}>
-						<SubTitle name='text field' />
+						<ItemContainer margin='0 0 .3rem 0'>
+							<SubTitle name='text field' />
+						</ItemContainer>
 						<InputText type='email' placeholder='Email' variant={InputVariants.InputText} />
 					</div>
 
 					<div className={styles.masked_text_field}>
-						<SubTitle name='masked text field' />
+						<ItemContainer margin='0 0 .3rem 0'>
+							<SubTitle name='masked text field' />
+						</ItemContainer>
 						<InputText type='text' placeholder='ДД.ММ.ГГГГ' variant={InputVariants.InputText} />
 					</div>
 
@@ -63,7 +66,9 @@ export default function Components() {
 					</div>
 
 					<div className={styles.filter_date_dropdown}>
-						<SubTitle name='filter date dropdown' />
+						<ItemContainer margin='0 0 .3rem 0'>
+							<SubTitle name='filter date dropdown' />
+						</ItemContainer>
 						<InputBtn
 							typeInput='text'
 							placeholderInput='19 авг - 23 авг'
@@ -73,7 +78,9 @@ export default function Components() {
 					</div>
 
 					<div className={styles.subscription_text_field}>
-						<SubTitle name={'subscription text field'} />
+						<ItemContainer margin='0 0 .3rem 0'>
+							<SubTitle name={'subscription text field'} />
+						</ItemContainer>
 						<InputBtn
 							typeInput='email'
 							placeholderInput='Email'
@@ -83,8 +90,10 @@ export default function Components() {
 					</div>
 
 					<div className={styles.dateDropdown}>
-						<SubTitle name='date dropdown' />
-						<DateDropdown />
+						<ItemContainer margin='0 0 .3rem 0'>
+							<SubTitle name='date dropdown' />
+						</ItemContainer>
+						<DateCalendar getDate={() => 0} />
 					</div>
 
 					<div className={styles.DropdownRooms}>
@@ -94,8 +103,9 @@ export default function Components() {
 				</div>
 
 				<div className={styles.column}>
-
-					<SubTitle name='checkbox button' />
+					<ItemContainer margin='0 0 .3rem 0'>
+						<SubTitle name='checkbox button' />
+					</ItemContainer>
 
 					<ItemContainer>
 						<CheckboxList
@@ -103,23 +113,36 @@ export default function Components() {
 						/>
 					</ItemContainer>
 					<div>
-						<SubTitle name='toggle' />
+						<ItemContainer margin='0 0 .3rem 0'>
+							<SubTitle name='toggle' />
+						</ItemContainer>
 						<CheckboxToggle type='checkbox' name='Получать спецпредложения' />
 					</div>
 
 					<div className={styles.radio_btn}>
-						<SubTitle name='radio buttons' />
-						<CheckboxRadio type='radio' male='Мужчина' female='Женщина' />
+						<ItemContainer margin='0 0 .3rem 0'>
+							<SubTitle name='radio buttons' />
+						</ItemContainer>
+						<CheckboxRadio
+							onClick={() => 0}
+							type='radio'
+							male='Мужчина'
+							female='Женщина'
+						/>
 					</div>
 
 
 					<div className={styles.like}>
-						<SubTitle name='button like' />
+						<ItemContainer margin='0 0 .3rem 0'>
+							<SubTitle name='button like' />
+						</ItemContainer>
 						<LikeBtn value={17} onClick={x => console.log(x)} />
 					</div>
 
 					<div className={styles.blockStars}>
-						<SubTitle name='rate stars' />
+						<ItemContainer margin='0 0 .3rem 0'>
+							<SubTitle name='rate stars' />
+						</ItemContainer>
 						<div className={styles.stars}>
 							<RateStars fullStars={3} maxStars={5} />
 							<RateStars fullStars={5} maxStars={7} />
@@ -127,8 +150,10 @@ export default function Components() {
 					</div>
 
 					<div className={styles.drop_down_list}>
-						<SubTitle name='dropdown' />
-						<DropDownList name='Сколько гостей' />
+						<ItemContainer margin='0 0 .3rem 0'>
+							<SubTitle name='dropdown' />
+						</ItemContainer>
+						<DropDownList name='Сколько гостей' getQtyVisitors={() => 0} />
 					</div>
 
 					<CheckboxRichList items={itemForCheckboxRichList} />
@@ -138,24 +163,16 @@ export default function Components() {
 
 				<div className={styles.column}>
 
-					{/* <ItemContainer> */}
-					{/* <ReactSlider
-						className="horizontal-slider"
-						thumbClassName="example-thumb"
-						trackClassName="example-track"
-						defaultValue={[0, 100]}
-						ariaLabel={['Lower thumb', 'Upper thumb']}
-						ariaValuetext={state => `Thumb value ${state.valueNow}`}
-						renderThumb={(props, state) => <div {...props}>{state.valueNow}</div>}
-						pearling
-						minDistance={10}
-					/> */}
-					{/* </ItemContainer> */}
+					<ItemContainer>
+						<HorizontalSlider title='range slider' minValue={0} maxValue={15000} />
+					</ItemContainer>
 
 					<div>
-						<SubTitle name='buttons' />
+						<ItemContainer margin='0 0 .3rem 0'>
+							<SubTitle name='buttons' />
+						</ItemContainer>
 						<div className={styles.btnSubmit}>
-							<LongSubmit name='перейти к оплате' type='submit' />
+							<LongSubmit name='перейти к оплате' type='submit' submitForm={() => 0} />
 						</div>
 
 						<div className={styles.BtnsClickMe}>
@@ -169,9 +186,13 @@ export default function Components() {
 					</div>
 
 					<div className={styles.bullet_list}>
-						<SubTitle name='bullet list' />
+						<ItemContainer margin='0 0 .3rem 0'>
+							<SubTitle name='bullet list' />
+						</ItemContainer>
 						<BulletList items={itemsForBulletList} />
 					</div>
+
+					<PeriodOfStay onChange={(period) => console.log(period)} />
 				</div>
 			</div>
 

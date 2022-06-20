@@ -1,0 +1,15 @@
+@import '../../CommonStyles.module.scss';
+
+.wrapper {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	color: $DarkShade50;
+
+	@extend %fontPropBody;
+	
+	.num {
+		font-weight: 700;
+	}
+
+}	

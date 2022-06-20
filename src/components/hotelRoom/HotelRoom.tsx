@@ -1,10 +1,12 @@
 import React from 'react';
+import TitleH1 from '../titles/titleH1/TitleH1';
 import TitleH2 from '../titles/titleH2/TitleH2';
 import styles from './HotelRoom.module.scss';
 
 interface IHotelRoom {
 	roomNumber: number;
-	roomStatus: string;
+	roomStatus: boolean;
+	sizeTitle: 'h1' | 'h2';
 }
 
 export default function HotelRoom(props: IHotelRoom) {
@@ -14,10 +16,14 @@ export default function HotelRoom(props: IHotelRoom) {
 				&#8470;
 			</div>
 			<div className={styles.roomNumber}>
-				<TitleH2 value={props.roomNumber} />
+				{props.sizeTitle === 'h1' ?
+					<TitleH1 value={props.roomNumber} />
+					:
+					<TitleH2 value={props.roomNumber} />
+				}
 			</div>
 			<div className={styles.roomStatus}>
-				{props.roomStatus}
+				{props.roomStatus ? 'люкс' : null}
 			</div>
 		</div>
 	)

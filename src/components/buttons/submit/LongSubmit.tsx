@@ -1,11 +1,17 @@
 import React from 'react';
-import { IBtnSubmit } from './BtnSubmitInterface';
 import styles from './LongSubmit.module.scss';
 
-export default function LongSubmit(props: IBtnSubmit) {
+interface ILongSubmit {
+	name: string;
+	type: string;
+	submitForm: () => void;
+}
+
+export default function LongSubmit(props: ILongSubmit) {
 	return (
 		<button
 			className={styles.Btn}
+			onClick={props.submitForm}
 		>
 			<div className={styles.name} >{props.name}</div>
 			<div className={styles.arrow}>arrow_forward</div>

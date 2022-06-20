@@ -3,7 +3,6 @@
 .mainTitle {
 	width: 100%;
 	height: 100%;
-	@extend %fontPropH2;
+	@extend %fontPropH1;
 	color: $DarkShade100;
-	line-height: 1.3rem;
 }

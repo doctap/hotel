@@ -1,0 +1,36 @@
+@import '../../CommonStyles.module.scss';
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+
+
+	.titleSlider {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		align-items: center;
+		margin-bottom: .9rem;
+
+
+		.values {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			width: 7rem;
+			color: $DarkShade50;
+
+			.value {
+				display: flex;
+				justify-content: end;
+				width: 3.2rem;
+			}
+		}
+	}
+
+	.hyphen {
+		padding: 0 0 2px 2px;
+		font-size: 0.75rem;
+	}
+}

@@ -8,13 +8,14 @@
 	align-items: flex-end;
 
 	.symbol {
-		font-size: 0.875rem;
+		font-size: 0.875em;
 		font-weight: 700;
 		color: $DarkShade100;
+		padding-bottom: 1px;
 	}
 
 	.roomNumber {
-		margin: 0 .4375rem 0 .1875rem;
+		margin: 0 .25rem 0 .1875rem;
 		line-height: 1.4rem;
 	}
 

@@ -6,6 +6,12 @@
 // 	font-weight: inherit;
 // }
 
+.easy {
+	font-weight: 400;
+	font-size: 0.75rem;
+	color: $DarkShade50;
+}
+
 .light {
 	@extend %fontPropBody;
 	color: $DarkShade75;

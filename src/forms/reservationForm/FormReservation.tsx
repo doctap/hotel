@@ -18,7 +18,7 @@ export default function FormReservation(props: IFormReservation) {
 
 			<div className={styles.header}>
 				<div className={styles.roomNumber}>
-					<HotelRoom roomNumber={888} roomStatus='люкс' />
+					<HotelRoom roomNumber={888} roomStatus={true} sizeTitle='h1' />
 				</div>
 				<div className={styles.tittlePricePerDay}>
 					<TittlePricePerDay price={9990} text='в сутки' />
@@ -26,7 +26,7 @@ export default function FormReservation(props: IFormReservation) {
 			</div>
 
 			<ItemContainer margin='0 0 1.2rem 0'>
-				<PeriodQtyVisitors />
+				<PeriodQtyVisitors getArrivalData={() => 0} />
 			</ItemContainer>
 
 			<div className={styles.finalPrices}>
@@ -65,7 +65,7 @@ export default function FormReservation(props: IFormReservation) {
 			</div>
 
 			<div className={styles.BtnSubmit}>
-				<LongSubmit name='забронировать' type='submit' />
+				<LongSubmit name='забронировать' type='submit' submitForm={() => 0} />
 			</div>
 
 		</FormContainer>

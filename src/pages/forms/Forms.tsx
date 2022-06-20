@@ -4,8 +4,9 @@ import FormRegistration from '../../forms/accountRegistration/FormRegistration';
 import Login from '../../forms/login/Login';
 import PickUpRoom from '../../forms/pickUpRoom/PickUpRoom';
 import FormReservation from '../../forms/reservationForm/FormReservation';
-import styles from './Forms.module.scss';
 import ItemRoom from '../../components/itemRoom/ItemRoom';
+import HotelRoom from '../../components/hotelRoom/HotelRoom';
+import styles from './Forms.module.scss';
 
 export default function Forms() {
 	return (
@@ -35,7 +36,10 @@ export default function Forms() {
 
 			<div className={styles.column}>
 				<ItemRoom />
+				<HotelRoom roomNumber={888} roomStatus={true} sizeTitle='h1' />
+				<HotelRoom roomNumber={1111} roomStatus={false} sizeTitle='h2' />
 
+				
 			</div>
 		</div>
 	)
