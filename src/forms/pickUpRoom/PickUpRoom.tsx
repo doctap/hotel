@@ -30,7 +30,6 @@ export default function PickUpRoom() {
 
 	return (
 		<FormContainer>
-			<div>{JSON.stringify(stateData)}</div>
 			<ItemContainer margin='0 0 0 0'>
 				<TitleH2 value='Найдём номера под ваши пожелания' />
 			</ItemContainer>

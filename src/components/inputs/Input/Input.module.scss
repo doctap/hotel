@@ -15,12 +15,10 @@
 		color: $DarkShade25;
 	}
 
+	&:focus,
 	&:hover {
-		border: 1px solid $DarkShade50;
-	}
-
-	&:focus {
-		outline: 1px solid $DarkShade50;
+		border-color: $DarkShade50;
+		outline: none;
 	}
 
 	&_paddingRight {

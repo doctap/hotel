@@ -11,6 +11,7 @@ import TitleH2 from '../../components/titles/titleH1/TitleH1';
 import FormContainer from '../containers/formContainer/FormContainer';
 import ItemContainer from '../containers/itemContainer/ItemContainer';
 import styles from './FormRegistration.module.scss';
+import InputDate from '../../components/inputs/InputDate/InputDate';
 
 interface IFormRegistration {
 	userName: string;
@@ -26,6 +27,10 @@ export default function FormRegistration() {
 
 	function getGender(male: boolean, female: boolean) {
 		console.log(male, female);
+	}
+
+	function getDateBirthday(e: React.ChangeEvent<HTMLInputElement>) {
+		console.log(e)
 	}
 
 	function getEmailPassword(email: string, password: string) {
@@ -68,12 +73,7 @@ export default function FormRegistration() {
 				<ItemContainer margin='0 0 .3rem 0'>
 					<SubTitle name='дата рождения' />
 				</ItemContainer>
-				{/* ==========ДОДЕЛАТЬ дату рождения===============*/}
-				<InputText
-					type='text'
-					placeholder='ДД.ММ.ГГГГ'
-					variant={InputVariants.InputText}
-				/>
+				<InputDate onInput={getDateBirthday} />
 			</ItemContainer>
 
 			<ItemContainer margin='0 0 0 0'>

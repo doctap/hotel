@@ -1,5 +1,4 @@
 import React from 'react';
-import Price from '../../forms/price/Price';
 import FormRegistration from '../../forms/accountRegistration/FormRegistration';
 import Login from '../../forms/login/Login';
 import PickUpRoom from '../../forms/pickUpRoom/PickUpRoom';
@@ -14,6 +13,7 @@ export default function Forms() {
 			className={styles.columns}
 		>
 			<div className={styles.column}>
+
 
 				<div className={styles.pick_up_room}>
 					<PickUpRoom />
@@ -39,7 +39,7 @@ export default function Forms() {
 				<HotelRoom roomNumber={888} roomStatus={true} sizeTitle='h1' />
 				<HotelRoom roomNumber={1111} roomStatus={false} sizeTitle='h2' />
 
-				
+
 			</div>
 		</div>
 	)
