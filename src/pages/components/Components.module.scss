@@ -67,11 +67,18 @@
 
 .BtnsClickMe {
 	display: flex;
+	align-items: center;
 	flex-wrap: wrap;
 	justify-content: space-around;
-	align-items: center;
+	height: 12rem;
 	width: 15rem;
-	height: 10rem;
+
+	&>* {
+		display: flex;
+		justify-content: center;
+		width: 6.1875rem;
+		height: 2.75rem;
+	}
 }
 
 .footer_row {

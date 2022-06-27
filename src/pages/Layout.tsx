@@ -15,6 +15,9 @@ export default function Layout() {
 					<li>
 						<Link to="/forms">Forms</Link>
 					</li>
+					<li>
+						<Link to="/headersFooters">Headers & Footers</Link>
+					</li>
 				</ul>
 			</nav>
 

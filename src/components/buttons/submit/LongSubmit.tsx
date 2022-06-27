@@ -4,7 +4,7 @@ import styles from './LongSubmit.module.scss';
 interface ILongSubmit {
 	name: string;
 	type: string;
-	submitForm: () => void;
+	submitForm?: () => void;
 }
 
 export default function LongSubmit(props: ILongSubmit) {

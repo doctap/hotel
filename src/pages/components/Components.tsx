@@ -176,12 +176,25 @@ export default function Components() {
 						</div>
 
 						<div className={styles.BtnsClickMe}>
-							<Button type='button' name='click me' variant={BtnVariants.Primary} />
-							<Button type='button' name='click me' variant={BtnVariants.Primary} disabled={true} />
-							<Button type='button' name='click me' variant={BtnVariants.Border} />
-							<Button type='button' name='click me' variant={BtnVariants.Border} disabled={true} />
-							<Button type='button' name='click me' variant={BtnVariants.BtnText} />
-							<Button type='button' name='click me' variant={BtnVariants.BtnText} disabled={true} />
+							<div>
+								<Button type='button' name='click me' variant={BtnVariants.Primary} />
+							</div>
+							<div>
+								<Button type='button' name='click me' variant={BtnVariants.Primary} disabled={true} />
+							</div>
+							<div>
+								<Button type='button' name='click me' variant={BtnVariants.Border} />
+							</div>
+							<div>
+								<Button type='button' name='click me' variant={BtnVariants.Border} disabled={true} />
+
+							</div>
+							<div>
+								<Button type='button' name='click me' variant={BtnVariants.BtnText} />
+							</div>
+							<div>
+								<Button type='button' name='click me' variant={BtnVariants.BtnText} disabled={true} />
+							</div>
 						</div>
 					</div>
 
