@@ -38,7 +38,7 @@ export default function Login() {
 
 			<div className={styles.createAccount}>
 				<div>Нет аккаунта на Toxin?</div>
-				<div>
+				<div className={styles.btnCreateAccount}>
 					<Button name='создать' type='button' variant={BtnVariants.Border} />
 				</div>
 			</div>

@@ -21,15 +21,24 @@
 	}
 
 	.itemsLink {
-		color:$DarkShade50 ;
+		color:$DarkShade50;
 		@extend %fontPropBody;
 		position: absolute;
 		top: 1.25rem;
 		background: #fff;
 		z-index: 1;
+		width: 100%;
+		border-radius: 0 0 0 4px;
+		border-left: 1px solid $DarkShade25;
+		border-bottom: 1px solid $DarkShade25;
 
 		&>* {
 			margin-bottom: .3rem;
+			padding-left: .3rem;
+		}
+
+		&>*:active {
+			background: $DarkShade25;
 		}
 	}
 

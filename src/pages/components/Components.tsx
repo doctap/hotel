@@ -230,6 +230,7 @@ export default function Components() {
 				<div className={styles.footer_column}>
 
 					<UserFeedback
+						wasWritten={new Date(2022, 5, 26)}
 						userName='Vasili Nikiforov'
 						likeValue={10}
 						getValueLike={x => console.log(x)}

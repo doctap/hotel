@@ -6,7 +6,7 @@ import styles from './UserFeedback.module.scss';
 
 interface IUserFeedback {
 	userName: string;
-	// dateWasLastOnline: Date;
+	wasWritten: Date;
 	userFeedback: string;
 	likeValue: number;
 	getValueLike: (num: number) => void;
@@ -14,16 +14,11 @@ interface IUserFeedback {
 
 export default function UserFeedback(props: IUserFeedback) {
 
-	// const getDate = () => {
-	// 	let nowDate = props.dateWasLastOnline;
-	// 	return new Date(nowDate)
-	// }
-
 	return (
 		<div className={styles.UserFeedback}>
 			<UserAvatar
 				name={props.userName}
-				wasLastOnline={5}
+				wasWritten={props.wasWritten}
 			/>
 			{/* узнать у санька как лучше сделать "dateWasLastOnline" */}
 

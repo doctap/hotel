@@ -4,7 +4,6 @@ import { BtnVariants } from '../../components/buttons/btns/ButtonInterface';
 import Logo from '../logo/Logo';
 import Select from '../select/Select';
 import styles from './Header.module.scss';
-import Nav from './navigation/nav/routes/Routes';
 
 export default function Header() {
 

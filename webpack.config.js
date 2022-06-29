@@ -1,32 +1,34 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = (env, argv) => {
-	console.log(`This is the Webpack 4 'mode': ${JSON.stringify(argv)}`);
-	console.log(`This is the Webpack 4 'mode': ${JSON.stringify(env)}`);
+	console.log(`This is the Webpack 4 "mode": ${JSON.stringify(argv)}`);
+	console.log(`This is the Webpack 4 "mode": ${JSON.stringify(env)}`);
 	return {
 		mode: argv,
-		entry: './src/index.tsx',
+		entry: "./src/index.tsx",
 		output: {
-			filename: 'bundle.js',
-			path: path.resolve(__dirname, 'dist')
+			filename: "bundle.js",
+			path: path.resolve(__dirname, "dist")
 		},
+		devtool: "inline-source-map",
 		resolve: {
 			extensions: [".js", ".ts", ".tsx"],
 		},
 		devServer: {
 			static: {
-				directory: path.join(__dirname, 'public'),
+				directory: path.join(__dirname, "public"),
 			},
 			compress: true,
 			port: 3000,
+			open: true,
 		},
 		module: {
 			rules: [
 				{
 					test: /\.(ts|tsx)$/,
-					loader: 'ts-loader',
+					loader: "ts-loader",
 				},
 				{
 					test: /\.(s[ac]ss|css)$/i,
@@ -41,11 +43,9 @@ module.exports = (env, argv) => {
 				},
 				{
 					test: /\.(png|jpe?g|gif|svg)$/i,
-					loader: 'file-loader',
-					exclude: /fonts/,
+					loader: "file-loader",
 					options: {
-						outputPath: 'images',
-						name: '[path][name].[ext]',
+						outputPath: "images",
 					},
 				},
 			]
