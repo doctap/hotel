@@ -10,9 +10,10 @@ module.exports = (env, argv) => {
 		entry: "./src/index.tsx",
 		output: {
 			filename: "bundle.js",
-			path: path.resolve(__dirname, "dist")
+			path: path.resolve(__dirname, "dist"),
+			clean: true,
 		},
-		devtool: "inline-source-map",
+		devtool: argv === 'development' ? "inline-source-map" : "source-map",
 		resolve: {
 			extensions: [".js", ".ts", ".tsx"],
 		},
@@ -48,6 +49,15 @@ module.exports = (env, argv) => {
 						outputPath: "images",
 					},
 				},
+				{
+					test: /\.(woff|woff2|eot|ttf|otf)$/i,
+					type: 'asset/resource',
+				},
+				// 	{
+				// 		test: /\.(js|js\.map|map)$/,
+				// 		use: ['source-map-loader'],
+				// 		enforce: 'pre',
+				//   },
 			]
 		},
 		plugins: [

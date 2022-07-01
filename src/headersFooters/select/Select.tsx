@@ -4,7 +4,7 @@ import { BtnTickVariants } from '../../components/buttons/arrowTickBtns/BtnArrow
 import styles from './Select.module.scss';
 
 interface ISelect {
-	items: string[];
+	items: JSX.Element[];
 	name: string;
 }
 
