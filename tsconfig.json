@@ -3,6 +3,8 @@
 		"allowJs": true,
 		"esModuleInterop": true,
 		"strict": true,
+		"sourceMap": true,
+		"sourceRoot": "./src/sourceRoot.ts",
 		"skipLibCheck": true,
 		"jsx": "react",
 		"module": "ESNext",

@@ -205,7 +205,6 @@ export default function Components() {
 						<BulletList items={itemsForBulletList} />
 					</div>
 
-					<PeriodOfStay onChange={(period) => console.log(period)} />
 				</div>
 			</div>
 

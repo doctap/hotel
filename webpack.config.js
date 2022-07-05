@@ -12,17 +12,19 @@ module.exports = (env, argv) => {
 			filename: "bundle.js",
 			path: path.resolve(__dirname, "dist"),
 			clean: true,
+			publicPath: '/',
 		},
-		devtool: argv === 'development' ? "inline-source-map" : "source-map",
+		devtool: argv == 'development' ? "inline-source-map" : "source-map",
 		resolve: {
 			extensions: [".js", ".ts", ".tsx"],
 		},
 		devServer: {
 			static: {
-				directory: path.join(__dirname, "public"),
+				directory: path.join(__dirname, "dist"),
 			},
 			compress: true,
 			port: 3000,
+			historyApiFallback: true,
 			open: true,
 		},
 		module: {
@@ -53,11 +55,6 @@ module.exports = (env, argv) => {
 					test: /\.(woff|woff2|eot|ttf|otf)$/i,
 					type: 'asset/resource',
 				},
-				// 	{
-				// 		test: /\.(js|js\.map|map)$/,
-				// 		use: ['source-map-loader'],
-				// 		enforce: 'pre',
-				//   },
 			]
 		},
 		plugins: [

@@ -19,7 +19,7 @@ export default function CheckboxTick(props: ICheckbox) {
 				type={props.type}
 				onChange={toggleCheckbox}
 			/>
-			<span className={styles.Tick}>check</span>
+			<div className={styles.Tick}>check</div>
 			<span className={styles.checkmark}></span>
 		</label>
 	)

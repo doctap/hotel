@@ -1,21 +1,23 @@
-import React from 'react';
+import React, { Suspense } from 'react';
+import styles from './App.module.scss'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './pages/Layout';
 import Components from './pages/components/Components';
-import Forms from './pages/forms/Forms';
+// import Forms from './pages/forms/Forms';
 import Home from './pages/Home';
 import NoPage from './pages/NoPage';
 import HeadersFooters from './pages/headersFooters/HeadersFooters';
+const Forms = React.lazy(() => import('./pages/forms/Forms'));
 
 export default function App() {
 	return (
-		<BrowserRouter>
+		<BrowserRouter >
 			<Routes>
 				<Route path="/" element={<Layout />}>
 					<Route index element={<Home />} />
-					<Route path="components" element={<Components />} />
-					<Route path="forms" element={<Forms />} />
-					<Route path="headersFooters" element={<HeadersFooters />} />
+					<Route path="/components" element={<Components />} />
+					<Route path="/forms" element={<Suspense fallback={<div>Loading</div>}><Forms /></Suspense>} />
+					<Route path="/headersFooters" element={<HeadersFooters />} />
 					<Route path="*" element={<NoPage />} />
 				</Route>
 			</Routes>
