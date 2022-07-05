@@ -2,13 +2,13 @@ import React from 'react';
 import styles from './TitleH1.module.scss';
 
 interface ITitleH1 {
-	children: React.ReactNode;
+	value: string | number;
 }
 
 export default function TitleH1(props: ITitleH1) {
   return (
 	 <div className={styles.mainTitle}>
-		 {props.children}
+		 {props.value}
 	 </div>
   )
 }

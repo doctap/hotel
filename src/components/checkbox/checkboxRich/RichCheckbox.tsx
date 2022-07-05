@@ -3,8 +3,8 @@ import CheckboxTick from '../checkbox/CheckboxTick';
 import styles from './RichCheckbox.module.scss';
 
 interface IRichCheckbox {
-	name: string;
-	children: string;
+	title: string;
+	text: string;
 }
 
 export default function RichCheckbox(props: IRichCheckbox) {
@@ -17,11 +17,11 @@ export default function RichCheckbox(props: IRichCheckbox) {
 				<div
 					className={styles.title}
 				>
-					{props.name}
+					{props.title}
 				</div>
 			</div>
 			<div className={styles.description}>
-				{props.children}
+				{props.text}
 			</div>
 		</label>
 	)

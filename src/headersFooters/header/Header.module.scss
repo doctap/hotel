@@ -1,0 +1,25 @@
+@import '../../CommonStyles.module.scss';
+
+.header {
+	height: 4.375rem;
+	padding: 0 8.75rem 0 8.75rem;
+
+	.navBar {
+		
+
+		.buttonsLogin {
+			height: 2.125rem;
+			display: flex;
+			justify-content: space-between;
+			width: 18.9375rem;
+
+			.btnLog {
+				width: 5.4375rem;
+			}
+
+			.btnRegistration {
+				width: 12.25rem;
+			}
+		}
+	}
+}

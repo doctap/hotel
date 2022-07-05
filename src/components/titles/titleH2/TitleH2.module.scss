@@ -1,0 +1,9 @@
+@import '../../../CommonStyles.module.scss';
+
+.mainTitle {
+	width: 100%;
+	height: 100%;
+	@extend %fontPropH2;
+	color: $DarkShade100;
+	line-height: 1.3rem;
+}

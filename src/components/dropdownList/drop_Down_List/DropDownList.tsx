@@ -8,15 +8,22 @@ import { BtnVariants } from '../../buttons/btns/ButtonInterface';
 
 interface IDropDownList {
 	name: string;
+	getQtyVisitors: (visitors: IVisitors) => void;
+}
+
+export interface IVisitors {
+	counterAdults: number;
+	counterKids: number;
+	counterBabies: number;
 }
 
 export default function DropDownList(props: IDropDownList) {
 
-	const [counterAdults, setCounterAdults] = useState<number>(0);
-	const [counterKids, setCounterKids] = useState<number>(0);
-	const [counterBabies, setCounterBabies] = useState<number>(0);
-	const [showHideList, setShowHideList] = useState<boolean>(false);
-	const [valueList, setValueList] = useState<string>(props.name);
+	const [counterAdults, setCounterAdults] = useState(0);
+	const [counterKids, setCounterKids] = useState(0);
+	const [counterBabies, setCounterBabies] = useState(0);
+	const [showHideList, setShowHideList] = useState(false);
+	const [valueList, setValueList] = useState(props.name);
 
 	const resetCounters = () => {
 		setCounterAdults(0);
@@ -36,9 +43,15 @@ export default function DropDownList(props: IDropDownList) {
 	const applyValueList = () => {
 		let word = visitors[sumVisitors % 10];
 		word = sumVisitors > 10 && sumVisitors < 20 ? ' гостей' : word;
-		setValueList(`${sumVisitors}` + word);
 
+		setValueList(`${sumVisitors}` + word);
 		setShowHideList(false);
+
+		props.getQtyVisitors({
+			counterAdults,
+			counterBabies,
+			counterKids,
+		});
 	}
 
 	return (

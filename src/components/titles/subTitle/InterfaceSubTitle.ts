@@ -1,3 +1,3 @@
 export interface ISubTitle {
-	name?: string;
+	name: string | number;
 }

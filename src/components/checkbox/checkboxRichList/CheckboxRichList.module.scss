@@ -1,0 +1,6 @@
+.list {
+	width: 16rem;
+	&>* {
+		margin-bottom: .5rem;
+	}
+}

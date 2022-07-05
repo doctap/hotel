@@ -2,9 +2,9 @@ import React from 'react';
 import styles from './ShortcutIcon.module.scss';
 
 interface IShortcutIcon {
-	name: string;
+	title: string;
 	variantIcon: string;
-	children: React.ReactNode;
+	text: string;
 }
 
 export default function ShortcutIcon(props: IShortcutIcon) {
@@ -19,10 +19,10 @@ export default function ShortcutIcon(props: IShortcutIcon) {
 				className={styles.body}
 			>
 				<div className={styles.title}>
-					{props.name}
+					{props.title}
 				</div>
 				<div className={styles.text}>
-					{props.children}
+					{props.text}
 				</div>
 			</div>
 		</div>

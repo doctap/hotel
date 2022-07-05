@@ -1,22 +1,39 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './CheckboxRadio.module.scss';
 
 interface ICheckboxRadio {
 	type: string;
 	male: string;
 	female: string;
+	onClick: (male: boolean, female: boolean) => void;
 }
 
 export default function CheckboxRadio(props: ICheckboxRadio) {
+
+	const [male, setMale] = useState(true);
+	const [female, setFemale] = useState(false);
+
+	function getMale() {
+		setMale(!male);
+		setFemale(!female);
+		props.onClick(male, female);
+	}
+
+	function getFemale() {
+		setFemale(!female);
+		setMale(!male);
+		props.onClick(male, female);
+	}
+
 	return (
 		<div className={styles.divRow}>
 			<label className={styles.label}>
 
 				{props.male}
 				<input
+					onClick={getMale}
+					checked={male}
 					type={props.type}
-					name='radio'
-					value={1}
 				/>
 				<span></span>
 			</label>
@@ -25,38 +42,12 @@ export default function CheckboxRadio(props: ICheckboxRadio) {
 
 				{props.female}
 				<input
+					onClick={getFemale}
+					checked={female}
 					type={props.type}
-					name='radio'
-					value={2}
 				/>
 				<span></span>
 			</label>
 		</div>
 	)
 }
-
-
-{/* <div className={styles.radio}>
-	<input name="first" type="radio" id="test-1" value="first" checked />
-	<label htmlFor="test-1">Test-1</label>
-	<input name="first" type="radio" id="test-2" value="second" />
-	<label htmlFor="test-2">Test-2</label>
-</div>
-
-<div className={styles.divRow}>
-
-<label className={styles.label}>
-	<input
-		type={props.type}
-		name={props.name}
-	/>
-	<span>Мужчина</span>
-</label>
-<label className={styles.label}>
-	<input
-		type={props.type}
-		name={props.name}
-	/>
-	<span>Женщина</span>
-</label>
-</div> */}

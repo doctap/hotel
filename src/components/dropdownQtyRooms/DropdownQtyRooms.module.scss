@@ -1,6 +1,7 @@
 @import '../../CommonStyles.module.scss';
 
 .wrapper {
+	position: relative;
 
 	.header {
 		width: 100%;
@@ -42,6 +43,11 @@
 		border-top: none;
 		border-radius: 0 0 4px 4px;
 		padding: 0.4375rem 0.390rem 0 0.9375rem;
+		position: absolute;
+		right: 0;
+		left: 0;
+		z-index: 1;
+		background: #fff;
 
 		&>* {
 			margin-bottom: 0.4375rem;

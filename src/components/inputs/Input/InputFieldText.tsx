@@ -7,9 +7,11 @@ export enum InputVariants {
 }
 
 export interface IInputProps {
+	value?: string;
 	type: string;
 	placeholder: string;
 	variant: InputVariants;
+	onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 export default function InputText(props: IInputProps) {
@@ -30,6 +32,7 @@ export default function InputText(props: IInputProps) {
 			type={props.type}
 			className={inputStyle(props.variant)}
 			placeholder={props.placeholder}
+			onChange={props.onChange}
 		/>
 	);
 }

@@ -1,6 +1,6 @@
 import React from 'react';
-import styles from './BtnArrowTick.module.scss';
 import { BtnTickVariants, IBtnTick } from './BtnArrowTickInterface';
+import styles from './BtnArrowTick.module.scss';
 
 export default function BtnTick(props: IBtnTick) {
 
@@ -9,6 +9,10 @@ export default function BtnTick(props: IBtnTick) {
 			case BtnTickVariants.Arrow: return styles.BtnArrow;
 
 			case BtnTickVariants.Tick: return styles.BtnTick;
+			
+			case BtnTickVariants.HorizontalTickLeft: return styles.BtnHorizontalTick;
+
+			case BtnTickVariants.HorizontalTickRight: return `${styles.BtnHorizontalTick} ${styles.BtnHorizontalTick_Right}`;
 
 			default:
 				break;
@@ -30,6 +34,11 @@ export default function BtnTick(props: IBtnTick) {
 				className={styles.Tick}
 			>
 				expand_more
+			</div>
+			<div
+				className={styles.HorizontalTick}
+			>
+				chevron_left
 			</div>
 		</button>
 	)

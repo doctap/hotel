@@ -5,82 +5,114 @@ import LongSubmit from '../../components/buttons/submit/LongSubmit';
 import CheckboxRadio from '../../components/checkbox/checkboxRadio/CheckboxRadio';
 import CheckboxToggle from '../../components/checkbox/checkboxToggle/CheckboxToggle';
 import InputText, { InputVariants } from '../../components/inputs/Input/InputFieldText';
+import TwoTextField from '../twoTextField/TwoTextField';
 import SubTitle from '../../components/titles/subTitle/SubTitle';
-import TitleH1 from '../../components/titles/titleH1/TitleH1';
+import TitleH2 from '../../components/titles/titleH1/TitleH1';
+import FormContainer from '../containers/formContainer/FormContainer';
+import ItemContainer from '../containers/itemContainer/ItemContainer';
 import styles from './FormRegistration.module.scss';
+import InputDate from '../../components/inputs/InputDate/InputDate';
+
+interface IFormRegistration {
+	userName: string;
+	userSurName: string;
+
+}
 
 export default function FormRegistration() {
+
+	function getFullName(userName: string, userSurName: string) {
+		console.log(userName, userSurName);
+	}
+
+	function getGender(male: boolean, female: boolean) {
+		console.log(male, female);
+	}
+
+	function getDateBirthday(e: React.ChangeEvent<HTMLInputElement>) {
+		console.log(e)
+	}
+
+	function getEmailPassword(email: string, password: string) {
+		console.log(email, password);
+	}
+
+	function getAnswerAboutSpecialOffers(isChecked: boolean) {
+		console.log(isChecked);
+	}
+
 	return (
-		<form className={styles.form_registration}>
+		<FormContainer>
 
-			<div className={styles.title}>
-				<TitleH1>Регистрация аккаунта</TitleH1>
-			</div>
+			<ItemContainer margin='0 0 .8rem 0'>
+				<TitleH2 value='Регистрация аккаунта' />
+			</ItemContainer>
 
-			<div className={styles.fullName}>
-				<InputText
-					type='text'
-					placeholder='Имя'
-					variant={InputVariants.InputText}
+			<ItemContainer margin='0 0 0 0'>
+				<TwoTextField
+					onChange={getFullName}
+					topInputType='text'
+					topInputPlaceholder='Имя'
+					bottomInputType='text'
+					bottomInputPlaceholder='Фамилия'
 				/>
-				<InputText
-					type='text'
-					placeholder='Фамилия'
-					variant={InputVariants.InputText}
-				/>
+			</ItemContainer>
+
+			<ItemContainer margin='0 0 1.2rem 0'>
 				<div className={styles.radio_btn}>
 					<CheckboxRadio
+						onClick={getGender}
 						type='radio'
 						male='Мужчина'
 						female='Женщина'
 					/>
 				</div>
-			</div>
+			</ItemContainer>
 
-			<div className={styles.Data}>
-				<div className={styles.birthDate}>
+			<ItemContainer>
+				<ItemContainer margin='0 0 .3rem 0'>
 					<SubTitle name='дата рождения' />
-					<InputText
-						type='text'
-						placeholder='ДД.ММ.ГГ'
-						variant={InputVariants.InputText}
-					/>
+				</ItemContainer>
+				<InputDate onInput={getDateBirthday} />
+			</ItemContainer>
+
+			<ItemContainer margin='0 0 0 0'>
+				<ItemContainer margin='0 0 .3rem 0'>
+					<SubTitle name='данные для входа в сервис' />
+				</ItemContainer>
+				<TwoTextField
+					onChange={getEmailPassword}
+					topInputType='email'
+					topInputPlaceholder='Email'
+					bottomInputType='password'
+					bottomInputPlaceholder='Пароль'
+				/>
+			</ItemContainer>
+
+			<ItemContainer margin='0 0 1.2rem 0'>
+				<CheckboxToggle
+					onChange={getAnswerAboutSpecialOffers}
+					type='checkbox'
+					name='Получать спецпредложения'
+				/>
+			</ItemContainer>
+
+			<ItemContainer margin='0 0 1.2rem 0'>
+				<LongSubmit name='перейти к оплате' type='submit' submitForm={() => 0} />
+			</ItemContainer>
+
+			<div className={styles.log_in}>
+
+				<div className={styles.text}>
+					Уже есть аккаунт на Toxin
 				</div>
-				<div className={styles.loginData}>
-					<div>
-						<SubTitle name='данные для входа в сервис' />
-						<InputText
-							type='email'
-							placeholder='Email'
-							variant={InputVariants.InputText}
-						/>
-					</div>
-					<InputText
-						type='text'
-						placeholder='Пороль'
-						variant={InputVariants.InputText}
-					/>
-					<CheckboxToggle type='checkbox' name='Получать спецпредложения' />
+
+				<div className={styles.btnLog_in}>
+					<Button name='войти' type='button' variant={BtnVariants.Border} />
 				</div>
+
 			</div>
 
-			<div className={styles.footer_registration}>
-				<div className={styles.submit}>
-					<LongSubmit name='перейти к оплате' type='submit' />
-				</div>
-
-				<div className={styles.log_in}>
-
-					<div className={styles.text}>
-						Уже есть аккаунт на Toxin
-					</div>
-					
-					<div className={styles.btnLog_in}>
-						<Button name='войти' type='button' variant={BtnVariants.Border} />
-					</div>
-
-				</div>
-			</div>
-		</form>
+		</FormContainer>
 	)
 }

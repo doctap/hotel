@@ -1,0 +1,28 @@
+@import '../../CommonStyles.module.scss';
+
+
+
+.headerBlock {
+	width: 100%;
+	display: flex;
+	align-items: flex-end;
+
+	.symbol {
+		font-size: 0.875em;
+		font-weight: 700;
+		color: $DarkShade100;
+		padding-bottom: 1px;
+	}
+
+	.roomNumber {
+		margin: 0 .25rem 0 .1875rem;
+		line-height: 1.4rem;
+	}
+
+	.roomStatus {
+		text-transform: uppercase;
+		font-weight: 700;
+		font-size: 0.75rem;
+		color: $Purple;
+	}
+}

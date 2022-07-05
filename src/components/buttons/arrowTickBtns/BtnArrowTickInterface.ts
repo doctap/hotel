@@ -6,5 +6,7 @@ export interface IBtnTick {
 
 export enum BtnTickVariants {
 	Arrow = 1,
-	Tick = 2
+	Tick = 2,
+	HorizontalTickLeft = 3,
+	HorizontalTickRight = 4
 }

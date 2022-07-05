@@ -1,0 +1,22 @@
+@import '../../../CommonStyles.module.scss';
+
+.InputDate::-webkit-calendar-picker-indicator {
+	display: none;
+}
+
+.InputDate {
+	width: 100%;
+	text-transform: uppercase;
+	@extend %fontPropBody;
+	color: $DarkShade25;
+	padding: 10.61px 0 10.61px 15px;
+	background: #FFFFFF;
+	border: 1px solid $DarkShade25;
+	border-radius: 4px;
+
+	&:focus,
+	&:hover {
+		border-color: $DarkShade50;
+		outline: none;
+	}
+}

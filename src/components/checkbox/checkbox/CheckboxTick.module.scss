@@ -28,11 +28,9 @@
 		top: .170rem;
 		left: .200rem;
 		display: none;
-		font-family: Material icons;
+		font-family: 'Material Icons';
 		font-weight: bold;
-		color: transparent;   
-		background-clip: text;
-		background-image: $GradientPurple;
+		color: $Purple;
 	}
 
 	.checkmark {
