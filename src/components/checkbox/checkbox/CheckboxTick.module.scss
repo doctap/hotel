@@ -1,0 +1,45 @@
+@import '../../../CommonStyles.module.scss';
+
+.container {
+	@extend %fontPropBody;
+	display: block;
+	position: relative;
+	padding-left: 1.9rem;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+	input {
+		position: absolute;
+		opacity: 0;
+		cursor: pointer;
+		height: 0;
+		width: 0;
+
+		&:checked~.Tick {
+			display: block;
+		}
+	}
+
+	.Tick {
+		position: absolute;
+		top: .170rem;
+		left: .200rem;
+		display: none;
+		font-family: 'Material Icons';
+		font-weight: bold;
+		color: $Purple;
+	}
+
+	.checkmark {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 1.25rem;
+		width: 1.25rem;
+		border-radius: 4px;
+		border: 1px solid $Purple;
+	}
+}

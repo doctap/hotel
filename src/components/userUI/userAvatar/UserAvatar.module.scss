@@ -1,0 +1,29 @@
+@import '../../../CommonStyles.module.scss';
+
+.wrapper {
+	display: flex;
+	align-items: flex-start;
+	width: fit-content;
+
+	.avatar {
+		width: 3rem;
+		height: 3rem;
+		margin-right: .6em;
+		border-radius: 2rem;
+	}
+
+	.body {
+		font-size: 0.875rem;
+		line-height: 1.5em;
+		padding: .2em 0 0 0;
+		color: $DarkShade75;
+
+		.name {
+			font-weight: 700;
+		}
+
+		.wasLastOnline {
+			font-weight: 400;
+		}
+	}
+}

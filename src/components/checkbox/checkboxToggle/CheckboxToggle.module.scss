@@ -1,29 +1,36 @@
-// @import '../../CommonStyles.module.scss';
+@import '../../../CommonStyles.module.scss';
 
-.wraper {
+.wrapper {
+	display: flex;
+	flex-direction: row;
+	cursor: pointer;
+	align-items: center;
+	width: fit-content;
+
 	.checkbox {
 		position: relative;
 		display: inline-block;
-		width: 2.5em;
+		min-width: 2.5em;
 		height: 1.25em;
+		margin: 0 .5em 0 0;
 
 		& input {
 			display: none;
 
 			&:checked+.slider {
-				border: 0.0625em solid rgb(46, 189, 27);
+				border: 0.0625em solid #BC9CFF;
 			}
 
 			&:checked+.slider:before {
 				transform: translateX(1.25em);
-				background-color: rgb(46, 189, 27);
+				background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+
 			}
 		}
 
 		.slider {
-			border: 0.0625em solid #df3d27;
+			border: 0.0625em solid $DarkShade25;
 			position: absolute;
-			cursor: pointer;
 			top: 0;
 			left: 0;
 			right: 0;
@@ -39,12 +46,15 @@
 				width: 0.85em;
 				left: 0.125em;
 				bottom: 0.125em;
-				background-color: #df3d27;
+				background: linear-gradient($DarkShade25, $DarkShade25);
 				transition: .4s;
 				border-radius: 1em;
 			}
 		}
 	}
 
-	.name {} 
+	.name {
+		@extend %fontPropBody;
+		color: $DarkShade75;
+	}
 }

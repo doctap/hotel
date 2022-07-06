@@ -1,22 +1,26 @@
-import React from 'react';
-import styles from './App.module.scss';
-import Checkbox from './components/checkbox/checkboxToggle/CheckboxToogle';
-import Input from './components/inputs/Input';
-import Select from './components/selects/Select';
+import React, { Suspense } from 'react';
+import styles from './App.module.scss'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Layout from './pages/Layout';
+import Components from './pages/components/Components';
+// import Forms from './pages/forms/Forms';
+import Home from './pages/Home';
+import NoPage from './pages/NoPage';
+import HeadersFooters from './pages/headersFooters/HeadersFooters';
+const Forms = React.lazy(() => import('./pages/forms/Forms'));
 
-function App() {
+export default function App() {
 	return (
-		<form className={styles.App}>
-
-			<div className={styles.column}>
-				<Input type='text' name={'TEXT FIELD'} placeholder={'Email'} />
-				<Select />
-				<Checkbox type='checkbox' name={'Получать спецпредложения'}/>
-
-			</div> 
-
-		</form>
+		<BrowserRouter >
+			<Routes>
+				<Route path="/" element={<Layout />}>
+					<Route index element={<Home />} />
+					<Route path="/components" element={<Components />} />
+					<Route path="/forms" element={<Suspense fallback={<div>Loading</div>}><Forms /></Suspense>} />
+					<Route path="/headersFooters" element={<HeadersFooters />} />
+					<Route path="*" element={<NoPage />} />
+				</Route>
+			</Routes>
+		</BrowserRouter>
 	);
 }
-
-export default App;

@@ -1,0 +1,23 @@
+@import '../../../CommonStyles.module.scss';
+
+.AddOne {
+	display: flex;
+	width: 5.75rem;
+	height: fit-content;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.ItemDropDown {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	@extend %fontPropH3;
+	color: $DarkShade100;
+
+	.name {
+		text-transform: uppercase;
+	}
+}

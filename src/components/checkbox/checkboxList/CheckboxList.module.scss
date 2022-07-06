@@ -1,0 +1,8 @@
+.ListCheckBox {
+	list-style: none;
+	width: 15rem;
+
+	&>* {
+		margin-bottom: 0.9rem;
+	}
+}
