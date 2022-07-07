@@ -7,18 +7,13 @@ import styles from './Header.module.scss';
 import LinkNav from './linkNav/LinkNav';
 
 export default function Header() {
-
-	// const itemsArr: JSX.Element[] = [<LinkNav id={1} name=''];
-
 	return (
 		<div className={styles.header}>
 
 			<Logo />
 
 			<div className={styles.navBar}>
-				{/* <Nav /> */}
 				<div className={styles.routes}>
-					{/* <Select items={itemsArr} name='Услуги' /> */}
 				</div>
 				<div className={styles.buttonsLogin}>
 					<div className={styles.btnLog}>
