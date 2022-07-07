@@ -14,7 +14,7 @@ module.exports = (env, argv) => {
 			clean: true,
 			publicPath: '/',
 		},
-		devtool: argv == 'development' ? "inline-source-map" : "source-map",
+		devtool: argv == "development" ? "inline-source-map" : "source-map",
 		resolve: {
 			extensions: [".js", ".ts", ".tsx"],
 		},

@@ -1,24 +1,47 @@
 import React from 'react';
-import LinkNav from '../linkNav/LinkNav';
+import Select from '../../select/Select';
+import Link from '../linkNav/Link';
 import styles from './Nav.module.scss';
 
 interface INav {
-	serviceLinks: JSX.Element[];
-	agreementLinks: JSX.Element[];
-	links: ILink;
+	pages: IPage[];
 }
-interface ILink {
-	linkName: string;
-	linkId: number;
+
+export interface IPage {
+	pageName: string;
+	pageId: number;
 }
 
 export default function Nav(props: INav) {
+
 	return (
 		<nav className={styles.nav}>
-
-			<LinkNav id={1} name='qwe' onClick={(id) => console.log(id)} />
-			<LinkNav id={2} name='asd' onClick={(id) => console.log(id)} />
-			<LinkNav id={3} name='zxc' onClick={(id) => console.log(id)} />
+			<Link
+				id={props.pages[0].pageId}
+				name={props.pages[0].pageName}
+				fontWeight='bold'
+				onClick={(id) => console.log(id)}
+			/>
+			<Select
+				name='Услуги'
+				pagesItem={props.pages.slice(1, 4)}
+			/>
+			<Link
+				id={props.pages[4].pageId}
+				name={props.pages[4].pageName}
+				fontWeight='normal'
+				onClick={(id) => console.log(id)}
+			/>
+			<Link
+				id={props.pages[5].pageId}
+				name={props.pages[5].pageName}
+				fontWeight='normal'
+				onClick={(id) => console.log(id)}
+			/>
+			<Select
+				name='Соглашения'
+				pagesItem={props.pages.slice(6, 11)}
+			/>
 		</nav>
 	)
 }

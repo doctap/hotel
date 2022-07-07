@@ -1,11 +1,30 @@
 @import '../../CommonStyles.module.scss';
 
 .header {
-	height: 4.375rem;
+	min-height: 4.375rem;
 	padding: 0 8.75rem 0 8.75rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background: #FFFFFF;
+	box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
 
 	.navBar {
-		
+		width: fit-content;
+		display: flex;
+		align-items: center;
+
+		.navigation {
+			min-width: 27.9375rem;
+			margin-right: 1.5rem;
+		}
+
+		.userName {
+			@extend %fontPropBody;
+			color: $DarkShade50;
+			border-left: 1px solid $DarkShade10;
+			padding: .5rem 0 .5rem 1.5rem ;
+		}
 
 		.buttonsLogin {
 			height: 2.125rem;

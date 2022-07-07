@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import BtnTick from '../../components/buttons/arrowTickBtns/BtnArrowTick';
 import { BtnTickVariants } from '../../components/buttons/arrowTickBtns/BtnArrowTickInterface';
+import Link from '../header/linkNav/Link';
+import { IPage } from '../header/nav/Nav';
 import styles from './Select.module.scss';
 
 interface ISelect {
-	items: JSX.Element[];
+	pagesItem: IPage[];
 	name: string;
 }
 
@@ -19,7 +21,9 @@ export default function Select(props: ISelect) {
 	return (
 		<div className={styles.wrapper}>
 			<label className={styles.name}>
-				{props.name}
+				<div>
+					{props.name}
+				</div>
 				<div className={styles.btnTick}>
 					<BtnTick
 						type='button'
@@ -29,10 +33,15 @@ export default function Select(props: ISelect) {
 				</div>
 			</label>
 			<div className={showItems ? styles.itemsLink : styles.itemsLinkHide}>
-				{props.items.map(
-					it => <div className={styles.item}>{it}</div>
+				{props.pagesItem.map(
+					it => <Link
+						id={it.pageId}
+						name={it.pageName}
+						onClick={(id) => console.log(id)}
+					/>
 				)}
 			</div>
 		</div>
 	)
 }
+
