@@ -1,8 +1,9 @@
 import React from 'react';
+import { IPage } from '../../commonInterfaces/RFCinterfaces';
 import Button from '../../components/buttons/btns/Button';
 import { BtnVariants } from '../../components/buttons/btns/ButtonInterface';
 import Logo from '../logo/Logo';
-import Nav, { IPage } from './nav/Nav';
+import Nav from './nav/Nav';
 import styles from './Header.module.scss';
 
 interface IHeader {
@@ -13,7 +14,7 @@ interface IHeader {
 
 export default function Header(props: IHeader) {
 	return (
-		<div className={styles.header}>
+		<header className={styles.header}>
 
 			<div className={styles.logo}>
 				<Logo />
@@ -37,6 +38,6 @@ export default function Header(props: IHeader) {
 						</div>
 				}
 			</div>
-		</div>
+		</header>
 	)
 }

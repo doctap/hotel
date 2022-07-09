@@ -1,5 +1,5 @@
 import React from 'react';
-import { getPrice } from '../commons/Utilities'
+import { splitNumber } from '../../commonsFunc/Utilities'
 import styles from './QtyFeedback.module.scss';
 
 interface IQtyFeedback {
@@ -18,7 +18,7 @@ export default function QtyFeedback(props: IQtyFeedback) {
 	return (
 		<div className={styles.wrapper}>
 			<div className={styles.num}>
-				{getPrice(props.qty)}
+				{splitNumber(props.qty)}
 			</div>
 			<div>
 				{getWord(props.qty)}

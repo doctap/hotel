@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
+import { IPage } from '../../commonInterfaces/RFCinterfaces';
 import BtnTick from '../../components/buttons/arrowTickBtns/BtnArrowTick';
 import { BtnTickVariants } from '../../components/buttons/arrowTickBtns/BtnArrowTickInterface';
 import Link from '../header/linkNav/Link';
-import { IPage } from '../header/nav/Nav';
 import styles from './Select.module.scss';
 
 interface ISelect {

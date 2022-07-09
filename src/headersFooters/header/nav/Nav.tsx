@@ -1,15 +1,11 @@
 import React from 'react';
+import { IPage } from '../../../commonInterfaces/RFCinterfaces';
 import Select from '../../select/Select';
 import Link from '../linkNav/Link';
 import styles from './Nav.module.scss';
 
 interface INav {
 	pages: IPage[];
-}
-
-export interface IPage {
-	pageName: string;
-	pageId: number;
 }
 
 export default function Nav(props: INav) {

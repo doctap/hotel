@@ -22,7 +22,6 @@ import ItemContainer from '../../forms/containers/itemContainer/ItemContainer';
 import styles from './Components.module.scss';
 import { BtnTickVariants } from '../../components/buttons/arrowTickBtns/BtnArrowTickInterface';
 import HorizontalSlider from '../../components/horizontalSlider/HorizontalSlider';
-import PeriodOfStay from '../../components/dateCalendar/periodOfStay/PeriodOfStay';
 
 export default function Components() {
 
