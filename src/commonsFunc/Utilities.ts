@@ -4,7 +4,7 @@
 	 * @param num число нормализации
 	 * @returns нормализованная строка
 	 */
-export function getPrice(num: number): string {
+export function splitNumber(num: number): string {
 	let arrNum = Math.trunc(num).toString().split('');
 
 	return arrNum.reduce((previousValue, currentValue, i) => {

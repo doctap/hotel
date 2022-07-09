@@ -1,8 +1,0 @@
-@import '../../../CommonStyles.module.scss';
-
-.LinkNav {
-	@extend %fontPropBody;
-	color: $DarkShade50;
-	width: fit-content;
-	cursor: pointer;
-}

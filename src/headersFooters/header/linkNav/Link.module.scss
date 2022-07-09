@@ -1,0 +1,18 @@
+@import '../../../CommonStyles.module.scss';
+
+.normal {
+	@extend %fontPropBody;
+	color: $DarkShade50;
+	width: fit-content;
+	cursor: pointer;
+	min-width: fit-content;
+}
+
+.bold {
+	@extend %fontPropBody;
+	font-weight: 700;
+	color: $DarkShade75;
+	width: fit-content;
+	cursor: pointer;
+	min-width: fit-content;
+}
