@@ -1,35 +1,43 @@
 import React from 'react';
+import { IPage } from '../../commonInterfaces/RFCinterfaces';
 import Button from '../../components/buttons/btns/Button';
 import { BtnVariants } from '../../components/buttons/btns/ButtonInterface';
 import Logo from '../logo/Logo';
-import Select from '../select/Select';
+import Nav from './nav/Nav';
 import styles from './Header.module.scss';
-import LinkNav from './linkNav/LinkNav';
 
-export default function Header() {
+interface IHeader {
+	pages: IPage[];
+	login: boolean;
+	userName?: string;
+}
 
-	// const itemsArr: JSX.Element[] = [<LinkNav id={1} name=''];
-
+export default function Header(props: IHeader) {
 	return (
-		<div className={styles.header}>
+		<header className={styles.header}>
 
-			<Logo />
-
-			<div className={styles.navBar}>
-				{/* <Nav /> */}
-				<div className={styles.routes}>
-					{/* <Select items={itemsArr} name='Услуги' /> */}
-				</div>
-				<div className={styles.buttonsLogin}>
-					<div className={styles.btnLog}>
-						<Button name='войти' type='button' variant={BtnVariants.Border} />
-					</div>
-					<div className={styles.btnRegistration}>
-						<Button name='зарегистрироваться' type='button' variant={BtnVariants.Primary} />
-					</div>
-				</div>
+			<div className={styles.logo}>
+				<Logo />
 			</div>
 
-		</div>
+			<div className={styles.navBar}>
+				<div className={styles.navigation}>
+					<Nav pages={props.pages} />
+				</div>
+				{
+					props.login ?
+						<div className={styles.userName}>{props.userName}</div>
+						:
+						<div className={styles.buttonsLogin}>
+							<div className={styles.btnLog}>
+								<Button name='войти' type='button' variant={BtnVariants.Border} />
+							</div>
+							<div className={styles.btnRegistration}>
+								<Button name='зарегистрироваться' type='button' variant={BtnVariants.Primary} />
+							</div>
+						</div>
+				}
+			</div>
+		</header>
 	)
 }
