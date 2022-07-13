@@ -40460,7 +40460,7 @@ var Forms = react__WEBPACK_IMPORTED_MODULE_0___default().lazy(function () { retu
 function App() {
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.BrowserRouter, null,
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Routes, null,
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, { path: "/", element: react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_pages_Layout__WEBPACK_IMPORTED_MODULE_1__["default"], null) },
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, { path: "/hotel", element: react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_pages_Layout__WEBPACK_IMPORTED_MODULE_1__["default"], null) },
                 react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, { index: true, element: react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_pages_Home__WEBPACK_IMPORTED_MODULE_3__["default"], null) }),
                 react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, { path: "/components", element: react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_pages_components_Components__WEBPACK_IMPORTED_MODULE_2__["default"], null) }),
                 react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, { path: "/forms", element: react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react__WEBPACK_IMPORTED_MODULE_0__.Suspense, { fallback: react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, "Loading") },
@@ -41979,7 +41979,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 
 function NoPage() {
-    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "404"));
+    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", { style: { textAlign: 'center' } }, "404"));
 }
 
 
