@@ -62,7 +62,6 @@ export default function FormRegistration() {
 				<div className={styles.radio_btn}>
 					<CheckboxRadio
 						onClick={getGender}
-						type='radio'
 						male='Мужчина'
 						female='Женщина'
 					/>
@@ -92,7 +91,6 @@ export default function FormRegistration() {
 			<ItemContainer margin='0 0 1.2rem 0'>
 				<CheckboxToggle
 					onChange={getAnswerAboutSpecialOffers}
-					type='checkbox'
 					name='Получать спецпредложения'
 				/>
 			</ItemContainer>

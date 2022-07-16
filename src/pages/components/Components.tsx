@@ -115,7 +115,10 @@ export default function Components() {
 						<ItemContainer margin='0 0 .3rem 0'>
 							<SubTitle name='toggle' />
 						</ItemContainer>
-						<CheckboxToggle type='checkbox' name='Получать спецпредложения' />
+						<ItemContainer margin='0 0 .3rem 0'>
+							<CheckboxToggle name='Получать спецпредложения' />
+						</ItemContainer>
+						<CheckboxToggle name='Получать спецпредложения' />
 					</div>
 
 					<div className={styles.radio_btn}>
@@ -124,7 +127,6 @@ export default function Components() {
 						</ItemContainer>
 						<CheckboxRadio
 							onClick={() => 0}
-							type='radio'
 							male='Мужчина'
 							female='Женщина'
 						/>

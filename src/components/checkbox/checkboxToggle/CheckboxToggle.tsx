@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { InputHTMLAttributes } from 'react';
 import { ChangeEvent } from 'react';
 import styles from './CheckboxToggle.module.scss';
 import { ICheckToggle } from './CheckboxToggleInterface';
@@ -15,7 +15,7 @@ export default function CheckboxToggle(props: ICheckToggle) {
 			<div className={styles.checkbox}>
 				<input
 					onChange={toggleCheckbox}
-					type={props.type}
+					type='checkbox'
 				/>
 				<span className={styles.slider}></span>
 			</div>

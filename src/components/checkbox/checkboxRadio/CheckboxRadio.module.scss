@@ -11,56 +11,64 @@
 	width: 100%;
 	justify-content: space-between;
 	@extend %fontPropBody;
-	color: $DarkShade50;
 
-	.label {
-		display: inline-block;
-		position: relative;
-		padding: 0.0625em 0 0 2.2em;
-		cursor: pointer;
-		user-select: none;
+	.item {
+		color: $DarkShade50;
 
-		span {
-			position: absolute;
-			top: 0;
-			left: 0;
-			height: 20px;
-			width: 20px;
-			border-radius: 50%;
-			border: 1px solid $DarkShade25;
-
-			&:after {
-				content: '';
-				position: absolute;
-				display: none;
-			}
-
-			&:after {
-				top: 3px;
-				left: 3px;
-				width: 12px;
-				height: 12px;
-				border-radius: 50%;
-				background: $GradientPurple;
-			}
-		}
-
-		input {
-			cursor: pointer;
-			position: absolute;
-			opacity: 0;
-
-			&:checked~span {
-				// background-color: #fec901;
-				border: 1px solid $Purple;
-			}
-
-			&:checked~span:after {
-				display: block;
-			}
+		&_color_DarkShade75 {
+			color: $DarkShade75
 		}
 	}
 }
+
+.label {
+	display: inline-block;
+	position: relative;
+	padding: 0.0625em 0 0 2.2em;
+	cursor: pointer;
+	user-select: none;
+
+	span {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 20px;
+		width: 20px;
+		border-radius: 50%;
+		border: 1px solid $DarkShade25;
+
+		&:after {
+			content: '';
+			position: absolute;
+			display: none;
+		}
+
+		&:after {
+			top: 3px;
+			left: 3px;
+			width: 12px;
+			height: 12px;
+			border-radius: 50%;
+			background: $GradientPurple;
+		}
+	}
+
+	input {
+		cursor: pointer;
+		position: absolute;
+		opacity: 0;
+
+		&:checked~span {
+			// background-color: #fec901;
+			border: 1px solid $Purple;
+		}
+
+		&:checked~span:after {
+			display: block;
+		}
+	}
+}
+
 
 // .divRow {
 // 	@extend %row;

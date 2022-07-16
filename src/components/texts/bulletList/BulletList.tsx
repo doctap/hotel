@@ -8,7 +8,7 @@ interface IBulletList {
 export default function BulletList(props: IBulletList) {
 	return (
 		<ul className={styles.bulletList}>
-			{props.items.map(x => <li>{x}</li>)}
+			{props.items.map(x => <li className={styles.li}>{x}</li>)}
 		</ul>
 	)
 }

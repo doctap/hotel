@@ -14,7 +14,7 @@ module.exports = (env, argv) => {
 			clean: true,
 			publicPath: '/',
 		},
-		devtool: argv == "development" ? "inline-source-map" : "source-map",
+		devtool: "inline-source-map",
 		resolve: {
 			extensions: [".js", ".ts", ".tsx"],
 		},
@@ -48,12 +48,13 @@ module.exports = (env, argv) => {
 					test: /\.(png|jpe?g|gif|svg)$/i,
 					loader: "file-loader",
 					options: {
-						outputPath: "images",
+						outputPath: "./images/",
+						name: "[name].[ext]?[hash]"
 					},
 				},
 				{
 					test: /\.(woff|woff2|eot|ttf|otf)$/i,
-					type: 'asset/resource',
+					type: "asset/resource",
 				},
 			]
 		},
