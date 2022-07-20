@@ -16,6 +16,7 @@ export default function CheckboxToggle(props: ICheckToggle) {
 				<input
 					onChange={toggleCheckbox}
 					type='checkbox'
+					checked={props.checked}
 				/>
 				<span className={styles.slider}></span>
 			</div>

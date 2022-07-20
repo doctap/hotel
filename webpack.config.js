@@ -1,20 +1,21 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const Dotenv = require("dotenv-webpack");
 
 module.exports = (env, argv) => {
 	console.log(`This is the Webpack 4 "mode": ${JSON.stringify(argv)}`);
 	console.log(`This is the Webpack 4 "mode": ${JSON.stringify(env)}`);
 	return {
-		mode: argv,
+		mode: argv.mode,
 		entry: "./src/index.tsx",
 		output: {
 			filename: "bundle.js",
 			path: path.resolve(__dirname, "dist"),
 			clean: true,
-			publicPath: '/',
+			publicPath: './',
 		},
-		devtool: "inline-source-map",
+		devtool: argv.mode === "development" ? "inline-source-map" : false,
 		resolve: {
 			extensions: [".js", ".ts", ".tsx"],
 		},
@@ -64,6 +65,9 @@ module.exports = (env, argv) => {
 			}),
 			new MiniCssExtractPlugin({
 				filename: "./src/index.css",
+			}),
+			new Dotenv({
+				path: path.resolve(__dirname, `./.env.${argv.mode}`),
 			}),
 		],
 	};

@@ -13,7 +13,7 @@ export default function App() {
 	return (
 		<BrowserRouter >
 			<Routes>
-				<Route path="/" element={<Layout />}>
+				<Route path={`${process.env.REACT_APP_BUILD}`} element={<Layout />}>
 					<Route index element={<Home />} />
 					<Route path="/components" element={<Components />} />
 					<Route path="/forms" element={<Suspense fallback={<div>Loading</div>}><Forms /></Suspense>} />
