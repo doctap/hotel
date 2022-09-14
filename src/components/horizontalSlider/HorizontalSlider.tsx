@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import ReactSlider from 'react-slider';
 import './stylesReactSlider/StylesReactSlider.css';
 import SubTitle from '../titles/subTitle/SubTitle';
-import Price from '../../forms/price/Price';
 import styles from './HorizontalSlider.module.scss';
+import Price from '../forms/price/Price';
 
 interface IHorizontalSlider {
 	title: string;

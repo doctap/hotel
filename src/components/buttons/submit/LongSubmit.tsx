@@ -3,13 +3,14 @@ import styles from './LongSubmit.module.scss';
 
 interface ILongSubmit {
 	name: string;
-	type: string;
+	type: 'button' | 'submit';
 	submitForm?: () => void;
 }
 
 export default function LongSubmit(props: ILongSubmit) {
 	return (
 		<button
+			type={props.type}
 			className={styles.Btn}
 			onClick={props.submitForm}
 		>

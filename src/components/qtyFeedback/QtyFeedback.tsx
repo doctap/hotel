@@ -1,5 +1,5 @@
 import React from 'react';
-import { splitNumber } from '../../commonsFunc/Utilities'
+import { splitNumber } from '../../commonFunc/Utilities'
 import styles from './QtyFeedback.module.scss';
 
 interface IQtyFeedback {

@@ -2,6 +2,8 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const Dotenv = require("dotenv-webpack");
+const { url } = require("inspector");
+const { loader } = require("mini-css-extract-plugin");
 
 module.exports = (env, argv) => {
 	console.log(`This is the Webpack 4 "mode": ${JSON.stringify(argv)}`);
@@ -13,7 +15,7 @@ module.exports = (env, argv) => {
 			filename: "bundle.js",
 			path: path.resolve(__dirname, "dist"),
 			clean: true,
-			publicPath: './',
+			publicPath: '/',
 		},
 		devtool: argv.mode === "development" ? "inline-source-map" : false,
 		resolve: {
@@ -38,20 +40,19 @@ module.exports = (env, argv) => {
 					test: /\.(s[ac]ss|css)$/i,
 					use: [
 						// Creates `style` nodes from JS strings
-						"style-loader",
+						{ loader: "style-loader" },
 						// Translates CSS into CommonJS
-						"css-loader",
+						{ loader: "css-loader" },
+						{ loader: 'resolve-url-loader' },
 						// Compiles Sass to CSS
-						"sass-loader",
+						{ loader: "sass-loader", options: { sourceMap: true } },
 					],
 				},
 				{
 					test: /\.(png|jpe?g|gif|svg)$/i,
-					loader: "file-loader",
-					options: {
-						outputPath: "./images/",
-						name: "[name].[ext]?[hash]"
-					},
+					use: [
+						{ loader: "file-loader", options: { outputPath: "./images/", name: "[name].[ext]?[hash]" } },
+					],
 				},
 				{
 					test: /\.(woff|woff2|eot|ttf|otf)$/i,
