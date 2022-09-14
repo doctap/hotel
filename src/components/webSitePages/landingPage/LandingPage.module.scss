@@ -1,0 +1,18 @@
+.main {
+	// background-image: url(mainBackGround.jpg);
+	position: relative;
+	width: 100%;
+	height: fit-content;
+
+	.header {
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: 0;
+	}
+
+	.mainBackGround {
+		width: inherit;
+		height: inherit;
+	}
+}

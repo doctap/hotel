@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import ItemContainer from '../../../forms/containers/itemContainer/ItemContainer';
+import ItemContainer from '../../forms/containers/itemContainer/ItemContainer';
 import SubTitle from '../../titles/subTitle/SubTitle';
 import DateCalendar from '../DateCalendar';
 import styles from './PeriodOfStay.module.scss';

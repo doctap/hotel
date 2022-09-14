@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import uniqId from 'uniqid';
 import BtnTick from '../../buttons/arrowTickBtns/BtnArrowTick';
 import { BtnTickVariants } from '../../buttons/arrowTickBtns/BtnArrowTickInterface';
 import CheckBoxItem from '../chtckBoxItem/CheckBoxItem';
@@ -35,7 +36,7 @@ export default function DropdownCheckboxes(props: IDropdownCheckboxes) {
 			<ul
 				className={showHideList ? styles.List : styles.NoneList}
 			>
-				{props.items.map(str => <li><CheckBoxItem name={str} /></li>)}
+				{props.items.map(str => <li key={uniqId()}><CheckBoxItem name={str} /></li>)}
 			</ul>
 		</div>
 	)

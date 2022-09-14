@@ -1,0 +1,64 @@
+@import '../../../../CommonStyles.module.scss';
+
+.footer {
+	background: #FFFFFF;
+	box-shadow: 0px 10px 20px $DarkShade5;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	.footerTop {
+		padding: 6.4rem 8.75rem 0 8.75rem;
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		min-height: 23.25rem;
+
+		.logo,
+		.InputSubscribe {
+			width: 16.25rem;
+			min-width: 16.25rem;
+			display: flex;
+			flex-direction: column;
+
+			&>* {
+				margin-bottom: 1rem;
+			}
+		}
+
+		@media screen and (max-width: 945px) {
+			.navigation {
+				display: none;
+			}
+		}
+
+		@media screen and (max-width: 1295px) {
+			.logo {
+				display: none;
+			}
+		}
+	}
+
+	@media screen and (max-width: 1080px) {
+		.footerTop {
+			padding: 5% 10% 0 10%;
+		}
+	}
+
+	.footerBottom {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0 8.75rem;
+		height: 4.375rem;
+		border-top: 1px solid $DarkShade10;
+		height: 4.375rem;
+
+		.brands {
+			display: flex;
+			justify-content: space-between;
+			width: 8rem;
+			height: 1.5rem;
+		}
+	}
+}

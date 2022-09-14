@@ -1,0 +1,64 @@
+@import '../../../CommonStyles.module.scss';
+
+.header {
+	min-height: 4.375rem;
+	padding: 0 5% 0 5%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background: #FFFFFF;
+	box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+
+	.logo {
+		margin-right: 1rem;
+	}
+
+	.navBar {
+		width: fit-content;
+		display: flex;
+		align-items: center;
+
+		.navigation {
+			width: 27.6rem;
+			margin-right: 1.5rem;
+		}
+
+		.userName {
+			@extend %fontPropBody;
+			color: $DarkShade50;
+			border-left: 1px solid $DarkShade10;
+			padding: .5rem 0 .5rem 1.5rem;
+		}
+
+		.buttonsLogin {
+			height: 2.125rem;
+			display: flex;
+			justify-content: space-between;
+			width: 18.9375rem;
+
+			.btnLog {
+				width: 5.4375rem;
+			}
+
+			.btnRegistration {
+				width: 12.25rem;
+			}
+		}
+	}
+
+	.BurgerMenu {
+		display: none;
+	}
+
+	@media screen and (max-width: 997px) {
+		.navBar {
+			display: none;
+		}
+	}
+
+	@media screen and (max-width: 997px) {
+		.BurgerMenu {
+			display: block;
+		}
+	}
+}

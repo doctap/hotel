@@ -1,4 +1,5 @@
 import React from 'react';
+import uniqId from 'uniqid';
 import styles from './RateStars.module.scss'
 
 interface IRateStars {
@@ -32,7 +33,7 @@ export default function RateStars(props: IRateStars) {
 		const stars: React.ReactNode[] = [];
 	
 		for (let index = 0; index < num; index++) {
-			stars.push(<div className={styles.Star}>{isFullsStars ? 'star' : 'star_border'}</div>)
+			stars.push(<div key={uniqId()} className={styles.Star}>{isFullsStars ? 'star' : 'star_border'}</div>)
 		}
 		 
 		return stars;
