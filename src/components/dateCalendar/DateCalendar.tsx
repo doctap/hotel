@@ -12,7 +12,6 @@ export default function DateCalendar(props: IDateCalendar) {
 
 	function sendDate() {
 		props.getDate(new Date());
-		console.log('DATE Sended');
 	}
 
 	return (

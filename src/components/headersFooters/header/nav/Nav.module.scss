@@ -4,6 +4,17 @@
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
+	background: #fff;
+
+	.buttonsBlockInBurgerMenu {
+		display: none;
+	}
+
+	@media screen and (max-width: 530px) {
+		.buttonsBlockInBurgerMenu {
+			display: block;
+		}
+	}
 
 	&_column {
 		width: fit-content;

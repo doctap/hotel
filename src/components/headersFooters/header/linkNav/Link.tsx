@@ -3,27 +3,25 @@ import styles from './Link.module.scss';
 
 interface ILink {
 	name: string;
-	id: number;
-	onClick: (id: number) => void;
+	id: string;
+	onClick: (id: string) => void;
 	fontWeight: 'normal' | 'bold';
 }
 
 export default function Link(props: ILink) {
 
-	const getModel = (style: string | undefined): string => {
+	const getId = (event: React.MouseEvent<HTMLAnchorElement>) => {
+		event.preventDefault();
+		event.stopPropagation();
 
-		if (style === undefined) return `${styles.normal}`;
-		if (style === 'normal') return `${styles.normal}`;
-
-		return `${styles.bold}`;
-	}
-
-	const getId = () => props.onClick(props.id);
+		props.onClick(props.id)
+	};
 
 	return (
 		<a
 			className={props.fontWeight === 'bold' ? `${styles.bold}` : `${styles.normal}`}
 			onClick={getId}
+			href='.'
 		>
 			{props.name}
 		</a>

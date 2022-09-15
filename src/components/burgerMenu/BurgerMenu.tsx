@@ -5,6 +5,7 @@ import styles from './BurgerMenu.module.scss';
 
 interface IBurgerMenu {
 	pages: IPage[];
+	getNextPage: (id: string) => void;
 }
 
 export default function BurgerMenu(props: IBurgerMenu) {
@@ -16,11 +17,11 @@ export default function BurgerMenu(props: IBurgerMenu) {
 			<button
 				onClick={() => setIsShowMenu(!isShowMenu)}
 				className={styles.callMenu}
-				children='jhgvcf'
+				children='menu'
 			/>
 			{
 				isShowMenu ?
-					<div className={styles.dropDownNav}><Nav navBurger={true} pages={props.pages} /></div>
+					<div className={styles.dropDownNav}><Nav getNextPage={props.getNextPage} navBurger={true} pages={props.pages} /></div>
 					:
 					null
 			}

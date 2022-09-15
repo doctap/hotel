@@ -4,7 +4,7 @@ import styles from './LongSubmit.module.scss';
 interface ILongSubmit {
 	name: string;
 	type: 'button' | 'submit';
-	submitForm?: () => void;
+	submitForm?: (e: React.FormEvent<HTMLButtonElement>) => void;
 }
 
 export default function LongSubmit(props: ILongSubmit) {

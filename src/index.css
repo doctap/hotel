@@ -4,10 +4,11 @@
 @import './fonts/Montserrat/static/montserrat.css';
 /*================================================*/
 
-html, body, #root {
-	min-width: 100%;
+html,
+body,
+#root {
+	min-width: fit-content;
 }
-
 
 * {
 	padding: 0;
@@ -15,6 +16,7 @@ html, body, #root {
 	font-family: Montserrat;
 }
 
-ol, ul {
+ol,
+ul {
 	list-style: none;
 }

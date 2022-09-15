@@ -59,6 +59,7 @@ export default function DropDownList(props: IDropDownList) {
 		<div className={styles.dropDownList}>
 			<div
 				className={showHideList ? `${styles.subTitle_bottomBorderRadius0} ${styles.subTitle}` : styles.subTitle}
+				onClick={showHideOptions}
 			>
 				<div className={styles.value}>
 					{valueList}

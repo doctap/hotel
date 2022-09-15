@@ -1,11 +1,22 @@
-import React, {useEffect, useState}  from 'react';
+import React, { useState } from 'react';
 import LongSubmit from '../../buttons/submit/LongSubmit';
+import { IVisitors } from '../../dropdownList/drop_Down_List/DropDownList';
 import TitleH2 from '../../titles/titleH2/TitleH2';
 import FormContainer from '../containers/formContainer/FormContainer';
 import ItemContainer from '../containers/itemContainer/ItemContainer';
 import PeriodQtyVisitors, { IPeriodVisitors } from '../periodQtyVisitors/PeriodQtyVisitors';
 
-export default function PickUpRoom() {
+export interface IDataRequest {
+	visitors: IVisitors;
+	dateArrival: Date;
+	dateDeparture: Date;
+}
+
+interface IPickUpRoom {
+	getRooms: (dataRequest: IDataRequest) => void;
+}
+
+export default function PickUpRoom(props: IPickUpRoom) {
 
 	const [stateData, setStateData] = useState({
 		visitors: {
@@ -16,17 +27,16 @@ export default function PickUpRoom() {
 		dateArrival: new Date(),
 		dateDeparture: new Date(),
 	});
-	function submitForm() {
+
+	const submitForm = (event: React.FormEvent<HTMLButtonElement>) => {
+		event.preventDefault();
+		event.stopPropagation();
+		props.getRooms(stateData)
 	}
 
-	function getData(data: IPeriodVisitors) {
+	function getPeriod(data: IPeriodVisitors) {
 		setStateData(data);
 	}
-
-	useEffect(() => {
-		console.log(stateData);
-	}, [stateData])
-	
 
 	return (
 		<FormContainer>
@@ -35,7 +45,7 @@ export default function PickUpRoom() {
 			</ItemContainer>
 
 			<ItemContainer margin='0 0 .5rem 0'>
-				<PeriodQtyVisitors getArrivalData={getData} />
+				<PeriodQtyVisitors getArrivalData={getPeriod} />
 			</ItemContainer>
 
 			<LongSubmit name='подобрать номер' type='submit' submitForm={submitForm} />

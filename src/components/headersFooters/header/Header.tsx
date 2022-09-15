@@ -11,6 +11,7 @@ interface IHeader {
 	pages: IPage[];
 	login: boolean;
 	userName?: string;
+	getNextPage: (id: string) => void;
 }
 
 export default function Header(props: IHeader) {
@@ -19,15 +20,9 @@ export default function Header(props: IHeader) {
 			<div className={styles.logo}>
 				<Logo />
 			</div>
-
-			<div className={styles.BurgerMenu}>
-				<BurgerMenu pages={props.pages} />
-			</div>
-
-
 			<div className={styles.navBar}>
 				<div className={styles.navigation}>
-					<Nav navBurger={false} pages={props.pages} />
+					<Nav navBurger={false} pages={props.pages} getNextPage={props.getNextPage} />
 				</div>
 				{
 					props.login ?
@@ -42,6 +37,10 @@ export default function Header(props: IHeader) {
 							</div>
 						</div>
 				}
+				<div className={styles.BurgerMenu}>
+					{/* display BurgerMenu depend on the width screen! Checked Css */}
+					<BurgerMenu getNextPage={props.getNextPage} pages={props.pages} />
+				</div>
 			</div>
 		</header>
 	)

@@ -1,6 +1,7 @@
 @import '../../../../CommonStyles.module.scss';
 
 .footer {
+	min-width: max-content;
 	background: #FFFFFF;
 	box-shadow: 0px 10px 20px $DarkShade5;
 	display: flex;
@@ -23,6 +24,16 @@
 
 			&>* {
 				margin-bottom: 1rem;
+			}
+		}
+
+		.linkList {
+			margin: 0 1rem;
+		}
+
+		@media screen and (max-width: 725px) {
+			.linkList {
+				margin: 0 0;
 			}
 		}
 
@@ -59,6 +70,12 @@
 			justify-content: space-between;
 			width: 8rem;
 			height: 1.5rem;
+		}
+	}
+
+	@media screen and (max-width: 1080px) {
+		.footerBottom {
+			padding: 0 10%;
 		}
 	}
 }

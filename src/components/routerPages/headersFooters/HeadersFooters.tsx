@@ -7,30 +7,30 @@ import Header from '../../headersFooters/header/Header';
 import styles from './HeadersFooters.module.scss'
 
 export const pagesForNav: IPage[] = [
-	{ pageName: 'О нас', pageId: 946 },
-	{ pageName: '1 услуга', pageId: 103 },
-	{ pageName: '2 услуга', pageId: 8273 },
-	{ pageName: '3 услуга', pageId: 23 },
-	{ pageName: 'Вакансии', pageId: 95 },
-	{ pageName: 'Новости', pageId: 987 },
-	{ pageName: '1 Соглашение', pageId: 823 },
-	{ pageName: '1 Соглашение', pageId: 22 },
-	{ pageName: '1 Соглашение', pageId: 62 },
-	{ pageName: '1 Соглашение', pageId: 765 },
+	{ pageName: 'О нас', pageId: '946' },
+	{ pageName: '1 услуга', pageId: '103' },
+	{ pageName: '2 услуга', pageId: '8273' },
+	{ pageName: '3 услуга', pageId: '23' },
+	{ pageName: 'Вакансии', pageId: '95' },
+	{ pageName: 'Новости', pageId: '987' },
+	{ pageName: '1 Соглашение', pageId: '823' },
+	{ pageName: '2 Соглашение', pageId: '22' },
+	{ pageName: '3 Соглашение', pageId: '62' },
+	{ pageName: '4 Соглашение', pageId: '765' },
 ];
 
 export const pagesForFooter: IPage[] = [
-	{ pageName: 'О нас', pageId: 9383 },
-	{ pageName: 'Новости', pageId: 83 },
-	{ pageName: 'Служба поддержки', pageId: 93 },
-	{ pageName: 'Услуги', pageId: 9 },
-	{ pageName: 'О сервисе', pageId: 8 },
-	{ pageName: 'Наша команда', pageId: 3 },
-	{ pageName: 'Вакансии', pageId: 47 },
-	{ pageName: 'Инвесторы', pageId: 38 },
-	{ pageName: 'Соглашения', pageId: 8674 },
-	{ pageName: 'Сообщества', pageId: 9383 },
-	{ pageName: 'Связь с нами', pageId: 9383 },
+	{ pageName: 'О нас', pageId: '9383' },
+	{ pageName: 'Новости', pageId: '83' },
+	{ pageName: 'Служба поддержки', pageId: '93' },
+	{ pageName: 'Услуги', pageId: '9' },
+	{ pageName: 'О сервисе', pageId: '8' },
+	{ pageName: 'Наша команда', pageId: '3' },
+	{ pageName: 'Вакансии', pageId: '47' },
+	{ pageName: 'Инвесторы', pageId: '38' },
+	{ pageName: 'Соглашения', pageId: '8674' },
+	{ pageName: 'Сообщества', pageId: '9383' },
+	{ pageName: 'Связь с нами', pageId: '9383' },
 ];
 
 export default function HeadersFooters() {
@@ -38,6 +38,7 @@ export default function HeadersFooters() {
 		<div className={styles.wrapper}>
 			<ItemContainer>
 				<Header
+					getNextPage={() => 0}
 					pages={pagesForNav}
 					login={false}
 				/>
@@ -45,6 +46,7 @@ export default function HeadersFooters() {
 
 			<ItemContainer margin='0 0 4rem 0'>
 				<Header
+					getNextPage={() => 0}
 					pages={pagesForNav}
 					login={true}
 					userName='Юлий Цезарь'
@@ -52,7 +54,7 @@ export default function HeadersFooters() {
 			</ItemContainer>
 
 			<ItemContainer margin='0 0 2rem 0'>
-				<FooterLinks pages={pagesForFooter} />
+				<FooterLinks getNextPage={() => 0} pages={pagesForFooter} />
 			</ItemContainer>
 
 			<ItemContainer>

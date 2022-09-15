@@ -1,5 +1,17 @@
+@import '../../CommonStyles.module.scss';
+
 .burgerMenu {
 	position: relative;
+	margin-left: 1rem;
+
+	.callMenu {
+		color: $DarkShade50;
+		padding: 0 .3rem;
+		font-family: Material Icons;
+		font-size: 1.7rem;
+		background: #fff;
+		border: none;
+	}
 
 	.dropDownNav {
 		position: absolute;

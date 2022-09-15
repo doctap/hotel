@@ -12,6 +12,7 @@ import styles from './FooterLinks.module.scss';
 
 interface IFooterLinks {
 	pages: IPage[];
+	getNextPage: (id: string) => void;
 }
 
 export default function FooterLinks(props: IFooterLinks) {
@@ -27,10 +28,14 @@ export default function FooterLinks(props: IFooterLinks) {
 				</div>
 
 				<div className={styles.navigation}>
-					<LinksList title='навигация' pages={props.pages.slice(0, 4)} />
+					<LinksList title='навигация' pages={props.pages.slice(0, 4)} getNextPage={props.getNextPage} />
 				</div>
-				<LinksList title='о нас' pages={props.pages.slice(4, 8)} />
-				<LinksList title='служба поддержки' pages={props.pages.slice(8)} />
+				<div className={styles.linkList}>
+					<LinksList title='о нас' pages={props.pages.slice(4, 8)} getNextPage={props.getNextPage} />
+				</div>
+				<div className={styles.linkList}>
+					<LinksList title='служба поддержки' pages={props.pages.slice(8)} getNextPage={props.getNextPage} />
+				</div>
 
 				<div className={styles.InputSubscribe}>
 					<SubTitle name='подписка' />

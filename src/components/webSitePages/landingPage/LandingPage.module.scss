@@ -1,8 +1,15 @@
+@import '../../../CommonStyles.module.scss';
+
 .main {
-	// background-image: url(mainBackGround.jpg);
+	background: url(mainBackGround.jpg) no-repeat;
+	background-size: cover;
 	position: relative;
-	width: 100%;
-	height: fit-content;
+	min-width: fit-content;
+	height: 891px;
+	padding: 8.75rem 10% 1.5rem 10%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 
 	.header {
 		position: absolute;
@@ -11,8 +18,23 @@
 		left: 0;
 	}
 
-	.mainBackGround {
-		width: inherit;
-		height: inherit;
+	.pickUpRoom {
+		width: 23.75rem;
+		height: 23.375rem;
 	}
+
+	.sloganBlock {
+		display: flex;
+		justify-content: end;
+
+		.slogan {
+			@extend %fontPropBody;
+			color: $DarkShade75;
+			line-height: 1.5rem;
+			height: fit-content;
+			max-width: 18.5625rem;
+			text-align: end;
+		}
+	}
+
 }

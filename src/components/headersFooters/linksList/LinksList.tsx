@@ -7,6 +7,7 @@ import styles from './LinksList.module.scss';
 interface ILinksList {
 	pages: IPage[];
 	title: string;
+	getNextPage: (id: string) => void;
 }
 
 export default function LinksList(props: ILinksList) {
@@ -23,7 +24,7 @@ export default function LinksList(props: ILinksList) {
 							key={page.pageId}
 							id={page.pageId}
 							name={page.pageName}
-							onClick={(id) => console.log(id)}
+							onClick={props.getNextPage}
 						/>
 					</li>
 				)}

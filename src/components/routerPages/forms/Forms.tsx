@@ -16,7 +16,7 @@ export default function Forms() {
 
 
 				<div className={styles.pick_up_room}>
-					<PickUpRoom />
+					<PickUpRoom getRooms={() => 0} />
 				</div>
 
 				<div className={styles.account_registration}>
