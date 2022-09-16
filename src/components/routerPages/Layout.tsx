@@ -21,6 +21,9 @@ export default function Layout() {
 					<li>
 						<Link to="/landingPage">Landing Page</Link>
 					</li>
+					<li>
+						<Link to="/roomDirectory">Room directory</Link>
+					</li>
 				</ul>
 			</nav>
 

@@ -7,6 +7,7 @@ import Components from './components/routerPages/components/Components';
 import HeadersFooters from './components/routerPages/headersFooters/HeadersFooters';
 import NoPage from './components/routerPages/NoPage';
 import LandingPage from './components/webSitePages/landingPage/LandingPage';
+import RoomDirectory from './components/webSitePages/roomDirectory/RoomDirectory';
 // import Forms from './pages/forms/Forms';
 const Forms = React.lazy(() => import('./components/routerPages/forms/Forms'));
 
@@ -20,6 +21,7 @@ export default function App() {
 					<Route path="/forms" element={<Suspense fallback={<div>Loading</div>}><Forms /></Suspense>} />
 					<Route path="/headersFooters" element={<HeadersFooters />} />
 					<Route path="/landingPage" element={<LandingPage />} />
+					<Route path="/roomDirectory" element={<RoomDirectory />} />
 					<Route path="*" element={<NoPage />} />
 				</Route>
 			</Routes>

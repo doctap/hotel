@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import LongSubmit from '../../buttons/submit/LongSubmit';
-import { IVisitors } from '../../dropdownList/drop_Down_List/DropDownList';
+import { IVisitors } from '../../dropdownList/DropDownAmountVisitors/DropDownAmountVisitors';
 import TitleH2 from '../../titles/titleH2/TitleH2';
 import FormContainer from '../containers/formContainer/FormContainer';
 import ItemContainer from '../containers/itemContainer/ItemContainer';

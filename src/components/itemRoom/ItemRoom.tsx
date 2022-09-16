@@ -9,13 +9,14 @@ import HotelRoom from '../hotelRoom/HotelRoom';
 import RateStars from '../rateStars/RateStars';
 import QtyFeedback from '../qtyFeedback/QtyFeedback';
 import TittlePricePerDay from '../forms/titlePricePerDay/TitlePricePerDay';
+import { IItemRoom } from '../../commonInterfaces/RFCinterfaces';
 
-export default function ItemRoom() {
+export default function ItemRoom(props: IItemRoom) {
 
 	const divImg: React.ReactNode[] = [
-		<img src={roomImg1} alt='Image' />,
-		<img src={roomImg2} alt='Image' />,
-		<img src={roomImg3} alt='Image' />
+		<img src={roomImg1} alt='qqqImg' />,
+		<img src={roomImg2} alt='qqqImg' />,
+		<img src={roomImg3} alt='qqqImg' />
 	];
 
 	const [nextImg, setNextImg] = useState(0);
@@ -56,20 +57,20 @@ export default function ItemRoom() {
 				<div className={styles.labelTop}>
 					<div>
 						<HotelRoom
-							roomNumber={888}
-							roomStatus={true}
+							roomNumber={props.roomNum}
+							roomStatus={props.isLux}
 							sizeTitle='h2'
 						/>
 					</div>
 
 					<div className={styles.TittlePricePerDay}>
-						<TittlePricePerDay price={9990} text='в сутки' />
+						<TittlePricePerDay price={props.price} text='в сутки' />
 					</div>
 				</div>
 				<div className={styles.labelBottom}>
-					<RateStars fullStars={5} maxStars={5} />
+					<RateStars fullStars={parseInt(props.grade)} maxStars={5} />
 					<div className={styles.QtyFeedback}>
-						<QtyFeedback qty={65} />
+						<QtyFeedback qty={parseInt(props.opinions)} />
 					</div>
 				</div>
 			</div>

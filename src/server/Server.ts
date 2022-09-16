@@ -1,0 +1,88 @@
+import { IItemRoom } from "../commonInterfaces/RFCinterfaces";
+
+export const rooms: IItemRoom[] = [
+	{
+		roomNum: '92',
+		isLux: false,
+		price: '7000',
+		grade: '3',
+		opinions: '75',
+	},
+	{
+		roomNum: '192',
+		isLux: false,
+		price: '7000',
+		grade: '4',
+		opinions: '44',
+	},
+	{
+		roomNum: '92',
+		isLux: true,
+		price: '7000',
+		grade: '5',
+		opinions: '129',
+	},
+	{
+		roomNum: '922',
+		isLux: false,
+		price: '7000',
+		grade: '2',
+		opinions: '56',
+	},
+	{
+		roomNum: '492',
+		isLux: false,
+		price: '7000',
+		grade: '4',
+		opinions: '44',
+	},
+	{
+		roomNum: '856',
+		isLux: false,
+		price: '7000',
+		grade: '4',
+		opinions: '44',
+	},
+	{
+		roomNum: '14',
+		isLux: true,
+		price: '9400',
+		grade: '5',
+		opinions: '100',
+	},
+	{
+		roomNum: '92',
+		isLux: true,
+		price: '7000',
+		grade: '5',
+		opinions: '44',
+	},
+	{
+		roomNum: '92',
+		isLux: false,
+		price: '7000',
+		grade: '4',
+		opinions: '44',
+	},
+	{
+		roomNum: '92',
+		isLux: false,
+		price: '7000',
+		grade: '4',
+		opinions: '44',
+	},
+	{
+		roomNum: '92',
+		isLux: false,
+		price: '7000',
+		grade: '4',
+		opinions: '44',
+	},
+	{
+		roomNum: '92',
+		isLux: false,
+		price: '7000',
+		grade: '4',
+		opinions: '44',
+	},
+];

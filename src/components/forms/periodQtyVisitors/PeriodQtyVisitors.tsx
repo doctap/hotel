@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import PeriodOfStay from '../../dateCalendar/periodOfStay/PeriodOfStay';
-import DropDownList, { IVisitors } from '../../dropdownList/drop_Down_List/DropDownList';
+import DropDownAmountVisitors, { IVisitors } from '../../dropdownList/DropDownAmountVisitors/DropDownAmountVisitors';
 import SubTitle from '../../titles/subTitle/SubTitle';
 import ItemContainer from '../containers/itemContainer/ItemContainer';
 import styles from './PeriodQtyVisitors.module.scss';
@@ -55,7 +55,7 @@ export default function PeriodQtyVisitors(props: IPeriodQtyVisitors) {
 				<ItemContainer margin='0 0 .3rem 0'>
 					<SubTitle name='гости' />
 				</ItemContainer>
-				<DropDownList name='Сколько гостей' getQtyVisitors={getVisitors} />
+				<DropDownAmountVisitors name='Сколько гостей' getQtyVisitors={getVisitors} />
 			</div>
 		</>
 	)

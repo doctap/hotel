@@ -4,7 +4,7 @@ import TitleH2 from '../titles/titleH2/TitleH2';
 import styles from './HotelRoom.module.scss';
 
 interface IHotelRoom {
-	roomNumber: number;
+	roomNumber: string;
 	roomStatus: boolean;
 	sizeTitle: 'h1' | 'h2';
 }

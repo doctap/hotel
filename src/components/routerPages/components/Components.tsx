@@ -4,13 +4,14 @@ import LikeBtn from '../../buttons/btnLike/LikeBtn';
 import Button from '../../buttons/btns/Button';
 import { BtnVariants } from '../../buttons/btns/ButtonInterface';
 import LongSubmit from '../../buttons/submit/LongSubmit';
-import CheckboxList from '../../checkbox/checkboxList/CheckboxList';
+import CheckboxListText from '../../checkbox/checkboxListText/CheckboxListText';
 import CheckboxRadio from '../../checkbox/checkboxRadio/CheckboxRadio';
-import CheckboxRichList from '../../checkbox/checkboxRichList/CheckboxRichList';
+import CheckboxListTitleText from '../../checkbox/checkboxListTitleText/CheckboxListTitleText';
 import CheckboxToggle from '../../checkbox/checkboxToggle/CheckboxToggle';
 import DropdownCheckboxes from '../../checkbox/dropdownCheckboxes/DropdownCheckboxes';
 import DateCalendar from '../../dateCalendar/DateCalendar';
-import DropDownList from '../../dropdownList/drop_Down_List/DropDownList';
+import FilterDateDropDown from '../../dateCalendar/filterDateDropDown/FilterDateDropDown';
+import DropDownAmountVisitors from '../../dropdownList/DropDownAmountVisitors/DropDownAmountVisitors';
 import DropdownQtyRooms from '../../dropdownQtyRooms/DropdownQtyRooms';
 import ItemContainer from '../../forms/containers/itemContainer/ItemContainer';
 import HorizontalSlider from '../../horizontalSlider/HorizontalSlider';
@@ -21,19 +22,12 @@ import ShortcutIcon from '../../shortcuts/shortcutIcon/ShortcutIcon';
 import BulletList from '../../texts/bulletList/BulletList';
 import SubTitle from '../../titles/subTitle/SubTitle';
 import UserFeedback from '../../userFeedback/UserFeedback';
+import { itemForCheckboxRichList, itemsForCheckboxList, itemsForDropdownCheckboxes } from '../../webSitePages/roomDirectory/RoomDirectory';
 import styles from './Components.module.scss';
 
+const itemsForBulletList = ['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия - после 13:00, а выезд до 12:00'];
 
 export default function Components() {
-
-	const itemsForBulletList = ['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия - после 13:00, а выезд до 12:00'];
-	const itemsForDropdownCheckboxes = ['Завтрак', 'Письменный стол', 'Стул для кормления', 'Кроватка', 'Телевизор', 'Шампунь',];
-	const itemsForCheckboxList = ['Можно курить', 'Можно с питомцами', 'Можно пригласить гостей (до 10 человек)'];
-	const itemForCheckboxRichList = [
-		{ title: 'Широкий коридор', text: 'Ширина коридоров в номере не менее 91 см.' },
-		{ title: 'Помощник для инвалидов', text: 'На 1 этаже вас встретит специалист и проводит до номера.' }
-	];
-
 	return (
 		<div className={styles.wrapper}>
 
@@ -69,12 +63,7 @@ export default function Components() {
 						<ItemContainer margin='0 0 .3rem 0'>
 							<SubTitle name='filter date dropdown' />
 						</ItemContainer>
-						<InputBtn
-							typeInput='text'
-							placeholderInput='19 авг - 23 авг'
-							typeButton='button'
-							variantBtn={BtnTickVariants.Tick}
-						/>
+						<FilterDateDropDown placeholder='19 авг - 23 авг' subTitle='filter date dropdown' />
 					</div>
 
 					<div className={styles.subscription_text_field}>
@@ -108,7 +97,7 @@ export default function Components() {
 					</ItemContainer>
 
 					<ItemContainer>
-						<CheckboxList
+						<CheckboxListText
 							items={itemsForCheckboxList}
 						/>
 					</ItemContainer>
@@ -155,13 +144,13 @@ export default function Components() {
 						<ItemContainer margin='0 0 .3rem 0'>
 							<SubTitle name='dropdown' />
 						</ItemContainer>
-						<DropDownList name='Сколько гостей' getQtyVisitors={() => 0} />
+						<DropDownAmountVisitors name='Сколько гостей' getQtyVisitors={() => 0} />
 					</div>
 
-					<CheckboxRichList items={itemForCheckboxRichList} />
-
+					<CheckboxListTitleText items={itemForCheckboxRichList} />
 
 				</div>
+
 
 				<div className={styles.column}>
 

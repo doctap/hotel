@@ -1,9 +1,9 @@
 import React from 'react';
 import uniqId from 'uniqid';
 import RichCheckbox from '../checkboxRich/RichCheckbox';
-import styles from './CheckboxRichList.module.scss';
+import styles from './CheckboxListTitleText.module.scss';
 
-interface ICheckboxRichList {
+interface ICheckboxListTitleText {
 	items: itemCheckboxRich[];
 }
 
@@ -12,7 +12,7 @@ export type itemCheckboxRich = {
 	text: string;
 }
 
-export default function CheckboxRichList(props: ICheckboxRichList) {
+export default function CheckboxListTitleText(props: ICheckboxListTitleText) {
 	return (
 		<div className={styles.list}>
 			{props.items.map(it =>

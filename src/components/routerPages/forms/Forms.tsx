@@ -35,9 +35,9 @@ export default function Forms() {
 			</div>
 
 			<div className={styles.column}>
-				<ItemRoom />
-				<HotelRoom roomNumber={888} roomStatus={true} sizeTitle='h1' />
-				<HotelRoom roomNumber={1111} roomStatus={false} sizeTitle='h2' />
+				<ItemRoom roomNum='888' isLux={true} grade='5' opinions='65' price='9900' />
+				<HotelRoom roomNumber={'888'} roomStatus={true} sizeTitle='h1' />
+				<HotelRoom roomNumber={'1111'} roomStatus={false} sizeTitle='h2' />
 
 
 			</div>

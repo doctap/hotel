@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import styles from './DropDownList.module.scss';
+import styles from './DropDownAmountVisitors.module.scss';
 import BtnTick from '../../buttons/arrowTickBtns/BtnArrowTick';
 import { BtnTickVariants } from '../../buttons/arrowTickBtns/BtnArrowTickInterface';
 import Counter from '../counter/Counter';
 import Button from '../../buttons/btns/Button';
 import { BtnVariants } from '../../buttons/btns/ButtonInterface';
 
-interface IDropDownList {
+interface IDropDownAmountVisitors {
 	name: string;
 	getQtyVisitors: (visitors: IVisitors) => void;
 }
@@ -17,7 +17,7 @@ export interface IVisitors {
 	counterBabies: number;
 }
 
-export default function DropDownList(props: IDropDownList) {
+export default function DropDownAmountVisitors(props: IDropDownAmountVisitors) {
 
 	const [counterAdults, setCounterAdults] = useState(0);
 	const [counterKids, setCounterKids] = useState(0);
@@ -55,7 +55,6 @@ export default function DropDownList(props: IDropDownList) {
 	}
 
 	return (
-
 		<div className={styles.dropDownList}>
 			<div
 				className={showHideList ? `${styles.subTitle_bottomBorderRadius0} ${styles.subTitle}` : styles.subTitle}
