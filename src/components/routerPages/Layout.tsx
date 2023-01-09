@@ -4,7 +4,7 @@ import { Outlet, Link } from "react-router-dom";
 export default function Layout() {
 	return (
 		<>
-			<nav style={{width: '100%'}}>
+			<nav>
 				<ul>
 					<li>
 						<Link to="/">Home</Link>

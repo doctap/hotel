@@ -44,7 +44,7 @@ export default function FormRegistration() {
 		<FormContainer>
 
 			<ItemContainer margin='0 0 .8rem 0'>
-				<TitleH2 value='Регистрация аккаунта' />
+				<TitleH2 children='Регистрация аккаунта' />
 			</ItemContainer>
 
 			<ItemContainer margin='0 0 0 0'>

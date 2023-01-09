@@ -1,5 +1,4 @@
 import React, { Suspense } from 'react';
-import styles from './App.module.scss'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './components/routerPages/Layout';
 import Home from './components/routerPages/Home';

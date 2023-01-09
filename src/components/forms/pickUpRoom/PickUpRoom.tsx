@@ -41,7 +41,7 @@ export default function PickUpRoom(props: IPickUpRoom) {
 	return (
 		<FormContainer>
 			<ItemContainer margin='0 0 0 0'>
-				<TitleH2 value='Найдём номера под ваши пожелания' />
+				<TitleH2 children='Найдём номера под ваши пожелания' />
 			</ItemContainer>
 
 			<ItemContainer margin='0 0 .5rem 0'>

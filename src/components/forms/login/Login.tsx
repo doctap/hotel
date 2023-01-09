@@ -19,7 +19,7 @@ export default function Login() {
 		<FormContainer>
 
 			<ItemContainer margin='0 0 0.8rem 0'>
-				<TitleH2 value='Войти' />
+				<TitleH2 children='Войти' />
 			</ItemContainer>
 
 			<ItemContainer margin='0 0 0.7rem 0'>

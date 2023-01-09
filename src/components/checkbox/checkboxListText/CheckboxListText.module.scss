@@ -3,6 +3,10 @@
 	width: 15rem;
 
 	&>* {
-		margin-bottom: 0.9rem;
+		margin-bottom: 1rem;
+	}
+
+	li:last-child {
+		margin-bottom: 0;
 	}
 }

@@ -17,9 +17,9 @@ export default function HotelRoom(props: IHotelRoom) {
 			</div>
 			<div className={styles.roomNumber}>
 				{props.sizeTitle === 'h1' ?
-					<TitleH1 value={props.roomNumber} />
+					<TitleH1 children={props.roomNumber} />
 					:
-					<TitleH2 value={props.roomNumber} />
+					<TitleH2 children={props.roomNumber} />
 				}
 			</div>
 			<div className={styles.roomStatus}>
