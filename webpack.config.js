@@ -14,7 +14,6 @@ module.exports = (env, argv) => {
 			path: path.resolve(__dirname, "dist"),
 			clean: true,
 			publicPath: '/',
-			assetModuleFilename: 'src/assets/images/[name].[ext]',
 		},
 		devtool: argv.mode === "development" ? "inline-source-map" : false,
 		resolve: {
@@ -46,10 +45,20 @@ module.exports = (env, argv) => {
 						{ loader: "sass-loader", options: { sourceMap: true } },
 					],
 				},
-				{
-					test: /\.(png|jpe?g|gif|svg|woff|woff2|eot|ttf|otf)$/i,
-					type: "asset/resource",
-				},
+        {
+          test: /\.(woff|woff2|eot|ttf|otf)$/i,
+          type: 'asset/resource',
+          generator: {
+            filename: 'src/fonts/[name][ext][query]'
+          }
+        },
+        {
+          test: /\.(png|jpe?g|gif|svg)$/i,
+          type: 'asset/resource',
+          generator: {
+            filename: 'src/images/[name]-[hash][ext][query]'
+          }
+        }
 			]
 		},
 		plugins: [
