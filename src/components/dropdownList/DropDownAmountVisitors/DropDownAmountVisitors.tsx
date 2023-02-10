@@ -83,9 +83,10 @@ export default function DropDownAmountVisitors(props: IDropDownAmountVisitors) {
 					className={styles.dropDownFooter}
 				>
 					{
-						sumVisitors > 0 ? <div className={styles.resetBtn}>
-							<Button type='button' name='очистить' variant={BtnVariants.BtnText} onClick={resetCounters} />
-						</div>
+						sumVisitors > 0
+							? <div className={styles.resetBtn}>
+								<Button type='button' name='очистить' variant={BtnVariants.BtnText} onClick={resetCounters} />
+							</div>
 							: null
 					}
 					<div className={styles.applyBtn}>
