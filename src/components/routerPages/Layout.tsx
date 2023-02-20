@@ -7,7 +7,7 @@ export default function Layout() {
 			<nav style={{width: '100%'}}>
 				<ul>
 					<li>
-						<Link to="/">Home</Link>
+						<Link to="/home">Home</Link>
 					</li>
 					<li>
 						<Link to="/components">Components</Link>

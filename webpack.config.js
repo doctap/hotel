@@ -2,8 +2,6 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const Dotenv = require("dotenv-webpack");
-const { url } = require("inspector");
-const { loader } = require("mini-css-extract-plugin");
 
 module.exports = (env, argv) => {
 	console.log(`This is the Webpack 4 "mode": ${JSON.stringify(argv)}`);
@@ -15,7 +13,7 @@ module.exports = (env, argv) => {
 			filename: "bundle.js",
 			path: path.resolve(__dirname, "dist"),
 			clean: true,
-			publicPath: '/',
+			publicPath: '/hotel/',
 		},
 		devtool: argv.mode === "development" ? "inline-source-map" : false,
 		resolve: {
@@ -49,15 +47,19 @@ module.exports = (env, argv) => {
 					],
 				},
 				{
-					test: /\.(png|jpe?g|gif|svg)$/i,
-					use: [
-						{ loader: "file-loader", options: { outputPath: "./images/", name: "[name].[ext]?[hash]" } },
-					],
-				},
-				{
-					test: /\.(woff|woff2|eot|ttf|otf)$/i,
-					type: "asset/resource",
-				},
+          test: /\.(woff|woff2|eot|ttf|otf)$/i,
+          type: 'asset/resource',
+          generator: {
+            filename: 'src/fonts/[name][ext][query]'
+          }
+        },
+        {
+          test: /\.(png|jpe?g|gif|svg)$/i,
+          type: 'asset/resource',
+          generator: {
+            filename: 'src/images/[name]-[hash][ext][query]'
+          }
+        }
 			]
 		},
 		plugins: [

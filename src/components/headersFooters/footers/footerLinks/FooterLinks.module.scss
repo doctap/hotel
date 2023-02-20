@@ -39,26 +39,35 @@
 		}
 	}
 
-	@media screen and (max-width: 1080px) {
-		.footerTop {
-			padding: 5% 10% 0 10%;
-		}
-	}
-
 	.footerBottom {
 		display: flex;
 		justify-content: space-between;
+		width: 100%;
+		flex-wrap: wrap;
 		align-items: center;
+		flex-direction: row;
 		padding: 0 8.75rem;
-		height: 4.375rem;
 		border-top: 1px solid $DarkShade10;
-		height: 4.375rem;
+		min-height: 4.375rem;
+		max-height: fit-content;
 
 		.brands {
 			display: flex;
 			justify-content: space-between;
 			width: 8rem;
 			height: 1.5rem;
+		}
+	}
+
+	@media screen and (max-width: 1080px) {
+		.footerTop {
+			padding: 5% 10% 0 10%;
+		}
+
+		
+		.footerBottom {
+			padding: 5% 10% 10% 10%;
+			justify-content: center;
 		}
 	}
 }

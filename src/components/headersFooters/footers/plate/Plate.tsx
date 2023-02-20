@@ -7,9 +7,11 @@ import styles from './Plate.module.scss';
 export default function Plate() {
 	return (
 		<div className={styles.plate}>
-			<Logo />
-			<div>
-				<Copyright />
+			<div className={styles.logo}>
+				<Logo />
+			</div>
+			<div className={styles.copyright}>
+				<Copyright text='Copyright © 2018 Toxin отель. Все права защищены.' />
 			</div>
 			<div className={styles.brands}>
 				<Brands />

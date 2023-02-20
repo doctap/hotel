@@ -1,10 +1,14 @@
 import React from 'react';
 import Paragraph from '../../texts/paragraph/Paragraph';
 
-export default function Copyright() {
+interface ICopyright {
+	text: string;
+}
+
+export default function Copyright(props: ICopyright) {
 	return (
 		<Paragraph>
-			Copyright © 2018 Toxin отель. Все права защищены.
+			{props.text}
 		</Paragraph>
 	)
 }

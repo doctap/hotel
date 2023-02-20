@@ -9,9 +9,20 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	padding: 5% 10% 5% 10%;
 
 	&>* {
 		margin-bottom: 1rem;
+	}
+
+	.logo {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+	}
+
+	.copyright {
+		text-align: center;
 	}
 
 	.brands {

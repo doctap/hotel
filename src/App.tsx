@@ -7,21 +7,19 @@ import Components from './components/routerPages/components/Components';
 import HeadersFooters from './components/routerPages/headersFooters/HeadersFooters';
 import NoPage from './components/routerPages/NoPage';
 import LandingPage from './components/webSitePages/landingPage/LandingPage';
-// import Forms from './pages/forms/Forms';
-const Forms = React.lazy(() => import('./components/routerPages/forms/Forms'));
+import Forms from './components/routerPages/forms/Forms';
 
 export default function App() {
 	return (
 		<BrowserRouter >
 			<Routes>
-				<Route path={`${process.env.REACT_APP_BUILD}/`} element={<Layout />}>
-					<Route index element={<Home />} />
-					<Route path="/components" element={<Components />} />
-					<Route path="/forms" element={<Suspense fallback={<div>Loading</div>}><Forms /></Suspense>} />
-					<Route path="/headersFooters" element={<HeadersFooters />} />
-					<Route path="/landingPage" element={<LandingPage />} />
-					<Route path="*" element={<NoPage />} />
-				</Route>
+				<Route path='/' element={<Layout />} />
+				<Route path='/home' element={<Home />} />
+				<Route path="/components" element={<Components />} />
+				<Route path="/forms" element={<Forms />} />
+				<Route path="/headersFooters" element={<HeadersFooters />} />
+				<Route path="/landingPage" element={<LandingPage />} />
+				<Route path="*" element={<NoPage />} />
 			</Routes>
 		</BrowserRouter>
 	);

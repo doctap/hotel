@@ -47,7 +47,9 @@ export default function FooterLinks(props: IFooterLinks) {
 			</div>
 
 			<div className={styles.footerBottom}>
-				<Copyright />
+				<div className={styles.Copyright}>
+					<Copyright text='Copyright © 2018 Toxin отель. Все права защищены.' />
+				</div>
 				<div className={styles.brands}>
 					<Brands />
 				</div>
