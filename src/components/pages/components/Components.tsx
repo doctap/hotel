@@ -24,7 +24,7 @@ import UserFeedback from '../../userFeedback/UserFeedback';
 import styles from './Components.module.scss';
 
 
-export default function Components() {
+export const Components = () => {
 
 	const itemsForBulletList = ['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия - после 13:00, а выезд до 12:00'];
 	const itemsForDropdownCheckboxes = ['Завтрак', 'Письменный стол', 'Стул для кормления', 'Кроватка', 'Телевизор', 'Шампунь',];

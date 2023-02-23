@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { IPage } from '../../commonInterfaces/RFCinterfaces';
+import { IPage } from '../../types';
 import Nav from '../headersFooters/header/nav/Nav';
 import styles from './BurgerMenu.module.scss';
 

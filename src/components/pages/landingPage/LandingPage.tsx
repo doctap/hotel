@@ -1,11 +1,11 @@
 import React from 'react'
 import Header from '../../headersFooters/header/Header';
-import { pagesForFooter, pagesForNav } from '../../routerPages/headersFooters/HeadersFooters';
 import mainBackGround from './mainBackGround.jpg';
 import styles from './LandingPage.module.scss';
 import FooterLinks from '../../headersFooters/footers/footerLinks/FooterLinks';
+import { pagesForNav, pagesForFooter } from '../index';
 
-export default function LandingPage() {
+export const LandingPage = () => {
 	return (
 		<>
 			<div className={styles.main}>

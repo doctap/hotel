@@ -1,5 +1,5 @@
 import React from 'react';
-import { splitNumber } from '../../../commonFunc/Utilities';
+import { splitNumber } from '../../../utils/Utils';
 import styles from './Price.module.scss';
 
 interface IPrice {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { IPage } from '../../../../commonInterfaces/RFCinterfaces';
+import { IPage } from '../../../../types';
 import Select from '../../select/Select';
 import Link from '../linkNav/Link';
 import styles from './Nav.module.scss';

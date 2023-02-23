@@ -13,7 +13,7 @@ module.exports = (env, argv) => {
 			filename: "bundle.js",
 			path: path.resolve(__dirname, "dist"),
 			clean: true,
-			publicPath: '/hotel/',
+			publicPath: './',
 		},
 		devtool: argv.mode === "development" ? "inline-source-map" : false,
 		resolve: {

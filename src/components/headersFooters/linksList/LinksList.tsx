@@ -1,5 +1,5 @@
 import React from 'react';
-import { IPage } from '../../../commonInterfaces/RFCinterfaces';
+import { IPage } from '../../../types';
 import SubTitle from '../../titles/subTitle/SubTitle';
 import Link from '../header/linkNav/Link';
 import styles from './LinksList.module.scss';

@@ -7,7 +7,7 @@ import HotelRoom from '../../hotelRoom/HotelRoom';
 import ItemRoom from '../../itemRoom/ItemRoom';
 import styles from './Forms.module.scss';
 
-export default function Forms() {
+export const Forms = () => {
 	return (
 		<div
 			className={styles.columns}

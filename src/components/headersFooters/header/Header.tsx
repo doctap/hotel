@@ -2,7 +2,7 @@ import React from 'react';
 import Logo from '../logo/Logo';
 import Nav from './nav/Nav';
 import styles from './Header.module.scss';
-import { IPage } from '../../../commonInterfaces/RFCinterfaces';
+import { IPage } from '../../../types';
 import Button from '../../buttons/btns/Button';
 import { BtnVariants } from '../../buttons/btns/ButtonInterface';
 import BurgerMenu from '../../burgerMenu/BurgerMenu';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { IPage } from '../../../../commonInterfaces/RFCinterfaces';
+import { IPage } from '../../../../types';
 import { BtnTickVariants } from '../../../buttons/arrowTickBtns/BtnArrowTickInterface';
 import InputBtn from '../../../inputs/InputBtn/InputBtn';
 import Paragraph from '../../../texts/paragraph/Paragraph';
