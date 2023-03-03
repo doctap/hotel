@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { IPage } from '../../../types';
-import BtnTick from '../../buttons/arrowTickBtns/BtnArrowTick';
-import { BtnTickVariants } from '../../buttons/arrowTickBtns/BtnArrowTickInterface';
 import Link from '../header/linkNav/Link';
 import styles from './Select.module.scss';
+import { BtnTick, BtnTickVariants } from '../../buttons';
 
 interface ISelect {
 	pagesItem: IPage[];

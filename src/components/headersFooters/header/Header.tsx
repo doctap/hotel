@@ -3,9 +3,8 @@ import Logo from '../logo/Logo';
 import Nav from './nav/Nav';
 import styles from './Header.module.scss';
 import { IPage } from '../../../types';
-import Button from '../../buttons/btns/Button';
-import { BtnVariants } from '../../buttons/btns/ButtonInterface';
-import BurgerMenu from '../../burgerMenu/BurgerMenu';
+import { BurgerMenu } from '../../burgerMenu/BurgerMenu';
+import { BtnVariants, Button } from '../../buttons';
 
 interface IHeader {
 	pages: IPage[];
@@ -21,7 +20,11 @@ export default function Header(props: IHeader) {
 			</div>
 
 			<div className={styles.BurgerMenu}>
-				<BurgerMenu pages={props.pages} />
+				<BurgerMenu
+					icon='menu'
+					iconColor='#000'
+					pages={props.pages} 
+				/>
 			</div>
 
 

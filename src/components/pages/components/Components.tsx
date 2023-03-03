@@ -1,9 +1,4 @@
 import React from 'react';
-import { BtnTickVariants } from '../../buttons/arrowTickBtns/BtnArrowTickInterface';
-import LikeBtn from '../../buttons/btnLike/LikeBtn';
-import Button from '../../buttons/btns/Button';
-import { BtnVariants } from '../../buttons/btns/ButtonInterface';
-import LongSubmit from '../../buttons/submit/LongSubmit';
 import CheckboxList from '../../checkbox/checkboxList/CheckboxList';
 import CheckboxRadio from '../../checkbox/checkboxRadio/CheckboxRadio';
 import CheckboxRichList from '../../checkbox/checkboxRichList/CheckboxRichList';
@@ -22,6 +17,7 @@ import BulletList from '../../texts/bulletList/BulletList';
 import SubTitle from '../../titles/subTitle/SubTitle';
 import UserFeedback from '../../userFeedback/UserFeedback';
 import styles from './Components.module.scss';
+import { BtnTickVariants, BtnVariants, Button, LikeBtn, LongSubmit } from '../../buttons';
 
 
 export const Components = () => {

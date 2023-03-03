@@ -1,8 +1,7 @@
 import React from 'react';
-import BtnTick from '../../buttons/arrowTickBtns/BtnArrowTick';
-import { BtnTickVariants } from '../../buttons/arrowTickBtns/BtnArrowTickInterface';
 import InputText, { InputVariants } from '../Input/InputFieldText';
 import styles from './InputBtn.module.scss';
+import { BtnTick, BtnTickVariants } from '../../buttons';
 
 interface IInputBtn {
 	typeInput: string;

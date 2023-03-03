@@ -2,13 +2,12 @@ import React, { useState } from 'react';
 import roomImg1 from '../../images/roomLux/image.jpg';
 import roomImg2 from '../../images/roomLux/Room.jpg';
 import roomImg3 from '../../images/roomLux/image.jpg';
-import { BtnTickVariants } from '../buttons/arrowTickBtns/BtnArrowTickInterface';
-import BtnTick from '../buttons/arrowTickBtns/BtnArrowTick';
 import styles from './ItemRoom.module.scss';
 import HotelRoom from '../hotelRoom/HotelRoom';
 import RateStars from '../rateStars/RateStars';
 import QtyFeedback from '../qtyFeedback/QtyFeedback';
 import TittlePricePerDay from '../forms/titlePricePerDay/TitlePricePerDay';
+import { BtnTick, BtnTickVariants } from '../buttons';
 
 export default function ItemRoom() {
 

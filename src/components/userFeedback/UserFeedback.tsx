@@ -1,8 +1,8 @@
 import React from 'react';
-import LikeBtn from '../buttons/btnLike/LikeBtn';
 import Paragraph from '../texts/paragraph/Paragraph';
 import UserAvatar from '../userUI/userAvatar/UserAvatar';
 import styles from './UserFeedback.module.scss';
+import { LikeBtn } from '../buttons';
 
 interface IUserFeedback {
 	userName: string;
