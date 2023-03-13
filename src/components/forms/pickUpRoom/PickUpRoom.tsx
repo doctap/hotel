@@ -1,9 +1,9 @@
 import React, {useEffect, useState}  from 'react';
-import LongSubmit from '../../buttons/submit/LongSubmit';
 import TitleH2 from '../../titles/titleH2/TitleH2';
 import FormContainer from '../containers/formContainer/FormContainer';
 import ItemContainer from '../containers/itemContainer/ItemContainer';
 import PeriodQtyVisitors, { IPeriodVisitors } from '../periodQtyVisitors/PeriodQtyVisitors';
+import { LongSubmit } from '../../buttons';
 
 export default function PickUpRoom() {
 

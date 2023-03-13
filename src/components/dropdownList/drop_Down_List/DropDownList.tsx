@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
 import styles from './DropDownList.module.scss';
-import BtnTick from '../../buttons/arrowTickBtns/BtnArrowTick';
-import { BtnTickVariants } from '../../buttons/arrowTickBtns/BtnArrowTickInterface';
 import Counter from '../counter/Counter';
-import Button from '../../buttons/btns/Button';
-import { BtnVariants } from '../../buttons/btns/ButtonInterface';
+import { BtnTick, BtnTickVariants, BtnVariants, Button } from '../../buttons';
 
 interface IDropDownList {
 	name: string;

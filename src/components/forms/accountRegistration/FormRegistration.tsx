@@ -1,7 +1,4 @@
 import React from 'react';
-import Button from '../../buttons/btns/Button';
-import { BtnVariants } from '../../buttons/btns/ButtonInterface';
-import LongSubmit from '../../buttons/submit/LongSubmit';
 import CheckboxRadio from '../../checkbox/checkboxRadio/CheckboxRadio';
 import CheckboxToggle from '../../checkbox/checkboxToggle/CheckboxToggle';
 import InputDate from '../../inputs/InputDate/InputDate';
@@ -11,6 +8,7 @@ import FormContainer from '../containers/formContainer/FormContainer';
 import ItemContainer from '../containers/itemContainer/ItemContainer';
 import TwoTextField from '../twoTextField/TwoTextField';
 import styles from './FormRegistration.module.scss';
+import { BtnVariants, Button, LongSubmit } from '../../buttons';
 
 interface IFormRegistration {
 	userName: string;

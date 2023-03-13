@@ -1,8 +1,20 @@
 import React from 'react';
-import { BtnTickVariants, IBtnTick } from './BtnArrowTickInterface';
 import styles from './BtnArrowTick.module.scss';
 
-export default function BtnTick(props: IBtnTick) {
+export interface IBtnTick {
+	type: 'submit' | 'button';
+	variant: BtnTickVariants;
+	onClick?: () => void;
+}
+
+export enum BtnTickVariants {
+	Arrow = 1,
+	Tick = 2,
+	HorizontalTickLeft = 3,
+	HorizontalTickRight = 4
+}
+
+export const BtnTick = (props: IBtnTick) => {
 
 	const variantBtn = (v: BtnTickVariants) => {
 		switch (v) {

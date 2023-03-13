@@ -1,6 +1,5 @@
 import React from 'react';
 import { IPage } from '../../../../types';
-import { BtnTickVariants } from '../../../buttons/arrowTickBtns/BtnArrowTickInterface';
 import InputBtn from '../../../inputs/InputBtn/InputBtn';
 import Paragraph from '../../../texts/paragraph/Paragraph';
 import SubTitle from '../../../titles/subTitle/SubTitle';
@@ -9,6 +8,7 @@ import Copyright from '../../copyright/Сopyright';
 import LinksList from '../../linksList/LinksList';
 import Logo from '../../logo/Logo';
 import styles from './FooterLinks.module.scss';
+import { BtnTickVariants } from '../../../buttons';
 
 interface IFooterLinks {
 	pages: IPage[];

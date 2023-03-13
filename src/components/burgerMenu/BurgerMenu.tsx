@@ -1,28 +1,31 @@
 import React, { useState } from 'react';
-import { IPage } from '../../types';
+import { HEX, IPage, IconType } from '../../types';
 import Nav from '../headersFooters/header/nav/Nav';
 import styles from './BurgerMenu.module.scss';
+import { IconButton } from '../buttons';
 
 interface IBurgerMenu {
-	pages: IPage[];
+	pages: IPage[]
+	icon: IconType
+	iconColor: HEX
 }
 
-export default function BurgerMenu(props: IBurgerMenu) {
+export const BurgerMenu = (props: IBurgerMenu) => {
 
 	const [isShowMenu, setIsShowMenu] = useState(false);
 
 	return (
 		<div className={styles.burgerMenu}>
-			<button
+			<IconButton
 				onClick={() => setIsShowMenu(!isShowMenu)}
-				className={styles.callMenu}
-				children='jhgvcf'
+				color={props.iconColor}
+				icon={props.icon}
+				type='button'
 			/>
 			{
-				isShowMenu ?
-					<div className={styles.dropDownNav}><Nav navBurger={true} pages={props.pages} /></div>
-					:
-					null
+				isShowMenu 
+					? <div className={styles.dropDownNav}><Nav navBurger={true} pages={props.pages} /></div>
+					: null
 			}
 		</div>
 	)

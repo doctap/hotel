@@ -6,7 +6,7 @@ interface ILikeBtn {
 	onClick?: (value: number) => void;
 }
 
-export default function LikeBtn(props: ILikeBtn) {
+export const LikeBtn = (props: ILikeBtn) => {
 
 	const [like, setLike] = useState(props.value);
 

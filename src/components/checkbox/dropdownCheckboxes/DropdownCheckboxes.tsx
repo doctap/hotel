@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import uniqId from 'uniqid';
-import BtnTick from '../../buttons/arrowTickBtns/BtnArrowTick';
-import { BtnTickVariants } from '../../buttons/arrowTickBtns/BtnArrowTickInterface';
 import CheckBoxItem from '../chtckBoxItem/CheckBoxItem';
 import styles from './DropdownCheckboxes.module.scss';
+import { BtnTick, BtnTickVariants } from '../../buttons';
 
 export interface IDropdownCheckboxes {
 	name: string;

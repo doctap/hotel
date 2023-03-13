@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import BtnTick from '../buttons/arrowTickBtns/BtnArrowTick';
-import { BtnTickVariants } from '../buttons/arrowTickBtns/BtnArrowTickInterface';
 import Counter from '../dropdownList/counter/Counter';
 import styles from './DropdownQtyRooms.module.scss';
+import { BtnTick, BtnTickVariants } from '../buttons';
 
 interface IDropdownQtyRooms {
 	limitBedroom: number;

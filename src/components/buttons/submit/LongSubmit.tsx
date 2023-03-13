@@ -7,7 +7,7 @@ interface ILongSubmit {
 	submitForm?: () => void;
 }
 
-export default function LongSubmit(props: ILongSubmit) {
+export const LongSubmit = (props: ILongSubmit) => {
 	return (
 		<button
 			type={props.type}

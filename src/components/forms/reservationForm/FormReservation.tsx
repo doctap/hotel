@@ -6,7 +6,7 @@ import PeriodQtyVisitors from '../periodQtyVisitors/PeriodQtyVisitors';
 import Price from '../price/Price';
 import styles from './FormReservation.module.scss';
 import HotelRoom from '../../hotelRoom/HotelRoom';
-import LongSubmit from '../../buttons/submit/LongSubmit';
+import { LongSubmit } from '../../buttons';
 
 interface IFormReservation {
 

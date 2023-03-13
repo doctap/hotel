@@ -4,9 +4,7 @@ import FormContainer from '../containers/formContainer/FormContainer';
 import ItemContainer from '../containers/itemContainer/ItemContainer';
 import styles from './Login.module.scss';
 import TitleH2 from '../../titles/titleH2/TitleH2';
-import Button from '../../buttons/btns/Button';
-import { BtnVariants } from '../../buttons/btns/ButtonInterface';
-import LongSubmit from '../../buttons/submit/LongSubmit';
+import { BtnVariants, Button, LongSubmit } from '../../buttons';
 
 export default function Login() {
 
