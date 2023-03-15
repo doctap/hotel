@@ -35,11 +35,17 @@ export const Forms = () => {
 			</div>
 
 			<div className={styles.column}>
-				<ItemRoom />
-				<HotelRoom roomNumber={888} roomStatus={true} sizeTitle='h1' />
-				<HotelRoom roomNumber={1111} roomStatus={false} sizeTitle='h2' />
-
-
+				<ItemRoom
+					feedBackAmount={65}
+					fullStars={4}
+					maxStars={5}
+					perTime='в сутки'
+					pricePerTime={9900}
+					roomNumber={777}
+					roomType='люкс'
+				/>
+				<HotelRoom roomNumber={888} roomType={'люкс'} sizeTitle='h1' />
+				<HotelRoom roomNumber={1111} roomType={''} sizeTitle='h2' />
 			</div>
 		</div>
 	)

@@ -9,7 +9,17 @@ import QtyFeedback from '../qtyFeedback/QtyFeedback';
 import TittlePricePerDay from '../forms/titlePricePerDay/TitlePricePerDay';
 import { BtnTick, BtnTickVariants } from '../buttons';
 
-export default function ItemRoom() {
+interface IItemRoom {
+	perTime: string;
+	pricePerTime: number;
+	roomNumber: number;
+	roomType: string;
+	maxStars: number;
+	fullStars: number;
+	feedBackAmount: number;
+}
+
+export default function ItemRoom(props: IItemRoom) {
 
 	const divImg: React.ReactNode[] = [
 		<img src={roomImg1} alt='Image' />,
@@ -55,20 +65,23 @@ export default function ItemRoom() {
 				<div className={styles.labelTop}>
 					<div>
 						<HotelRoom
-							roomNumber={888}
-							roomStatus={true}
+							roomNumber={props.roomNumber}
+							roomType={props.roomType}
 							sizeTitle='h2'
 						/>
 					</div>
 
 					<div className={styles.TittlePricePerDay}>
-						<TittlePricePerDay price={9990} text='в сутки' />
+						<TittlePricePerDay price={props.pricePerTime} text={props.perTime} />
 					</div>
 				</div>
 				<div className={styles.labelBottom}>
-					<RateStars fullStars={5} maxStars={5} />
+					<RateStars 
+						fullStars={props.fullStars}
+						maxStars={props.maxStars}
+					/>
 					<div className={styles.QtyFeedback}>
-						<QtyFeedback qty={65} />
+						<QtyFeedback qty={props.feedBackAmount} />
 					</div>
 				</div>
 			</div>

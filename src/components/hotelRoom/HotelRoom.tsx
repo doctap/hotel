@@ -5,7 +5,7 @@ import styles from './HotelRoom.module.scss';
 
 interface IHotelRoom {
 	roomNumber: number;
-	roomStatus: boolean;
+	roomType: string;
 	sizeTitle: 'h1' | 'h2';
 }
 
@@ -22,8 +22,8 @@ export default function HotelRoom(props: IHotelRoom) {
 					<TitleH2 value={props.roomNumber} />
 				}
 			</div>
-			<div className={styles.roomStatus}>
-				{props.roomStatus ? 'люкс' : null}
+			<div className={styles.roomType}>
+				{props.roomType}
 			</div>
 		</div>
 	)

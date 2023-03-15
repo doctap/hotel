@@ -18,7 +18,7 @@ export default function FormReservation(props: IFormReservation) {
 
 			<div className={styles.header}>
 				<div className={styles.roomNumber}>
-					<HotelRoom roomNumber={888} roomStatus={true} sizeTitle='h1' />
+					<HotelRoom roomNumber={888} roomType='люкс' sizeTitle='h1' />
 				</div>
 				<div className={styles.tittlePricePerDay}>
 					<TittlePricePerDay price={9990} text='в сутки' />
